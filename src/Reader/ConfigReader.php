@@ -29,22 +29,7 @@ class ConfigReader
 
 	public function getTags()
 	{
-		if (!isset($this->data['tag']))
-		{
-			return [];
-		}
-
-		$tag = $this->data['tag'];
-		if (is_string($tag) && $tag === '*')
-		{
-			$tag = [];
-			foreach (glob(ROOT_DIR . 'data/tag/*.json') as $file)
-			{
-				$tag[str_replace('.json', '', basename($file))] = [];
-			}
-		}
-
-		return $tag;
+		return (isset($this->data['tag']) ? $this->data['tag'] : []);
 	}
 
 	public function getTrigger()
