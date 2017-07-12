@@ -49,8 +49,9 @@ class ImportGenerator
 
 			$jsonData = $this->replaceBaseVariable($jsonData, $configReader);
 
+			file_put_contents($outputFile, $jsonData);
+
 			echo $jsonData;
-			exit;
 
 		} catch (\Exception $e)
 		{
@@ -69,9 +70,13 @@ class ImportGenerator
 	private function replaceBaseVariable($jsonData, ConfigReader $configReader)
 	{
 		return strtr($jsonData, [
+			'"publicId": ""' => '"publicId": "' . $configReader->getPublicId() . '"',
 			'"accountId": ""' => '"accountId": "' . $configReader->getAccountId() . '"',
 			'"containerId": ""' => '"containerId": "' . $configReader->getContainerId() . '"',
+			'"tagManagerUrl": ""' => '"tagManagerUrl": "' . sprintf('https://tagmanager.google.com/#/container/accounts/%s/containers/%s/workspaces?apiLink=container', $configReader->getAccountId(), $configReader->getContainerId()) . '"',
 		]);
+
+
 	}
 
 }

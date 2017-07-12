@@ -34,6 +34,7 @@ class TagBuilder
 			$tagContent = file_get_contents($tagTemplate);
 
 			$tagContent = $this->replaceTriggerPlaceholder($tagContent);
+			$tagContent = $this->replaceDataVariables($tagContent, $data);
 
 			$tag = json_decode($tagContent, true);
 			$tag['tagId'] = $tagId++;
@@ -55,6 +56,16 @@ class TagBuilder
 
 				$tagContent = str_replace(sprintf('<<TRIGGER %s>>', $triggerName), $triggerId, $tagContent);
 			}
+		}
+
+		return $tagContent;
+	}
+
+	private function replaceDataVariables($tagContent, $data)
+	{
+		foreach ($data as $key => $value)
+		{
+			$tagContent = str_replace(sprintf('{{%s}}', $key), $value, $tagContent);
 		}
 
 		return $tagContent;

@@ -12,6 +12,11 @@ class ConfigReader
 		$this->data = json_decode(file_get_contents($file), true);
 	}
 
+	public function getPublicId()
+	{
+		return (isset($this->data['publicId']) ? $this->data['publicId'] : '');
+	}
+
 	public function getAccountId()
 	{
 		return (isset($this->data['accountId']) ? $this->data['accountId'] : '');
