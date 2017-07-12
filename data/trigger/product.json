@@ -1,0 +1,25 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"triggerId": "",
+	"name": "Product",
+	"type": "PAGEVIEW",
+	"filter": [
+		{
+			"type": "EQUALS",
+			"parameter": [
+				{
+					"type": "TEMPLATE",
+					"key": "arg0",
+					"value": "{{Page Type}}"
+				},
+				{
+					"type": "TEMPLATE",
+					"key": "arg1",
+					"value": "product"
+				}
+			]
+		}
+	],
+	"fingerprint": ""
+}

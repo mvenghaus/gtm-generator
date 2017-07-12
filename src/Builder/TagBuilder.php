@@ -36,10 +36,17 @@ class TagBuilder
 			$tagContent = $this->replaceTriggerPlaceholder($tagContent);
 			$tagContent = $this->replaceDataVariables($tagContent, $data);
 
-			$tag = json_decode($tagContent, true);
-			$tag['tagId'] = $tagId++;
+			$tagList = json_decode($tagContent, true);
+			if (isset($tagList['accountId']))
+			{
+				$tagList = [$tagList];
+			}
+			foreach ($tagList as $tag)
+			{
+				$tag['tagId'] = $tagId++;
 
-			$tags[] = $tag;
+				$tags[] = $tag;
+			}
 		}
 
 		return $tags;

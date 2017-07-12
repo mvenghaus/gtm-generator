@@ -1,0 +1,25 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"triggerId": "",
+	"name": "Cart",
+	"type": "PAGEVIEW",
+	"filter": [
+		{
+			"type": "EQUALS",
+			"parameter": [
+				{
+					"type": "TEMPLATE",
+					"key": "arg0",
+					"value": "{{Page Type}}"
+				},
+				{
+					"type": "TEMPLATE",
+					"key": "arg1",
+					"value": "cart"
+				}
+			]
+		}
+	],
+	"fingerprint": ""
+}

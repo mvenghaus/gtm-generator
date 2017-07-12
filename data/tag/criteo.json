@@ -1,0 +1,138 @@
+[
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Criteo - Home",
+		"type": "crto",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "accountId",
+				"value": "{{Criteo Account ID}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "tagType",
+				"value": "HOME_TAG"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "siteType",
+				"value": "{{Device Type}}"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Home>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Criteo - Cart",
+		"type": "crto",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "accountId",
+				"value": "{{Criteo Account ID}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "tagType",
+				"value": "BASKET_TAG"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "siteType",
+				"value": "{{Device Type}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "basketArray",
+				"value": "{{Cart Products}}"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Cart>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Criteo - Product",
+		"type": "crto",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "accountId",
+				"value": "{{Criteo Account ID}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "productID",
+				"value": "{{Product ID}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "tagType",
+				"value": "PRODUCT_TAG"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "siteType",
+				"value": "{{Device Type}}"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Product>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Criteo - Purchase",
+		"type": "crto",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "accountId",
+				"value": "{{Criteo Account ID}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "tagType",
+				"value": "TRANSACTION_TAG"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "siteType",
+				"value": "{{Device Type}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "TransactionID",
+				"value": "{{Purchase ID}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "TransactionArray",
+				"value": "{{Purchase Products}}"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	}
+]
