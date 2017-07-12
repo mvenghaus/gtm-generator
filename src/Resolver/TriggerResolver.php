@@ -16,12 +16,12 @@ class TriggerResolver
 		return $this;
 	}
 
-	public function resolveIdByName($id, $default = null)
+	public function resolveNameById($id, $default = null)
 	{
 		return (isset($this->idToName[$id]) ? $this->idToName[$id] : $default);
 	}
 
-	public function resolveNameById($name, $default = null)
+	public function resolveIdByName($name, $default = null)
 	{
 		return (isset($this->nameToId[$name]) ? $this->nameToId[$name] : $default);
 	}

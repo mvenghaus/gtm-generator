@@ -18,10 +18,28 @@ class TriggerBuilder
 		$this->triggerResolver = $triggerResolver;
 	}
 
-
 	public function build(ConfigReader $configReader)
 	{
-		return ['abc' => 'def'];
+		$triggers = [];
+
+		$triggerId = 1;
+		foreach ($configReader->getTrigger() as $name => $data)
+		{
+			$triggerTemplate = sprintf('%sdata/trigger/%s.json', ROOT_DIR, $name);
+			if (!file_exists($triggerTemplate))
+			{
+				throw new \Exception(sprintf('trigger file not found "%s.json"', $name));
+			}
+
+			$trigger = json_decode(file_get_contents($triggerTemplate), true);
+			$trigger['triggerId'] = $triggerId++;
+
+			$this->triggerResolver->add($trigger['triggerId'], $trigger['name']);
+
+			$triggers[] = $trigger;
+		}
+
+		return $triggers;
 	}
 
 }

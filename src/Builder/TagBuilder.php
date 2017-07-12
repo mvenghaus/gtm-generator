@@ -18,10 +18,46 @@ class TagBuilder
 		$this->triggerResolver = $triggerResolver;
 	}
 
-
 	public function build(ConfigReader $configReader)
 	{
-		return ['abc' => 'def'];
+		$tags = [];
+
+		$tagId = 1;
+		foreach ($configReader->getTags() as $name => $data)
+		{
+			$tagTemplate = sprintf('%sdata/tag/%s.json', ROOT_DIR, $name);
+			if (!file_exists($tagTemplate))
+			{
+				throw new \Exception(sprintf('tag file not found "%s.json"', $name));
+			}
+
+			$tagContent = file_get_contents($tagTemplate);
+
+			$tagContent = $this->replaceTriggerPlaceholder($tagContent);
+
+			$tag = json_decode($tagContent, true);
+			$tag['tagId'] = $tagId++;
+
+			$tags[] = $tag;
+		}
+
+		return $tags;
+	}
+
+	private function replaceTriggerPlaceholder($tagContent)
+	{
+		preg_match_all('/<<TRIGGER ([^>]+)>>/is', $tagContent, $results);
+		if (isset($results[1]))
+		{
+			foreach ($results[1] as $triggerName)
+			{
+				$triggerId = $this->triggerResolver->resolveIdByName($triggerName);
+
+				$tagContent = str_replace(sprintf('<<TRIGGER %s>>', $triggerName), $triggerId, $tagContent);
+			}
+		}
+
+		return $tagContent;
 	}
 
 }

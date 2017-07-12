@@ -33,7 +33,7 @@
 	],
 	"fingerprint": "",
 	"firingTriggerId": [
-		"((TRIGGER purchase))"
+		"<<TRIGGER Purchase>>"
 	],
 	"tagFiringOption": "ONCE_PER_EVENT"
 }

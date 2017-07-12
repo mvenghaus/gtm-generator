@@ -1,9 +1,21 @@
 {
-	"accountId" : "",
-	"containerId" : "",
+	"accountId": "123",
+	"containerId": "",
 	"tag": {
-		"bingads" : {
-			"tag_id" : ""
+		"bingAds": {
+			"Bing Tag Id": ""
+		},
+		"adwordsConversion": {
+			"Adwords Conversion ID": "123"
+		},
+		"retargetingTag": {
+			"Adwords Conversion ID": "123"
 		}
+	},
+	"trigger": {
+		"purchase": {}
+	},
+	"variable": {
+		"pageType": {}
 	}
 }

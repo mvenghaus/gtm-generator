@@ -38,16 +38,24 @@ class ImportGenerator
 	{
 		$configReader = new ConfigReader($configFile);
 
-		$data = $this->loadBaseData();
-		$data['containerVersion']['trigger'] = $this->triggerBuilder->build($configReader);
-		$data['containerVersion']['tag'] = $this->tagBuilder->build($configReader);
-		$data['containerVersion']['variable'] = $this->variableBuilder->build($configReader);
+		try {
 
-		$jsonData = json_encode($data, JSON_PRETTY_PRINT);
+			$data = $this->loadBaseData();
+			$data['containerVersion']['trigger'] = $this->triggerBuilder->build($configReader);
+			$data['containerVersion']['tag'] = $this->tagBuilder->build($configReader);
+			$data['containerVersion']['variable'] = $this->variableBuilder->build($configReader);
 
-		$jsonData = $this->replaceBaseVariable($jsonData, $configReader);
+			$jsonData = json_encode($data, JSON_PRETTY_PRINT);
 
-		echo $jsonData;
+			$jsonData = $this->replaceBaseVariable($jsonData, $configReader);
+
+			echo $jsonData;
+			exit;
+
+		} catch (\Exception $e)
+		{
+			echo $e->getMessage();
+		}
 	}
 
 	/**
