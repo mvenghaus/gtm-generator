@@ -1,0 +1,39 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"tagId": "",
+	"name": "Adwords - Conversion",
+	"type": "awct",
+	"parameter": [
+		{
+			"type": "TEMPLATE",
+			"key": "conversionValue",
+			"value": "{{Ecommerce Purchase Revenue}}"
+		},
+		{
+			"type": "TEMPLATE",
+			"key": "orderId",
+			"value": "{{Ecommerce Purchase ID}}"
+		},
+		{
+			"type": "TEMPLATE",
+			"key": "conversionId",
+			"value": "{{Adwords Conversion ID}}"
+		},
+		{
+			"type": "TEMPLATE",
+			"key": "currencyCode",
+			"value": "{{Currency Code}}"
+		},
+		{
+			"type": "TEMPLATE",
+			"key": "conversionLabel",
+			"value": "{{Adwords Conversion Label}}"
+		}
+	],
+	"fingerprint": "",
+	"firingTriggerId": [
+		"((TRIGGER purchase))"
+	],
+	"tagFiringOption": "ONCE_PER_EVENT"
+}

@@ -1,0 +1,56 @@
+{
+	"exportFormatVersion": 2,
+	"exportTime": "",
+	"containerVersion": {
+		"path": "",
+		"accountId": "",
+		"containerId": "",
+		"containerVersionId": "0",
+		"container": {
+			"path": "",
+			"accountId": "",
+			"containerId": "",
+			"name": "",
+			"publicId": "",
+			"usageContext": [
+				"WEB"
+			],
+			"fingerprint": "",
+			"tagManagerUrl": ""
+		},
+		"builtInVariable": [
+			{
+				"accountId": "",
+				"containerId": "",
+				"type": "PAGE_URL",
+				"name": "Page URL"
+			},
+			{
+				"accountId": "",
+				"containerId": "",
+				"type": "PAGE_HOSTNAME",
+				"name": "Page Hostname"
+			},
+			{
+				"accountId": "",
+				"containerId": "",
+				"type": "PAGE_PATH",
+				"name": "Page Path"
+			},
+			{
+				"accountId": "",
+				"containerId": "",
+				"type": "REFERRER",
+				"name": "Referrer"
+			},
+			{
+				"accountId": "",
+				"containerId": "",
+				"type": "EVENT",
+				"name": "Event"
+			}
+		],
+		"fingerprint": "",
+		"tagManagerUrl": ""
+	}
+}

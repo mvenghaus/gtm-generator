@@ -1,0 +1,27 @@
+{
+	"name": "inkl/gtm-generator",
+	"authors": [
+		{
+			"name": "Marcus Venghaus",
+			"email": "info@inklammern.de"
+		}
+	],
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"config": {
+		"secure-http": false,
+		"preferred-install": {
+			"*": "dist"
+		}
+	},
+	"require": {
+		"php-di/php-di": "@stable",
+		"symfony/console": "@stable",
+		"monolog/monolog": "@stable"
+	},
+	"autoload": {
+		"psr-0": {
+			"": "src/"
+		}
+	}
+}
