@@ -16,7 +16,5 @@
 	"trigger": {
 		"purchase": {}
 	},
-	"variable": {
-		"pageType": {}
-	}
+	"variable": "*"
 }

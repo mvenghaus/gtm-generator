@@ -29,17 +29,62 @@ class ConfigReader
 
 	public function getTags()
 	{
-		return (isset($this->data['tag']) ? $this->data['tag'] : []);
+		if (!isset($this->data['tag']))
+		{
+			return [];
+		}
+
+		$tag = $this->data['tag'];
+		if (is_string($tag) && $tag === '*')
+		{
+			$tag = [];
+			foreach (glob(ROOT_DIR . 'data/tag/*.json') as $file)
+			{
+				$tag[str_replace('.json', '', basename($file))] = [];
+			}
+		}
+
+		return $tag;
 	}
 
 	public function getTrigger()
 	{
-		return (isset($this->data['trigger']) ? $this->data['trigger'] : []);
+		if (!isset($this->data['trigger']))
+		{
+			return [];
+		}
+
+		$trigger = $this->data['trigger'];
+		if (is_string($trigger) && $trigger === '*')
+		{
+			$trigger = [];
+			foreach (glob(ROOT_DIR . 'data/trigger/*.json') as $file)
+			{
+				$trigger[str_replace('.json', '', basename($file))] = [];
+			}
+		}
+
+		return $trigger;
 	}
 
 	public function getVariables()
 	{
-		return (isset($this->data['variable']) ? $this->data['variable'] : []);
+		if (!isset($this->data['variable']))
+		{
+			return [];
+		}
+
+		$variable = $this->data['variable'];
+		if (is_string($variable) && $variable === '*')
+		{
+			$variable = [];
+			foreach (glob(ROOT_DIR . 'data/variable/*.json') as $file)
+			{
+				$variable[str_replace('.json', '', basename($file))] = [];
+			}
+		}
+
+		return $variable;
 	}
 
 }
