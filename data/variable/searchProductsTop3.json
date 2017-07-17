@@ -8,7 +8,7 @@
 		{
 			"type": "TEMPLATE",
 			"key": "javascript",
-			"value": "function () {\n\t{{Search Products}}.slice(0, 3);\n}"
+			"value": "function () {\n\treturn {{Search Products}}.slice(0, 3);\n}"
 		}
 	],
 	"fingerprint": ""
