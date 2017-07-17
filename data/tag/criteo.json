@@ -134,6 +134,40 @@
 		"accountId": "",
 		"containerId": "",
 		"tagId": "",
+		"name": "Criteo - Cart",
+		"type": "crto",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "accountId",
+				"value": "{{Criteo Account ID}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "tagType",
+				"value": "BASKET_TAG"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "siteType",
+				"value": "{{Device Type}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "basketArray",
+				"value": "{{Cart Products}}"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Cart>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
 		"name": "Criteo - Purchase",
 		"type": "crto",
 		"parameter": [
