@@ -1,0 +1,15 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"variableId": "",
+	"name": "Search Products - Top 3",
+	"type": "jsm",
+	"parameter": [
+		{
+			"type": "TEMPLATE",
+			"key": "javascript",
+			"value": "function () {\n\t{{Search Products}}.slice(0, 3);\n}"
+		}
+	],
+	"fingerprint": ""
+}

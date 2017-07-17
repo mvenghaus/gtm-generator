@@ -32,40 +32,6 @@
 		"accountId": "",
 		"containerId": "",
 		"tagId": "",
-		"name": "Criteo - Cart",
-		"type": "crto",
-		"parameter": [
-			{
-				"type": "TEMPLATE",
-				"key": "accountId",
-				"value": "{{Criteo Account ID}}"
-			},
-			{
-				"type": "TEMPLATE",
-				"key": "tagType",
-				"value": "BASKET_TAG"
-			},
-			{
-				"type": "TEMPLATE",
-				"key": "siteType",
-				"value": "{{Device Type}}"
-			},
-			{
-				"type": "TEMPLATE",
-				"key": "basketArray",
-				"value": "{{Cart Products}}"
-			}
-		],
-		"fingerprint": "",
-		"firingTriggerId": [
-			"<<TRIGGER Cart>>"
-		],
-		"tagFiringOption": "ONCE_PER_EVENT"
-	},
-	{
-		"accountId": "",
-		"containerId": "",
-		"tagId": "",
 		"name": "Criteo - Product",
 		"type": "crto",
 		"parameter": [
@@ -93,6 +59,74 @@
 		"fingerprint": "",
 		"firingTriggerId": [
 			"<<TRIGGER Product>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Criteo - Category",
+		"type": "crto",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "accountId",
+				"value": "{{Criteo Account ID}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "tagType",
+				"value": "LISTING_TAG"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "siteType",
+				"value": "{{Device Type}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "listingID",
+				"value": "{{Category Products - Top 3}}"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Category>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Criteo - Search",
+		"type": "crto",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "accountId",
+				"value": "{{Criteo Account ID}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "tagType",
+				"value": "LISTING_TAG"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "siteType",
+				"value": "{{Device Type}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "listingID",
+				"value": "{{Search Products - Top 3}}"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Searchresults>>"
 		],
 		"tagFiringOption": "ONCE_PER_EVENT"
 	},
