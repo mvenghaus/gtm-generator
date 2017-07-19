@@ -1,1 +1,60 @@
-{}
+[
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Universal Analytics - PageView",
+		"type": "ua",
+		"parameter": [
+			{
+				"type": "BOOLEAN",
+				"key": "overrideGaSettings",
+				"value": "false"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "trackType",
+				"value": "TRACK_PAGEVIEW"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "gaSettings",
+				"value": "{{Universal Analytics Settings}}"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER All Pages>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Universal Analytics - Purchase",
+		"type": "ua",
+		"parameter": [
+			{
+				"type": "BOOLEAN",
+				"key": "overrideGaSettings",
+				"value": "false"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "trackType",
+				"value": "TRACK_TRANSACTION"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "gaSettings",
+				"value": "{{Universal Analytics Settings}}"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	}
+]
