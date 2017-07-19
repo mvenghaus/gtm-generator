@@ -1,0 +1,29 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"tagId": "2",
+	"name": "Adwords - Remarketing",
+	"type": "sp",
+	"parameter": [
+		{
+			"type": "TEMPLATE",
+			"key": "dataLayerVariable",
+			"value": "{{Adwords Remarketing Tag Params}}"
+		},
+		{
+			"type": "TEMPLATE",
+			"key": "conversionId",
+			"value": "{{Adwords Conversion ID}}"
+		},
+		{
+			"type": "TEMPLATE",
+			"key": "customParamsFormat",
+			"value": "DATA_LAYER"
+		}
+	],
+	"fingerprint": "",
+	"firingTriggerId": [
+		"<<TRIGGER All Pages>>"
+	],
+	"tagFiringOption": "ONCE_PER_EVENT"
+}
