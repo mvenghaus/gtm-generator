@@ -23,7 +23,7 @@ class TriggerBuilder
 		$triggers = [];
 
 		$triggerId = 1;
-		foreach ($configReader->getTrigger() as $name => $data)
+		foreach ($configReader->getTrigger() as $name)
 		{
 			$triggerTemplate = sprintf('%sdata/trigger/%s.json', ROOT_DIR, $name);
 			if (!file_exists($triggerTemplate))

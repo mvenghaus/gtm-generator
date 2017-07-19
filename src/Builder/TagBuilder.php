@@ -25,7 +25,7 @@ class TagBuilder
 		$tagId = 1;
 		foreach ($configReader->getTags() as $name => $data)
 		{
-			$tagTemplate = sprintf('%sdata/tag/%s.json', ROOT_DIR, $name);
+			$tagTemplate = sprintf('%sdata/tag/%s/%s.json', ROOT_DIR, $name, $name);
 			if (!file_exists($tagTemplate))
 			{
 				throw new \Exception(sprintf('tag file not found "%s.json"', $name));

@@ -45,7 +45,7 @@ class ConfigReader
 			$trigger = [];
 			foreach (glob(ROOT_DIR . 'data/trigger/*.json') as $file)
 			{
-				$trigger[str_replace('.json', '', basename($file))] = [];
+				$trigger[basename($file)] = str_replace('.json', '', basename($file));
 			}
 		}
 
@@ -65,7 +65,7 @@ class ConfigReader
 			$variable = [];
 			foreach (glob(ROOT_DIR . 'data/variable/*.json') as $file)
 			{
-				$variable[str_replace('.json', '', basename($file))] = [];
+				$variable[basename($file)] = str_replace('.json', '', basename($file));
 			}
 		}
 

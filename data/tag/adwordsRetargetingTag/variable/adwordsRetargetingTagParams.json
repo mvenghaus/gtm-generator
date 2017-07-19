@@ -1,0 +1,15 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"variableId": "",
+	"name": "Adwords Retargeting Tag Params",
+	"type": "jsm",
+	"parameter": [
+		{
+			"type": "TEMPLATE",
+			"key": "javascript",
+			"value": "function() {\n  \n  var googleTagParams = {\n    ecomm_pagetype: \"{{Page Type}}\"\n  }\n  \n  var ecommerce = {{Ecommerce}};\n  if (typeof ecommerce === 'undefined') {\n    return googleTagParams;\n  }\n\n  if (ecommerce.hasOwnProperty('purchase')) {\n    googleTagParams.ecomm_prodid = [];\n    for (var i=0; i<ecommerce.purchase.products.length; i++) {\n      googleTagParams.ecomm_prodid.push(ecommerce.purchase.products[i].id);\n    }\n    \n    googleTagParams.ecomm_totalvalue = ecommerce.purchase.actionField.revenue;\n  }\n  \t\t\n  return googleTagParams;\n}"
+		}
+	],
+	"fingerprint": ""
+}

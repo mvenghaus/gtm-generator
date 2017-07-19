@@ -8,12 +8,12 @@
 		{
 			"type": "TEMPLATE",
 			"key": "conversionValue",
-			"value": "{{Ecommerce Purchase Revenue}}"
+			"value": "{{Purchase Revenue}}"
 		},
 		{
 			"type": "TEMPLATE",
 			"key": "orderId",
-			"value": "{{Ecommerce Purchase ID}}"
+			"value": "{{Purchase ID}}"
 		},
 		{
 			"type": "TEMPLATE",
