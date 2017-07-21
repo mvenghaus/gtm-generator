@@ -1,0 +1,80 @@
+[
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Adroll Smart Pixel",
+		"type": "asp",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "pixelId",
+				"value": "{{AdRoll Pixel ID}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "customerId",
+				"value": "{{AdRoll Advertiser ID}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "conversionValueCurrency",
+				"value": "{{Currency Code}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "conversionValueInDollars",
+				"value": ""
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "visitorEmail",
+				"value": "{{Customer Email}}"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER All Pages>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Adroll Conversion Pixel",
+		"type": "asp",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "pixelId",
+				"value": "{{AdRoll Pixel ID}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "customerId",
+				"value": "{{AdRoll Advertiser ID}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "conversionValueCurrency",
+				"value": "{{Currency Code}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "conversionValueInDollars",
+				"value": ""
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "visitorEmail",
+				"value": "{{Customer Email}}"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER All Pages>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	}
+]
