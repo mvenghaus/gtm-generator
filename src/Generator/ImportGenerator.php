@@ -70,12 +70,10 @@ class ImportGenerator
 	private function replaceBaseVariable($jsonData, ConfigReader $configReader)
 	{
 		return strtr($jsonData, [
-			'"publicId": ""' => '"publicId": "' . $configReader->getPublicId() . '"',
-			'"accountId": ""' => '"accountId": "' . $configReader->getAccountId() . '"',
-			'"containerId": ""' => '"containerId": "' . $configReader->getContainerId() . '"',
-			'"tagManagerUrl": ""' => '"tagManagerUrl": "' . sprintf('https://tagmanager.google.com/#/container/accounts/%s/containers/%s/workspaces?apiLink=container', $configReader->getAccountId(), $configReader->getContainerId()) . '"',
+			'"publicId": ""' => '"publicId": "0"',
+			'"accountId": ""' => '"accountId": "0"',
+			'"containerId": ""' => '"containerId": "0"'
 		]);
-
 
 	}
 
