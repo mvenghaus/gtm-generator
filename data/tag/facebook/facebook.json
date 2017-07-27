@@ -43,7 +43,7 @@
     ],
     "fingerprint": "",
     "firingTriggerId": [
-      "<<TRIGGER cartAdd>>"
+      "<<TRIGGER Add To Cart Click>>"
     ],
     "setupTag": [
       {
@@ -73,7 +73,7 @@
     ],
     "fingerprint": "",
     "firingTriggerId": [
-      "<<TRIGGER cart>>"
+      "<<TRIGGER Cart>>"
     ],
     "setupTag": [
       {
@@ -103,7 +103,7 @@
     ],
     "fingerprint": "",
     "firingTriggerId": [
-      "<<TRIGGER product>>"
+      "<<TRIGGER Product>>"
     ],
     "setupTag": [
       {
@@ -133,7 +133,7 @@
     ],
     "fingerprint": "",
     "firingTriggerId": [
-      "<<TRIGGER purchase>>"
+      "<<TRIGGER Purchase>>"
     ],
     "setupTag": [
       {

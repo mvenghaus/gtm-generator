@@ -2,7 +2,7 @@
   "accountId": "",
   "containerId": "",
   "triggerId": "",
-  "name": "Event - Google AddToCart",
+  "name": "Add To Cart Click",
   "type": "CUSTOM_EVENT",
   "customEventFilter": [
     {
@@ -16,7 +16,7 @@
         {
           "type": "TEMPLATE",
           "key": "arg1",
-          "value": "addToCart"
+          "value": "addToCartClick"
         }
       ]
     }
