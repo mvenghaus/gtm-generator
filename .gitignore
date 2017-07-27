@@ -2,3 +2,4 @@
 vendor
 projects/*
 !projects/all.json
+composer.phar

@@ -1,0 +1,146 @@
+[
+  {
+    "accountId": "",
+    "containerId": "",
+    "tagId": "",
+    "name": "Facebook Base Pixel",
+    "type": "html",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "html",
+        "value": "<script>\n!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?\nn.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;\nn.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;\nt.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,\ndocument,'script','https://connect.facebook.net/en_US/fbevents.js');\nfbq('init', '{{Facebook Pixel ID}}', {\nem: 'insert_email_variable,'\n});\nfbq('track', 'PageView');\n</script>"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "supportDocumentWrite",
+        "value": "false"
+      }
+    ],
+    "fingerprint": "",
+    "firingTriggerId": [
+      "<<TRIGGER All Pages>>"
+    ],
+    "tagFiringOption": "ONCE_PER_LOAD"
+  },
+  {
+    "accountId": "",
+    "containerId": "",
+    "tagId": "",
+    "name": "Facebook Event - Add To Cart",
+    "type": "html",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "html",
+        "value": "<script>\nvar ecommerce = {{Ecommerce}};\n  \nif (ecommerce.hasOwnProperty('add')) {\n  for (var i=0; i < ecommerce.add.products.length; i++)\n  {  \n    var product = ecommerce.add.products[i];\n    \n    fbq('track', 'AddToCart', {\n\t  content_ids: [product.id],\n\t  content_type: 'product',\n\t  value: Math.round((product.price * product.quantity) * 100, 2) / 100,\n\t  currency: 'EUR'\n\t});\n  }\n}\n  \n</script>"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "supportDocumentWrite",
+        "value": "false"
+      }
+    ],
+    "fingerprint": "",
+    "firingTriggerId": [
+      "<<TRIGGER cartAdd>>"
+    ],
+    "setupTag": [
+      {
+        "tagName": "Facebook Base Pixel",
+        "stopOnSetupFailure": true
+      }
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT"
+  },
+  {
+    "accountId": "",
+    "containerId": "",
+    "tagId": "",
+    "name": "Facebook Event - Checkout",
+    "type": "html",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "html",
+        "value": "<script>\nfbq('track', 'InitiateCheckout');\n</script>"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "supportDocumentWrite",
+        "value": "false"
+      }
+    ],
+    "fingerprint": "",
+    "firingTriggerId": [
+      "<<TRIGGER cart>>"
+    ],
+    "setupTag": [
+      {
+        "tagName": "Facebook Base Pixel",
+        "stopOnSetupFailure": true
+      }
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT"
+  },
+  {
+    "accountId": "",
+    "containerId": "",
+    "tagId": "",
+    "name": "Facebook Event - Product",
+    "type": "html",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "html",
+        "value": "<script>\nfbq('track', 'ViewContent', {\ncontent_ids: [\"{{Product ID}}\"],\ncontent_type: 'product',\nvalue: {{Product Price}},\ncurrency: 'EUR'\n});\n</script>"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "supportDocumentWrite",
+        "value": "false"
+      }
+    ],
+    "fingerprint": "",
+    "firingTriggerId": [
+      "<<TRIGGER product>>"
+    ],
+    "setupTag": [
+      {
+        "tagName": "Facebook Base Pixel",
+        "stopOnSetupFailure": true
+      }
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT"
+  },
+  {
+    "accountId": "",
+    "containerId": "",
+    "tagId": "",
+    "name": "Facebook Event - Purchase",
+    "type": "html",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "html",
+        "value": "<script> \n  fbq('track', 'Purchase', {\n    content_ids: {{Purchase Product IDs}},\n    content_type: 'product',\n    value: {{Purchase Revenue}},\n    currency: 'EUR'\n   });\n</script>"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "supportDocumentWrite",
+        "value": "false"
+      }
+    ],
+    "fingerprint": "",
+    "firingTriggerId": [
+      "<<TRIGGER purchase>>"
+    ],
+    "setupTag": [
+      {
+        "tagName": "Facebook Base Pixel",
+        "stopOnSetupFailure": true
+      }
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT"
+  }
+]
