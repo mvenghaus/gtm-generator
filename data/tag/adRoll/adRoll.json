@@ -63,17 +63,38 @@
 			{
 				"type": "TEMPLATE",
 				"key": "conversionValueInDollars",
-				"value": ""
+				"value": "{{Purchase Revenue}}"
 			},
 			{
 				"type": "TEMPLATE",
 				"key": "visitorEmail",
 				"value": "{{Customer Email}}"
+			},
+			{
+				"type": "LIST",
+				"key": "customData",
+				"list": [
+					{
+						"type": "MAP",
+						"map": [
+							{
+								"type": "TEMPLATE",
+								"key": "key",
+								"value": "ORDER_ID"
+							},
+							{
+								"type": "TEMPLATE",
+								"key": "value",
+								"value": "{{Purchase ID}}"
+							}
+						]
+					}
+				]
 			}
 		],
 		"fingerprint": "",
 		"firingTriggerId": [
-			"<<TRIGGER All Pages>>"
+			"<<TRIGGER Purchase>>"
 		],
 		"tagFiringOption": "ONCE_PER_EVENT"
 	}
