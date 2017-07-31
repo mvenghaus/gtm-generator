@@ -1,0 +1,98 @@
+[
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "rbtmarkt - Marker - Global",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<img width=\"1\" height=\"1\" src=\"https://www.rvty.net/RTB/Re?EM_reListId={{rtbmarkt Global List ID}}&EM_del=0&EM_shopArtId=0\" style=\"display: none;\">"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER All Pages>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "rtbmarkt - Marker - Cart",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<img width=\"1\" height=\"1\" src=\"https://www.rvty.net/RTB/Re?EM_reListId={{rtbmarkt Cart List ID}}&EM_del=0&EM_shopArtId=0\" style=\"display: none;\">"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Cart>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "rtbmartk - Marker - Sale",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<img width=\"1\" height=\"1\" src=\"https://www.rvty.net/RTB/Re?EM_reListId={{rtbmarkt Sale List ID}}&EM_del=0&EM_shopArtId=0\" style=\"display: none;\">"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "rtbmarkt - Conversion - Sale",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<img src=\"https://www.rvty.net/goto/px/key/{{rtbmarkt Account ID}}?s=Bestellung&amount={{Purchase Revenue}}&hosted_table=order-id={{Purchase ID}}\" width=\"1\" height=\"1\"/>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	}
+]
