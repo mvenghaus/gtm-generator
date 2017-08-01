@@ -2,6 +2,7 @@
 
 namespace Generator;
 
+use Builder\FolderBuilder;
 use Builder\TagBuilder;
 use Builder\TriggerBuilder;
 use Builder\VariableBuilder;
@@ -15,19 +16,24 @@ class ImportGenerator
 	private $tagBuilder;
 	/** @var VariableBuilder */
 	private $variableBuilder;
+	/** @var FolderBuilder */
+	private $folderBuilder;
 
 	/**
 	 * @param TriggerBuilder $triggerBuilder
 	 * @param TagBuilder $tagBuilder
 	 * @param VariableBuilder $variableBuilder
+	 * @param FolderBuilder $folderBuilder
 	 */
 	public function __construct(TriggerBuilder $triggerBuilder,
 	                            TagBuilder $tagBuilder,
-	                            VariableBuilder $variableBuilder)
+	                            VariableBuilder $variableBuilder,
+	                            FolderBuilder $folderBuilder)
 	{
 		$this->triggerBuilder = $triggerBuilder;
 		$this->tagBuilder = $tagBuilder;
 		$this->variableBuilder = $variableBuilder;
+		$this->folderBuilder = $folderBuilder;
 	}
 
 	/**
@@ -38,12 +44,14 @@ class ImportGenerator
 	{
 		$configReader = new ConfigReader($configFile);
 
-		try {
+		try
+		{
 
 			$data = $this->loadBaseData();
 			$data['containerVersion']['trigger'] = $this->triggerBuilder->build($configReader);
 			$data['containerVersion']['tag'] = $this->tagBuilder->build($configReader);
 			$data['containerVersion']['variable'] = $this->variableBuilder->build($configReader);
+			$data['containerVersion']['folder'] = $this->folderBuilder->build($configReader);
 
 			$jsonData = json_encode($data, JSON_PRETTY_PRINT);
 
@@ -52,7 +60,6 @@ class ImportGenerator
 			file_put_contents($outputFile, $jsonData);
 
 			echo $jsonData;
-
 		} catch (\Exception $e)
 		{
 			echo $e->getMessage();
@@ -74,7 +81,6 @@ class ImportGenerator
 			'"accountId": ""' => '"accountId": "0"',
 			'"containerId": ""' => '"containerId": "0"'
 		]);
-
 	}
 
 }

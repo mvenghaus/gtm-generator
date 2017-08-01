@@ -5,16 +5,29 @@ namespace Reader;
 class ConfigReader
 {
 
+	private $name = '';
 	private $data = [];
 
 	public function __construct($file)
 	{
 		$this->data = json_decode(file_get_contents($file), true);
+
+		$this->name = str_replace('.json', '', basename($file));
+	}
+
+	public function getName()
+	{
+		return $this->name;
 	}
 
 	public function getTags()
 	{
-		return (isset($this->data['tag']) ? $this->data['tag'] : []);
+		return $this->data['tag'] ?? [];
+	}
+
+	public function getCustomTags()
+	{
+		return $this->data['custom']['tag'] ?? [];
 	}
 
 	public function getTrigger()
@@ -30,11 +43,16 @@ class ConfigReader
 			$trigger = [];
 			foreach (glob(ROOT_DIR . 'data/trigger/*.json') as $file)
 			{
-				$trigger[basename($file)] = str_replace('.json', '', basename($file));
+				$trigger[str_replace('.json', '', basename($file))] = [];
 			}
 		}
 
 		return $trigger;
+	}
+
+	public function getCustomTrigger()
+	{
+		return $this->data['custom']['trigger'] ?? [];
 	}
 
 	public function getVariables()

@@ -2,7 +2,7 @@
 	"accountId": "",
 	"containerId": "",
 	"variableId": "",
-	"name": "Currency Code",
+	"name": "Product Price",
 	"type": "v",
 	"parameter": [
 		{
@@ -18,7 +18,7 @@
 		{
 			"type": "TEMPLATE",
 			"key": "name",
-			"value": "currencyCode"
+			"value": "ecommerce.detail.products.0.price"
 		}
 	],
 	"fingerprint": "",

@@ -21,5 +21,6 @@
 			"value": "customerEmail"
 		}
 	],
-	"fingerprint": ""
+	"fingerprint": "",
+	"parentFolderId": "<<FOLDER Variable>>"
 }

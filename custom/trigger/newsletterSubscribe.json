@@ -2,21 +2,21 @@
 	"accountId": "",
 	"containerId": "",
 	"triggerId": "",
-	"name": "Searchresults",
+	"name": "Newsletter Subscribe",
 	"type": "PAGEVIEW",
 	"filter": [
 		{
-			"type": "EQUALS",
+			"type": "CONTAINS",
 			"parameter": [
 				{
 					"type": "TEMPLATE",
 					"key": "arg0",
-					"value": "{{Page Type}}"
+					"value": "{{Page URL}}"
 				},
 				{
 					"type": "TEMPLATE",
 					"key": "arg1",
-					"value": "searchresults"
+					"value": "{{Newsletter Subscribe Url}}"
 				}
 			]
 		}

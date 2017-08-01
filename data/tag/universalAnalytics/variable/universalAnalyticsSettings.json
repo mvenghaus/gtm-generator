@@ -56,5 +56,6 @@
 			"value": "{{Universal Analytics Tracking ID}}"
 		}
 	],
-	"fingerprint": ""
+	"fingerprint": "",
+	"parentFolderId": "<<FOLDER Variable>>"
 }

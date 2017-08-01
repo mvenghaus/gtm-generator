@@ -21,5 +21,6 @@
 			"value": "ecommerce.purchase.actionField.id"
 		}
 	],
-	"fingerprint": ""
+	"fingerprint": "",
+	"parentFolderId": "<<FOLDER Variable>>"
 }

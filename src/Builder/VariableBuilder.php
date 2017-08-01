@@ -2,6 +2,7 @@
 
 namespace Builder;
 
+use Filter\FolderFilter;
 use Reader\ConfigReader;
 use Filter\VariableFilter;
 
@@ -9,13 +10,18 @@ class VariableBuilder
 {
 	/** @var VariableFilter */
 	private $variableFilter;
+	/** @var FolderFilter */
+	private $folderFilter;
 
 	/**
 	 * @param VariableFilter $variableFilter
+	 * @param FolderFilter $folderFilter
 	 */
-	public function __construct(VariableFilter $variableFilter)
+	public function __construct(VariableFilter $variableFilter,
+	                            FolderFilter $folderFilter)
 	{
 		$this->variableFilter = $variableFilter;
+		$this->folderFilter = $folderFilter;
 	}
 
 	public function build(ConfigReader $configReader)
@@ -62,7 +68,6 @@ class VariableBuilder
 		return $variables;
 	}
 
-
 	private function loadVariable($file, $variables = [])
 	{
 		if (!file_exists($file))
@@ -72,8 +77,9 @@ class VariableBuilder
 
 		$content = file_get_contents($file);
 		$content = $this->variableFilter->filter($content, $variables);
+		$content = $this->folderFilter->filter($content);
 
-		return  json_decode($content, true);
+		return json_decode($content, true);
 	}
 
 }

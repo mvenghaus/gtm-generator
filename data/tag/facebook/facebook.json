@@ -21,7 +21,8 @@
     "firingTriggerId": [
       "<<TRIGGER All Pages>>"
     ],
-    "tagFiringOption": "ONCE_PER_LOAD"
+    "tagFiringOption": "ONCE_PER_LOAD",
+    "parentFolderId": "<<FOLDER Facebook>>"
   },
   {
     "accountId": "",
@@ -51,7 +52,8 @@
         "stopOnSetupFailure": true
       }
     ],
-    "tagFiringOption": "ONCE_PER_EVENT"
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "parentFolderId": "<<FOLDER Facebook>>"
   },
   {
     "accountId": "",
@@ -81,7 +83,8 @@
         "stopOnSetupFailure": true
       }
     ],
-    "tagFiringOption": "ONCE_PER_EVENT"
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "parentFolderId": "<<FOLDER Facebook>>"
   },
   {
     "accountId": "",
@@ -111,7 +114,8 @@
         "stopOnSetupFailure": true
       }
     ],
-    "tagFiringOption": "ONCE_PER_EVENT"
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "parentFolderId": "<<FOLDER Facebook>>"
   },
   {
     "accountId": "",
@@ -141,6 +145,7 @@
         "stopOnSetupFailure": true
       }
     ],
-    "tagFiringOption": "ONCE_PER_EVENT"
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "parentFolderId": "<<FOLDER Facebook>>"
   }
 ]

@@ -26,7 +26,8 @@
 		"firingTriggerId": [
 			"<<TRIGGER Home>>"
 		],
-		"tagFiringOption": "ONCE_PER_EVENT"
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Criteo>>"
 	},
 	{
 		"accountId": "",
@@ -60,7 +61,8 @@
 		"firingTriggerId": [
 			"<<TRIGGER Product>>"
 		],
-		"tagFiringOption": "ONCE_PER_EVENT"
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Criteo>>"
 	},
 	{
 		"accountId": "",
@@ -94,7 +96,8 @@
 		"firingTriggerId": [
 			"<<TRIGGER Category>>"
 		],
-		"tagFiringOption": "ONCE_PER_EVENT"
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Criteo>>"
 	},
 	{
 		"accountId": "",
@@ -128,7 +131,8 @@
 		"firingTriggerId": [
 			"<<TRIGGER Searchresults>>"
 		],
-		"tagFiringOption": "ONCE_PER_EVENT"
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Criteo>>"
 	},
 	{
 		"accountId": "",
@@ -162,7 +166,8 @@
 		"firingTriggerId": [
 			"<<TRIGGER Cart>>"
 		],
-		"tagFiringOption": "ONCE_PER_EVENT"
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Criteo>>"
 	},
 	{
 		"accountId": "",
@@ -201,6 +206,7 @@
 		"firingTriggerId": [
 			"<<TRIGGER Purchase>>"
 		],
-		"tagFiringOption": "ONCE_PER_EVENT"
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Criteo>>"
 	}
 ]

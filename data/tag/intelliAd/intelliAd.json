@@ -25,7 +25,8 @@
 			"<<TRIGGER Cart>>",
 			"<<TRIGGER Purchase>>"
 		],
-		"tagFiringOption": "ONCE_PER_EVENT"
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Intelli Ad>>"
 	},
 	{
 		"accountId": "",
@@ -49,7 +50,8 @@
 		"firingTriggerId": [
 			"<<TRIGGER Cart>>"
 		],
-		"tagFiringOption": "ONCE_PER_EVENT"
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Intelli Ad>>"
 	},
 	{
 		"accountId": "",
@@ -73,6 +75,7 @@
 		"firingTriggerId": [
 			"<<TRIGGER Purchase>>"
 		],
-		"tagFiringOption": "ONCE_PER_EVENT"
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Intelli Ad>>"
 	}
 ]

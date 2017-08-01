@@ -21,5 +21,6 @@
 			"value": "ecommerce.detail.products.0.id"
 		}
 	],
-	"fingerprint": ""
+	"fingerprint": "",
+	"parentFolderId": "<<FOLDER Variable>>"
 }

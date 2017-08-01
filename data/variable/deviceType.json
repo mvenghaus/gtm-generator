@@ -11,5 +11,6 @@
 			"value": "function () {\n  return (/iPad/.test(navigator.userAgent) ? \"t\" : (/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile/.test(navigator.userAgent) ? \"m\" : \"d\"));\n}"
 		}
 	],
-	"fingerprint": ""
+	"fingerprint": "",
+	"parentFolderId": "<<FOLDER Variable>>"
 }

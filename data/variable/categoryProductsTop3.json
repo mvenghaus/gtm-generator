@@ -11,5 +11,6 @@
 			"value": "function () {\n\treturn {{Category Products}}.slice(0, 3);\n}"
 		}
 	],
-	"fingerprint": ""
+	"fingerprint": "",
+	"parentFolderId": "<<FOLDER Variable>>"
 }

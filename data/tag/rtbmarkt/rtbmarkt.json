@@ -21,7 +21,8 @@
 		"firingTriggerId": [
 			"<<TRIGGER All Pages>>"
 		],
-		"tagFiringOption": "ONCE_PER_EVENT"
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER rtbmarkt>>"
 	},
 	{
 		"accountId": "",
@@ -45,7 +46,8 @@
 		"firingTriggerId": [
 			"<<TRIGGER Cart>>"
 		],
-		"tagFiringOption": "ONCE_PER_EVENT"
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER rtbmarkt>>"
 	},
 	{
 		"accountId": "",
@@ -69,7 +71,8 @@
 		"firingTriggerId": [
 			"<<TRIGGER Purchase>>"
 		],
-		"tagFiringOption": "ONCE_PER_EVENT"
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER rtbmarkt>>"
 	},
 	{
 		"accountId": "",
@@ -93,6 +96,7 @@
 		"firingTriggerId": [
 			"<<TRIGGER Purchase>>"
 		],
-		"tagFiringOption": "ONCE_PER_EVENT"
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER rtbmarkt>>"
 	}
 ]
