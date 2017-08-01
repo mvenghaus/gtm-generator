@@ -3,13 +3,13 @@
 		"accountId": "",
 		"containerId": "",
 		"tagId": "",
-		"name": "IntelliAd - Page View",
+		"name": "IntelliAd - OnSite Pixel",
 		"type": "html",
 		"parameter": [
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<script async defer language=\"javascript\" type=\"text/javascript\" charset=\"utf-8\">\n\nvar ia_tp = \"t23.intelliad.de/tc2.js\";\nvar ia_cl = \"{{IntelliAd Client ID}}\";\nvar ia_v = \"0\";\nvar ia_vz = \"{{IntelliAd Page View Type}}\"; // Warenkorb\nvar ia_vv = \"EUR\";\nvar ia_po = \"\";\nvar ia_pi = \"\";\nvar ia_custom1 = \"\";\nvar ia_custom2 = \"\";\nvar ia_custom3 = \"\";\nvar ia_custom4 = \"\";\nvar ia_rand = Math.floor(Math.random()*11111139435231);\n\nvar scriptTag = document.createElement(\"script\");\nscriptTag.type = \"text/javascript\";\nscriptTag.src = \"//\"+ia_tp+'?cl='+ia_cl+'&v='+ia_v+'&vz='+ia_vz+'&vv='+ia_vv+'&po='+ia_po+'&pi='+ia_pi+'&c1='+ia_custom1+'&c2='+ia_custom2+'&c3='+ia_custom3+'&c4='+ia_custom4+'&rand='+ia_rand;\nscriptTag.language = \"javascript\";\nscriptTag.async = true;\nscriptTag.defer = true;\n(document.getElementsByTagName(\"body\")[0] || document.getElementsByTagName(\"head\")[0]).appendChild(scriptTag);\n\n\n</script>\n<noscript>\n<img src=\"http://t23.intelliad.de/tc.php?cl={{IntelliAd Client ID}}&v=0&vz={{IntelliAd Page View Type}}&vv=EUR&po=&pi=&c1=&c2=&c3=&c4=\" width=\"1\" height=\"1\" alt=\"intelliAd\"/>\n</noscript>"
+				"value": "<script language=\"javascript\" type=\"text/javascript\" charset=\"utf-8\">\n\n\tvar ia_tc = \"\"; // optional: name of the campaign\n\tvar ia_sc = \"\"; // optional: name of the adgroup\n\tvar ia_pi = \"\"; // optional: product ids, separated by a |\n\n</script>\n<script language=\"javascript\" type=\"text/javascript\" charset=\"utf-8\" src=\"https://t13.intelliad.de/cl/{{IntelliAd Channel ID}}.js\"></script>"
 			},
 			{
 				"type": "BOOLEAN",
@@ -26,7 +26,7 @@
 			"<<TRIGGER Purchase>>"
 		],
 		"tagFiringOption": "ONCE_PER_EVENT",
-		"parentFolderId": "<<FOLDER Intelli Ad>>"
+		"parentFolderId": "<<FOLDER IntelliAd>>"
 	},
 	{
 		"accountId": "",
@@ -38,7 +38,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<script async defer language=\"javascript\" type=\"text/javascript\" charset=\"utf-8\">\n\nvar ia_tp = \"t23.intelliad.de/tc2.js\";\nvar ia_cl = \"{{IntelliAd Client ID}}\";\nvar ia_v = \"0\";\nvar ia_vz = \"{{IntelliAd Cart Type}}\"; // Warenkorb\nvar ia_vv = \"EUR\";\nvar ia_po = \"\";\nvar ia_pi = \"\";\nvar ia_custom1 = \"\";\nvar ia_custom2 = \"\";\nvar ia_custom3 = \"\";\nvar ia_custom4 = \"\";\nvar ia_rand = Math.floor(Math.random()*11111139435231);\n\nvar scriptTag = document.createElement(\"script\");\nscriptTag.type = \"text/javascript\";\nscriptTag.src = \"//\"+ia_tp+'?cl='+ia_cl+'&v='+ia_v+'&vz='+ia_vz+'&vv='+ia_vv+'&po='+ia_po+'&pi='+ia_pi+'&c1='+ia_custom1+'&c2='+ia_custom2+'&c3='+ia_custom3+'&c4='+ia_custom4+'&rand='+ia_rand;\nscriptTag.language = \"javascript\";\nscriptTag.async = true;\nscriptTag.defer = true;\n(document.getElementsByTagName(\"body\")[0] || document.getElementsByTagName(\"head\")[0]).appendChild(scriptTag);\n\n\n</script>\n<noscript>\n<img src=\"http://t23.intelliad.de/tc.php?cl={{IntelliAd Client ID}}&v=0&vz={{IntelliAd Cart Type}}&vv=EUR&po=&pi=&c1=&c2=&c3=&c4=\" width=\"1\" height=\"1\" alt=\"intelliAd\"/>\n</noscript>"
+				"value": "<script async defer language=\"javascript\" type=\"text/javascript\" charset=\"utf-8\">\n\nvar cartProducts = {{Cart Products}};\nvar productSkus = [];\nfor (var i=0; i<cartProducts.length; i++) {\n  productSkus.push(cartProducts[i].id);\n}\n\nvar ia_tp = \"t23.intelliad.de/tc2.js\";\nvar ia_cl = \"{{IntelliAd Channel ID}}\";\nvar ia_v = \"0\";\nvar ia_vz = \"{{IntelliAd Cart Type}}\"; // Warenkorb\nvar ia_vv = \"EUR\";\nvar ia_po = \"\";\nvar ia_pi = productSkus.join('|');\nvar ia_custom1 = \"\";\nvar ia_custom2 = \"\";\nvar ia_custom3 = \"\";\nvar ia_custom4 = \"\";\nvar ia_rand = Math.floor(Math.random()*11111139435231);\n  \nvar scriptTag = document.createElement(\"script\");\nscriptTag.type = \"text/javascript\";\nscriptTag.src = \"//\"+ia_tp+'?cl='+ia_cl+'&v='+ia_v+'&vz='+ia_vz+'&vv='+ia_vv+'&po='+ia_po+'&pi='+ia_pi+'&c1='+ia_custom1+'&c2='+ia_custom2+'&c3='+ia_custom3+'&c4='+ia_custom4+'&rand='+ia_rand;\nscriptTag.language = \"javascript\";\nscriptTag.async = true;\nscriptTag.defer = true;\n(document.getElementsByTagName(\"body\")[0] || document.getElementsByTagName(\"head\")[0]).appendChild(scriptTag);\n\n\n</script>\n<noscript>\n<img src=\"http://t23.intelliad.de/tc.php?cl={{IntelliAd Channel ID}}&v=0&vz={{IntelliAd Cart Type}}&vv=EUR&po=&pi=&c1=&c2=&c3=&c4=\" width=\"1\" height=\"1\" alt=\"intelliAd\"/>\n</noscript>"
 			},
 			{
 				"type": "BOOLEAN",
@@ -51,7 +51,7 @@
 			"<<TRIGGER Cart>>"
 		],
 		"tagFiringOption": "ONCE_PER_EVENT",
-		"parentFolderId": "<<FOLDER Intelli Ad>>"
+		"parentFolderId": "<<FOLDER IntelliAd>>"
 	},
 	{
 		"accountId": "",
@@ -63,7 +63,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<script async defer language=\"javascript\" type=\"text/javascript\" charset=\"utf-8\">\n\nvar ia_tp = \"t23.intelliad.de/tc2.js\";\nvar ia_cl = \"{{IntelliAd Client ID}}\";\nvar ia_v = \"{{Purchase Revenue}}\"; // Platzhalter Shopsystem einfügen\nvar ia_vz = \"{{IntelliAd Sale Type}}\";\nvar ia_vv = \"EUR\";\nvar ia_po = \"{{Purchase ID}}\";\nvar ia_pi = \"\";\nvar ia_custom1 = \"\";\nvar ia_custom2 = \"\";\nvar ia_custom3 = \"\";\nvar ia_custom4 = \"\";\nvar ia_rand = Math.floor(Math.random()*11111139435231);\n\nvar scriptTag = document.createElement(\"script\");\nscriptTag.type = \"text/javascript\";\nscriptTag.src = \"//\"+ia_tp+'?cl='+ia_cl+'&v='+ia_v+'&vz='+ia_vz+'&vv='+ia_vv+'&po='+ia_po+'&pi='+ia_pi+'&c1='+ia_custom1+'&c2='+ia_custom2+'&c3='+ia_custom3+'&c4='+ia_custom4+'&rand='+ia_rand;\nscriptTag.language = \"javascript\";\nscriptTag.async = true;\nscriptTag.defer = true;\n(document.getElementsByTagName(\"body\")[0] || document.getElementsByTagName(\"head\")[0]).appendChild(scriptTag);\n\n\n</script>\n<noscript>\n<img src=\"http://t23.intelliad.de/tc.php?cl={{IntelliAd Client ID}}&v={{Purchase Revenue}}&vz={{IntelliAd Sale Type}}&vv=EUR&po={{Purchase ID}}&pi=&c1=&c2=&c3=&c4=\" width=\"1\" height=\"1\" alt=\"intelliAd\"/>\n</noscript>"
+				"value": "<script async defer language=\"javascript\" type=\"text/javascript\" charset=\"utf-8\">\n\nvar purchaseProducts = {{Purchase Products}};\nvar productSkus = [];\nfor (var i=0; i<purchaseProducts.length; i++) {\n  productSkus.push(purchaseProducts[i].id);\n}\n  \nvar ia_tp = \"t23.intelliad.de/tc2.js\";\nvar ia_cl = \"{{IntelliAd Channel ID}}\";\nvar ia_v = \"{{Purchase Revenue}}\"; // Platzhalter Shopsystem einfügen\nvar ia_vz = \"{{IntelliAd Sale Type}}\";\nvar ia_vv = \"EUR\";\nvar ia_po = \"{{Purchase ID}}\";\nvar ia_pi = productSkus.join('|');\nvar ia_custom1 = \"\";\nvar ia_custom2 = \"\";\nvar ia_custom3 = \"\";\nvar ia_custom4 = \"\";\nvar ia_rand = Math.floor(Math.random()*11111139435231);\n\nvar scriptTag = document.createElement(\"script\");\nscriptTag.type = \"text/javascript\";\nscriptTag.src = \"//\"+ia_tp+'?cl='+ia_cl+'&v='+ia_v+'&vz='+ia_vz+'&vv='+ia_vv+'&po='+ia_po+'&pi='+ia_pi+'&c1='+ia_custom1+'&c2='+ia_custom2+'&c3='+ia_custom3+'&c4='+ia_custom4+'&rand='+ia_rand;\nscriptTag.language = \"javascript\";\nscriptTag.async = true;\nscriptTag.defer = true;\n(document.getElementsByTagName(\"body\")[0] || document.getElementsByTagName(\"head\")[0]).appendChild(scriptTag);\n\n\n</script>\n<noscript>\n<img src=\"http://t23.intelliad.de/tc.php?cl={{IntelliAd Channel ID}}&v={{Purchase Revenue}}&vz=sale&vv=EUR&po={{Purchase ID}}&pi=&c1=&c2=&c3=&c4=\" width=\"1\" height=\"1\" alt=\"intelliAd\"/>\n</noscript>"
 			},
 			{
 				"type": "BOOLEAN",
@@ -76,6 +76,6 @@
 			"<<TRIGGER Purchase>>"
 		],
 		"tagFiringOption": "ONCE_PER_EVENT",
-		"parentFolderId": "<<FOLDER Intelli Ad>>"
+		"parentFolderId": "<<FOLDER IntelliAd>>"
 	}
 ]
