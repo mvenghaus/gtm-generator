@@ -1,0 +1,16 @@
+{
+  "accountId": "",
+  "containerId": "",
+  "variableId": "",
+  "name": "Purchase Product IDs",
+  "type": "jsm",
+  "parameter": [
+    {
+      "type": "TEMPLATE",
+      "key": "javascript",
+      "value": "function () {\n  var ecommerce = {{Ecommerce}};\n  var productIds = [];\n\n  if (ecommerce.hasOwnProperty('purchase')) {\n    for (var i=0; i < ecommerce.purchase.products.length; i++)\n    {  \n      productIds.push(ecommerce.purchase.products[i].id);\n    }\n  }\n  return productIds;\n}"
+    }
+  ],
+  "fingerprint": "",
+  "parentFolderId": "<<FOLDER Variable>>"
+}

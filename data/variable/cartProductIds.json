@@ -1,0 +1,16 @@
+{
+  "accountId": "",
+  "containerId": "",
+  "variableId": "",
+  "name": "Cart Product IDs",
+  "type": "jsm",
+  "parameter": [
+    {
+      "type": "TEMPLATE",
+      "key": "javascript",
+      "value": "function () {\n  var cartProducts = {{Cart Products}};\n  var productIds = [];\n\n  if (typeof cartProducts !== 'undefined') {\n    for (var i=0; i < cartProducts.length; i++)\n    {  \n      productIds.push(cartProducts[i].id);\n    }\n  }\n  return productIds;\n}"
+    }
+  ],
+  "fingerprint": "",
+  "parentFolderId": "<<FOLDER Variable>>"
+}

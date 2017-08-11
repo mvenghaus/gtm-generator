@@ -1,0 +1,52 @@
+[
+  {
+    "accountId": "",
+    "containerId": "",
+    "tagId": "",
+    "name": "ChannelPilot - Global",
+    "type": "html",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "html",
+        "value": "<script type=\"text/javascript\" src=\"//content.cptrack.de/clicks.js\"></script>"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "supportDocumentWrite",
+        "value": "false"
+      }
+    ],
+    "fingerprint": "",
+    "firingTriggerId": [
+      "<<TRIGGER All Pages>>"
+    ],
+    "tagFiringOption": "ONCE_PER_LOAD",
+    "parentFolderId": "<<FOLDER ChannelPilot>>"
+  },
+  {
+    "accountId": "",
+    "containerId": "",
+    "tagId": "",
+    "name": "ChannelPilot - Sale",
+    "type": "html",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "html",
+        "value": "<script type=\"text/javascript\">\n    var cpSale = {\n        trackingKey: \"{{Channel Pilot Tracking Key}}\",\n        orderId: \"{{Purchase ID}}\",\n        orderTotal: \"{{Purchase Revenue}}\",\n        cookie: \"last\",\n        shoppingCart: new Array()\n    };\n\n    var ecommerce = {{Ecommerce}};\n    for (var i=0; i < ecommerce.purchase.products.length; i++)\n    {\n        cpSale.shoppingCart.push({\n          id: ecommerce.purchase.products[i].id, \n          price: ecommerce.purchase.products[i].price, \n          amount: ecommerce.purchase.products[i].quantity\n        });\n    }\n</script>\n\n<script type=\"text/javascript\" src=\"//content.cptrack.de/sales.js\"></script>"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "supportDocumentWrite",
+        "value": "false"
+      }
+    ],
+    "fingerprint": "",
+    "firingTriggerId": [
+      "<<TRIGGER Purchase>>"
+    ],
+    "tagFiringOption": "ONCE_PER_LOAD",
+    "parentFolderId": "<<FOLDER ChannelPilot>>"
+  }
+]

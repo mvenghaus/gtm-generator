@@ -1,0 +1,16 @@
+{
+  "accountId": "",
+  "containerId": "",
+  "variableId": "",
+  "name": "Cart Revenue",
+  "type": "jsm",
+  "parameter": [
+    {
+      "type": "TEMPLATE",
+      "key": "javascript",
+      "value": "function () {\n  var cartProducts = {{Cart Products}};\n  var revenue = 0;\n\n  if (typeof cartProducts !== 'undefined') {\n    for (var i=0; i < cartProducts.length; i++)\n    {  \n      revenue += cartProducts[i].price * cartProducts[i].quantity;\n    }\n  }\n  return revenue;\n}"
+    }
+  ],
+  "fingerprint": "",
+  "parentFolderId": "<<FOLDER Variable>>"
+}

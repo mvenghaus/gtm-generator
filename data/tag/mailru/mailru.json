@@ -1,0 +1,183 @@
+[
+  {
+    "accountId": "",
+    "containerId": "",
+    "tagId": "",
+    "name": "MailRu Base Pixel",
+    "type": "html",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "html",
+        "value": "<script type=\"text/javascript\">\nvar _tmr = window._tmr || (window._tmr = []);\n_tmr.push({id: \"{{MailRu ID}}\", type: \"pageView\", start: (new Date()).getTime()});\n(function (d, w, id) {\n  if (d.getElementById(id)) return;\n  var ts = d.createElement(\"script\"); ts.type = \"text/javascript\"; ts.async = true; ts.id = id;\n  ts.src = (d.location.protocol == \"https:\" ? \"https:\" : \"http:\") + \"//top-fwz1.mail.ru/js/code.js\";\n  var f = function () {var s = d.getElementsByTagName(\"script\")[0]; s.parentNode.insertBefore(ts, s);};\n  if (w.opera == \"[object Opera]\") { d.addEventListener(\"DOMContentLoaded\", f, false); } else { f(); }\n})(document, window, \"topmailru-code\");\n</script>"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "supportDocumentWrite",
+        "value": "false"
+      }
+    ],
+    "fingerprint": "",
+    "firingTriggerId": [
+      "<<TRIGGER All Pages>>"
+    ],
+    "parentFolderId": "<<FOLDER MailRu>>",
+    "tagFiringOption": "ONCE_PER_EVENT"
+  },
+  {
+    "accountId": "",
+    "containerId": "",
+    "tagId": "",
+    "name": "MailRu Event - Cart",
+    "type": "html",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "html",
+        "value": "<script type=\"text/javascript\">\nvar _tmr = _tmr || [];\n_tmr.push({\n    type: 'itemView',\n    productid: '{{Cart Product IDs}}',\n    pagetype: '{{Page Type}}',\n    list: {{MailRu List}},\n    totalvalue: {{Cart Revenue}}\n});\n</script>"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "supportDocumentWrite",
+        "value": "false"
+      }
+    ],
+    "fingerprint": "",
+    "firingTriggerId": [
+      "<<TRIGGER Cart>>"
+    ],
+    "setupTag": [
+      {
+        "tagName": "MailRu Base Pixel",
+        "stopOnSetupFailure": true
+      }
+    ],
+    "parentFolderId": "<<FOLDER MailRu>>",
+    "tagFiringOption": "ONCE_PER_EVENT"
+  },
+  {
+    "accountId": "",
+    "containerId": "",
+    "tagId": "",
+    "name": "MailRu Event - Category",
+    "type": "html",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "html",
+        "value": "<script type=\"text/javascript\">\nvar _tmr = _tmr || [];\n_tmr.push({\n    type: 'itemView',\n    productid: '',\n    pagetype: '{{Page Type}}',\n    list: {{MailRu List}}\n});\n</script>"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "supportDocumentWrite",
+        "value": "false"
+      }
+    ],
+    "fingerprint": "",
+    "firingTriggerId": [
+      "<<TRIGGER Category>>",
+      "<<TRIGGER Searchresults>>"
+    ],
+    "setupTag": [
+      {
+        "tagName": "MailRu Base Pixel",
+        "stopOnSetupFailure": true
+      }
+    ],
+    "parentFolderId": "<<FOLDER MailRu>>",
+    "tagFiringOption": "ONCE_PER_EVENT"
+  },
+  {
+    "accountId": "",
+    "containerId": "",
+    "tagId": "",
+    "name": "MailRu Event - Other",
+    "type": "html",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "html",
+        "value": "<script type=\"text/javascript\">\nvar _tmr = _tmr || [];\n_tmr.push({\n    type: 'itemView',\n    productid: '',\n    pagetype: '{{Page Type}}',\n    list: {{MailRu List}}\n});\n</script>"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "supportDocumentWrite",
+        "value": "false"
+      }
+    ],
+    "fingerprint": "",
+    "firingTriggerId": [
+      "<<TRIGGER Other>>"
+    ],
+    "setupTag": [
+      {
+        "tagName": "MailRu Base Pixel",
+        "stopOnSetupFailure": true
+      }
+    ],
+    "parentFolderId": "<<FOLDER MailRu>>",
+    "tagFiringOption": "ONCE_PER_EVENT"
+  },
+  {
+    "accountId": "",
+    "containerId": "",
+    "tagId": "",
+    "name": "MailRu Event - Product",
+    "type": "html",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "html",
+        "value": "<script type=\"text/javascript\">\nvar _tmr = _tmr || [];\n_tmr.push({\n    type: 'itemView',\n    productid: '{{Product ID}}',\n    pagetype: '{{Page Type}}',\n    list: {{MailRu List}},\n    totalvalue: {{Product Price}}\n});\n</script>"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "supportDocumentWrite",
+        "value": "false"
+      }
+    ],
+    "fingerprint": "",
+    "firingTriggerId": [
+      "<<TRIGGER Product>>"
+    ],
+    "setupTag": [
+      {
+        "tagName": "MailRu Base Pixel",
+        "stopOnSetupFailure": true
+      }
+    ],
+    "parentFolderId": "<<FOLDER MailRu>>",
+    "tagFiringOption": "ONCE_PER_EVENT"
+  },
+  {
+    "accountId": "",
+    "containerId": "",
+    "tagId": "",
+    "name": "MailRu Event - Purchase",
+    "type": "html",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "html",
+        "value": "<script type=\"text/javascript\">\nvar _tmr = _tmr || [];\n_tmr.push({\n    type: 'itemView',\n    productid: '{{Purchase Product IDs}}',\n    pagetype: '{{Page Type}}',\n    list: {{MailRu List}},\n    totalvalue: {{Purchase Revenue}}\n});\n</script>"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "supportDocumentWrite",
+        "value": "false"
+      }
+    ],
+    "fingerprint": "",
+    "firingTriggerId": [
+      "<<TRIGGER Purchase>>"
+    ],
+    "setupTag": [
+      {
+        "tagName": "MailRu Base Pixel",
+        "stopOnSetupFailure": true
+      }
+    ],
+    "parentFolderId": "<<FOLDER MailRu>>",
+    "tagFiringOption": "ONCE_PER_EVENT"
+  }
+]
