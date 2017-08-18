@@ -1,0 +1,27 @@
+[
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Ladenzeile - Conversion",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script type=\"text/javascript\">\nvar vmt_pi = {\n\t'trackingId': '{{Ladenzeile Tracking ID}}',\n\t'version': 's_0.0.1'\n};\n</script>\n<script type=\"text/javascript\">\nvar vmt = {};\n(function(d, p) {\n\tvar vmtr = d.createElement('script'); vmtr.type = 'text/javascript'; vmtr.async = true;\n\tvar cachebuster = Math.round(new Date().getTime() / 1000);\n\tvmtr.src = ('https:' == p ? 'https' : 'http') + '://www.ladenzeile.de/controller/visualMetaTrackingJs?cb=' + cachebuster;\n\tvar s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(vmtr, s);\n})(document, document.location.protocol);\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
+		],
+		"parentFolderId": "<<FOLDER Ladenzeile>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	}
+]
