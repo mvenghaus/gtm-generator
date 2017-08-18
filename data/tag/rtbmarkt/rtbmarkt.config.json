@@ -1,0 +1,8 @@
+{
+	"rtbmarkt": {
+		"rtbmarkt Account ID": "YOUR_ACCOUNT_ID",
+		"rtbmarkt Global List ID": "YOUR_GLOBAL_LIST_ID",
+		"rtbmarkt Cart List ID": "YOUR_CART_LIST_ID",
+		"rtbmarkt Sale List ID": "YOUR_SALE_LIST_ID"
+	}
+}
