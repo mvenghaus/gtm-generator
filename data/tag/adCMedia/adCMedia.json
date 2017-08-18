@@ -1,0 +1,127 @@
+[
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "adC media - Visit",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<iframe src=\"//r.adc-srv.net/retargeting.php?customer={{adCMedia Customer}}&method=visit&value=visit\" frameborder=\"0\" scrolling=\"no\" style=\"width:1px;height:1px;\"></iframe>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER All Pages>>"
+		],
+		"parentFolderId": "<<FOLDER adCMedia>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "adC media - Category",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<iframe src=\"//r.adc-srv.net/retargeting.php?customer={{adCMedia Customer}}&method=category&value={{Category Name}}\" frameborder=\"0\" scrolling=\"no\" style=\"width:1px;height:1px;\"></iframe>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Category>>"
+		],
+		"parentFolderId": "<<FOLDER adCMedia>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "adC media - Product",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<iframe src=\"//r.adc-srv.net/retargeting.php?customer={{adCMedia Customer}}&method=product&value={{Product ID}}\" frameborder=\"0\" scrolling=\"no\" style=\"width:1px;height:1px;\"></iframe>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Product>>"
+		],
+		"parentFolderId": "<<FOLDER adCMedia>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "adC media - Cart",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<iframe src=\"//r.adc-srv.net/retargeting.php?customer={{adCMedia Customer}}&method=basket&value={{Cart Product IDs Pipe}}\" frameborder=\"0\" scrolling=\"no\" style=\"width:1px;height:1px;\"></iframe>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Cart>>"
+		],
+		"parentFolderId": "<<FOLDER adCMedia>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "adC media - Conversion",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<iframe src=\"//r.adc-srv.net/retargeting.php?customer={{adCMedia Customer}}&method=checkout&value=checkout\" frameborder=\"0\" scrolling=\"no\" style=\"width:1px;height:1px;\"></iframe>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
+		],
+		"parentFolderId": "<<FOLDER adCMedia>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	}
+]
