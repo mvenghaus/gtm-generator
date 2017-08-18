@@ -1,0 +1,25 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"tagId": "",
+	"name": "Tradetracker",
+	"type": "html",
+	"parameter": [
+		{
+			"type": "TEMPLATE",
+			"key": "html",
+			"value": "<div style=\"display:none;\">\n\t<img src=\"/tradetracker/conversion.php?campaignID=13617&productID=20261&conversionType=sales&https=1&transactionID={{Purchase ID}}&transactionAmount={{Purchase Revenue}}&email=&descrMerchant=&descrAffiliate=\" alt=\"\" width=\"1\" height=\"1\" border=\"0\"/>\n</div>"
+		},
+		{
+			"type": "BOOLEAN",
+			"key": "supportDocumentWrite",
+			"value": "false"
+		}
+	],
+	"fingerprint": "",
+	"firingTriggerId": [
+		"<<TRIGGER Purchase>>"
+	],
+	"parentFolderId": "<<FOLDER Tradetracker>>",
+	"tagFiringOption": "ONCE_PER_EVENT"
+}
