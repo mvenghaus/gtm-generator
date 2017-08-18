@@ -1,0 +1,52 @@
+[
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "VeInteractive - Page View",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script src=\"//config1.veinteractive.com/tags/{{VeInteractive Journey Folder}}/tag.js\" type=\"text/javascript\" async></script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER All Pages>>"
+		],
+		"parentFolderId": "<<FOLDER VeInteractive>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "VeInteractive - Conversion",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<img src=\"//drs2.veinteractive.com/DataReceiverService.asmx/Pixel?journeycode={{VeInteractive Journey Code}}\" width=\"1\" height=\"1\"/>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
+		],
+		"parentFolderId": "<<FOLDER VeInteractive>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	}
+]
