@@ -1,0 +1,77 @@
+[
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Kupona - Product",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script language=\"JavaScript\" type=\"text/javascript\">\n  var kp_product_brand = \"\";\n  var kp_product_id = \"{{Product ID}}\";\n  var kp_product_category_id = \"\";\n  var kp_recommended_product_ids = \"\";\n</script>\n<script type=\"text/javascript\" src=\"https://d31bfnnwekbny6.cloudfront.net/customers/{{Kupona Customer ID}}.min.js\"></script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Detail>>"
+		],
+		"parentFolderId": "<<FOLDER Kupona>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Kupona - Cart",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script language=\"JavaScript\" type=\"text/javascript\">\n\tvar productIds = [];\n\tvar cartProducts = {{Cart Products}};\n\tfor (var i=0; i<cartProducts.length; i++) {\n\t\tproductIds.push(cartProducts[i].id);\n\t}\n\tvar kp_shoppingcart_product_ids = productIds.join(',');\n</script>\n<script type=\"text/javascript\" src=\"https://d31bfnnwekbny6.cloudfront.net/customers/{{Kupona Customer ID}}.min.js\"></script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Cart>>"
+		],
+		"parentFolderId": "<<FOLDER Kupona>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Kupona - Conversion",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script>\nvar productIds = [];\nvar productQuantities = [];\n\nfor (var i=0; i<purchaseProducts.length; i++) {\n\tvar product = purchaseProducts[i];\n\n\tproductIds.push(product.id);\n\tproductQuantities.push(product.quantity);\n}\n\nvar kp_order_id = \"{{Purchase ID}}\";\nvar kp_order_total = \"{{Purchase Revenue}}\";\nvar kp_order_product_ids = productIds.join(',');\nvar kp_order_product_quantities = productQuantities.join(',');\n</script>\n<script type=\"text/javascript\" src=\"https://d31bfnnwekbny6.cloudfront.net/customers/{{Kupona Customer ID}}.min.js\"></script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
+		],
+		"parentFolderId": "<<FOLDER Kupona>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	}
+]
