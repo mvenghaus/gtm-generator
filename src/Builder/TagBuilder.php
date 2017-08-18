@@ -50,6 +50,11 @@ class TagBuilder
 			}
 			foreach ($tagList as $tag)
 			{
+				if ($this->isIgnored($tag['name'], $configReader))
+				{
+					continue;
+				}
+
 				$tag['tagId'] = $tagId++;
 
 				$tags[] = $tag;
@@ -86,6 +91,17 @@ class TagBuilder
 		}
 
 		return $tags;
+	}
+
+
+	private function isIgnored($tagName, ConfigReader $configReader)
+	{
+		if (in_array($tagName, $configReader->getIgnoreTags()))
+		{
+			return true;
+		}
+
+		return false;
 	}
 
 }

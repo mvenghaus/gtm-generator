@@ -30,6 +30,11 @@ class ConfigReader
 		return $this->data['custom']['tag'] ?? [];
 	}
 
+	public function getIgnoreTags()
+	{
+		return $this->data['ignore']['tag'] ?? [];
+	}
+
 	public function getTrigger()
 	{
 		if (!isset($this->data['trigger']))
