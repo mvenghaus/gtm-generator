@@ -2,7 +2,7 @@
 	"accountId": "",
 	"containerId": "",
 	"variableId": "11",
-	"name": "Cart Product IDs Comma",
+	"name": "Cart Product IDs Comma Separated",
 	"type": "jsm",
 	"parameter": [
 		{

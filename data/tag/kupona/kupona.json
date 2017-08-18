@@ -19,7 +19,7 @@
 		],
 		"fingerprint": "",
 		"firingTriggerId": [
-			"<<TRIGGER Detail>>"
+			"<<TRIGGER Product>>"
 		],
 		"parentFolderId": "<<FOLDER Kupona>>",
 		"tagFiringOption": "ONCE_PER_EVENT"
@@ -34,7 +34,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<script language=\"JavaScript\" type=\"text/javascript\">\n\tvar productIds = [];\n\tvar cartProducts = {{Cart Products}};\n\tfor (var i=0; i<cartProducts.length; i++) {\n\t\tproductIds.push(cartProducts[i].id);\n\t}\n\tvar kp_shoppingcart_product_ids = productIds.join(',');\n</script>\n<script type=\"text/javascript\" src=\"https://d31bfnnwekbny6.cloudfront.net/customers/{{Kupona Customer ID}}.min.js\"></script>"
+				"value": "<script language=\"JavaScript\" type=\"text/javascript\">\n\tvar kp_shoppingcart_product_ids = {{Cart Product IDs Comma Separated}};\n</script>\n<script type=\"text/javascript\" src=\"https://d31bfnnwekbny6.cloudfront.net/customers/{{Kupona Customer ID}}.min.js\"></script>"
 			},
 			{
 				"type": "BOOLEAN",

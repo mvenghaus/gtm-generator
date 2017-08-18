@@ -2,7 +2,7 @@
 	"accountId": "",
 	"containerId": "",
 	"variableId": "11",
-	"name": "Cart Product IDs Pipe",
+	"name": "Cart Product IDs Pipe Separated",
 	"type": "jsm",
 	"parameter": [
 		{
