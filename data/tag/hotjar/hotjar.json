@@ -1,0 +1,27 @@
+[
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "hotjar - Global",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script>\n\t(function(h,o,t,j,a,r){\n\t\th.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};\n\t\th._hjSettings={hjid:{{hotjar ID}},hjsv:5};\n\t\ta=o.getElementsByTagName('head')[0];\n\t\tr=o.createElement('script');r.async=1;\n\t\tr.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;\n\t\ta.appendChild(r);\n\t})(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER All Pages>>"
+		],
+		"parentFolderId": "<<FOLDER hotjar>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	}
+]
