@@ -34,7 +34,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<img width=\"1\" height=\"1\" src=\"https://www.rvty.net/RTB/Re?EM_reListId={{rtbmarkt Cart List ID}}&EM_del=0&EM_shopArtId=0\" style=\"display: none;\">"
+				"value": "<img width=\"1\" height=\"1\" src=\"https://brain.rvty.net/RTB/Re?EM_reListId={{rtbmarkt Cart List ID}}&EM_del=0&EM_shopArtId=0\" style=\"display: none;\">"
 			},
 			{
 				"type": "BOOLEAN",
@@ -59,7 +59,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<img width=\"1\" height=\"1\" src=\"https://www.rvty.net/RTB/Re?EM_reListId={{rtbmarkt Sale List ID}}&EM_del=0&EM_shopArtId=0\" style=\"display: none;\">"
+				"value": "<img width=\"1\" height=\"1\" src=\"https://brain.rvty.net/RTB/Re?EM_reListId={{rtbmarkt Sale List ID}}&EM_del=0&EM_shopArtId=0\" style=\"display: none;\">"
 			},
 			{
 				"type": "BOOLEAN",
@@ -84,7 +84,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<img src=\"https://www.rvty.net/goto/px/key/{{rtbmarkt Account ID}}?s=Bestellung&amount={{Purchase Revenue}}&hosted_table=order-id={{Purchase ID}}\" width=\"1\" height=\"1\"/>"
+				"value": "<img src=\"https://brain.rvty.net/goto/px/key/{{rtbmarkt Account ID}}?s=Bestellung&amount={{Purchase Revenue}}&hosted_table=order-id={{Purchase ID}}\" width=\"1\" height=\"1\"/>"
 			},
 			{
 				"type": "BOOLEAN",
