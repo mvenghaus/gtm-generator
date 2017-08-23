@@ -1,5 +1,5 @@
 .idea
 vendor
 projects/*
-!projects/all.json
+!projects/generate.php
 composer.phar

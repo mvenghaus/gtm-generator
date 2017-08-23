@@ -59,7 +59,7 @@ class ImportGenerator
 
 			file_put_contents($outputFile, $jsonData);
 
-			echo $jsonData;
+			printf('%s successfully created.' . PHP_EOL, $outputFile);
 		} catch (\Exception $e)
 		{
 			echo $e->getMessage();
