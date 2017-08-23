@@ -8,7 +8,7 @@
 		{
 			"type": "TEMPLATE",
 			"key": "javascript",
-			"value": "function () {\n  return {{Purchase Products IDs}}.join(',');\n}"
+			"value": "function () {\n  return {{Purchase Product IDs}}.join(',');\n}"
 		}
 	],
 	"fingerprint": "",
