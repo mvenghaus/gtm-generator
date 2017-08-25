@@ -1,6 +1,8 @@
 {
-	"trustedShops": {
-		"Google Customer Reviews Store ID": "YOUR_TS_ID",
-		"Trusted Shops yOffset": "YOUR_YOFFSET"
+	"googleCustomerReviews": {
+		"Google Customer Reviews Store ID": "YOUR_STORE_ID",
+		"Google Customer Reviews Badge Position": "YOUR_BADGE_POSITION",
+		"Google Customer Reviews Offer ID": "YOUR_OFFER_ID",
+		"Google Customer Reviews Subaccount ID": "YOUR_SUBACCOUNT_ID",
 	}
 }

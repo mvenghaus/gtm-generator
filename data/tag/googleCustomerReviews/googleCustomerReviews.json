@@ -3,13 +3,13 @@
 		"accountId": "",
 		"containerId": "",
 		"tagId": "",
-		"name": "Trusted Shops",
+		"name": "Google Customer Reviews",
 		"type": "html",
 		"parameter": [
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<script type=\"text/javascript\">\n    var windowWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);\n    if (windowWidth > 700) {\n\n        var _tsid = '{{Trusted Shops ID}}';\n        _tsConfig = {\n            'yOffset': '{{Trusted Shops yOffset}}', /* offset from page bottom */\n            'variant': 'reviews', /* text, default, small, reviews, custom, custom_reviews */\n            'customElementId': '', /* required for variants custom and custom_reviews */\n            'trustcardDirection': '', /* for custom variants: topRight, topLeft, bottomRight, bottomLeft */\n            'customBadgeWidth': '', /* for custom variants: 40 - 90 (in pixels) */\n            'customBadgeHeight': '', /* for custom variants: 40 - 90 (in pixels) */\n            'disableResponsive': 'true', /* deactivate responsive behaviour */\n            'disableTrustbadge': 'false' /* deactivate trustbadge */\n        };\n        var _ts = document.createElement('script');\n        _ts.type = 'text/javascript';\n        _ts.charset = 'utf-8';\n        _ts.async = true;\n        _ts.src = '//widgets.trustedshops.com/js/' + _tsid + '.js';\n        var __ts = document.getElementsByTagName('script')[0];\n        __ts.parentNode.insertBefore(_ts, __ts);\n    }\n</script>"
+				"value": "<script type=\"text/javascript\">\n\tvar gts = gts || [];\n\n\tgts.push([\"id\", \"{{Google Customer Reviews Store ID}}\"]);\n\tgts.push([\"badge_position\", \"{{Google Customer Reviews Badge Position}}\"]);\n\tgts.push([\"locale\", \"{{Locale Code}}\"]);\n\tgts.push([\"google_base_offer_id\", \"{{Google Customer Reviews Offer ID}}\"]);\n\tgts.push([\"google_base_subaccount_id\", \"{{Google Customer Reviews Subaccount ID}}\"]);\n\n\t(function() {\n\t\tvar gts = document.createElement(\"script\");\n\t\tgts.type = \"text/javascript\";\n\t\tgts.async = true;\n\t\tgts.src = \"https://www.googlecommerce.com/trustedstores/api/js\";\n\t\tvar s = document.getElementsByTagName(\"script\")[0];\n\t\ts.parentNode.insertBefore(gts, s);\n\t})();\n</script>"
 			},
 			{
 				"type": "BOOLEAN",
@@ -21,7 +21,7 @@
 		"firingTriggerId": [
 			"<<TRIGGER All Pages>>"
 		],
-		"parentFolderId": "<<FOLDER Trusted Shops>>",
+		"parentFolderId": "<<FOLDER Google Customer Reviews>>",
 		"tagFiringOption": "ONCE_PER_EVENT"
 	}
 ]

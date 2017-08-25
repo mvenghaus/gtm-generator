@@ -1,6 +1,7 @@
 {
 	"trustedShops": {
 		"Trusted Shops ID": "YOUR_TS_ID",
-		"Trusted Shops yOffset": "YOUR_YOFFSET"
+		"Trusted Shops yOffset": "YOUR_YOFFSET",
+		"Trusted Shops trustcardDirection": ""
 	}
 }

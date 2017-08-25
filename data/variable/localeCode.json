@@ -1,0 +1,26 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"variableId": "",
+	"name": "Locale Code",
+	"type": "v",
+	"parameter": [
+		{
+			"type": "INTEGER",
+			"key": "dataLayerVersion",
+			"value": "2"
+		},
+		{
+			"type": "BOOLEAN",
+			"key": "setDefaultValue",
+			"value": "false"
+		},
+		{
+			"type": "TEMPLATE",
+			"key": "name",
+			"value": "localeCode"
+		}
+	],
+	"fingerprint": "",
+	"parentFolderId": "<<FOLDER Variable>>"
+}
