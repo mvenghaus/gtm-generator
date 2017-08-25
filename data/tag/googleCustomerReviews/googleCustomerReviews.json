@@ -9,7 +9,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<script type=\"text/javascript\">\n\tvar gts = gts || [];\n\n\tgts.push([\"id\", \"{{Google Customer Reviews Store ID}}\"]);\n\tgts.push([\"badge_position\", \"{{Google Customer Reviews Badge Position}}\"]);\n\tgts.push([\"locale\", \"{{Locale Code}}\"]);\n\tgts.push([\"google_base_offer_id\", \"{{Google Customer Reviews Offer ID}}\"]);\n\tgts.push([\"google_base_subaccount_id\", \"{{Google Customer Reviews Subaccount ID}}\"]);\n\n\t(function() {\n\t\tvar gts = document.createElement(\"script\");\n\t\tgts.type = \"text/javascript\";\n\t\tgts.async = true;\n\t\tgts.src = \"https://www.googlecommerce.com/trustedstores/api/js\";\n\t\tvar s = document.getElementsByTagName(\"script\")[0];\n\t\ts.parentNode.insertBefore(gts, s);\n\t})();\n</script>"
+				"value": "<script type=\"text/javascript\">\n\tvar gts = gts || [];\n\n\tgts.push([\"id\", \"{{Google Customer Reviews Store ID}}\"]);\n\tgts.push([\"badge_position\", \"{{Google Customer Reviews Badge Position}}\"]);\n\tgts.push([\"locale\", \"{{Locale Code}}\"]);\n\tgts.push([\"google_base_offer_id\", \"{{Product ID}}\"]);\n\tgts.push([\"google_base_subaccount_id\", \"{{Google Customer Reviews Subaccount ID}}\"]);\n\n\t(function() {\n\t\tvar gts = document.createElement(\"script\");\n\t\tgts.type = \"text/javascript\";\n\t\tgts.async = true;\n\t\tgts.src = \"https://www.googlecommerce.com/trustedstores/api/js\";\n\t\tvar s = document.getElementsByTagName(\"script\")[0];\n\t\ts.parentNode.insertBefore(gts, s);\n\t})();\n</script>"
 			},
 			{
 				"type": "BOOLEAN",

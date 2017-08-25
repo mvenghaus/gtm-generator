@@ -84,7 +84,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<iframe src=\"//r.adc-srv.net/retargeting.php?customer={{adCMedia Customer}}&method=basket&value={{Cart Product IDs Pipe}}\" frameborder=\"0\" scrolling=\"no\" style=\"width:1px;height:1px;\"></iframe>"
+				"value": "<iframe src=\"//r.adc-srv.net/retargeting.php?customer={{adCMedia Customer}}&method=basket&value={{Cart Product IDs Pipe Separated}}\" frameborder=\"0\" scrolling=\"no\" style=\"width:1px;height:1px;\"></iframe>"
 			},
 			{
 				"type": "BOOLEAN",
