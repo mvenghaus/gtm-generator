@@ -3,101 +3,52 @@
 		"accountId": "",
 		"containerId": "",
 		"tagId": "",
-		"name": "Adroll Smart Pixel",
-		"type": "asp",
+		"name": "Adroll Pixel",
+		"type": "html",
 		"parameter": [
 			{
 				"type": "TEMPLATE",
-				"key": "pixelId",
-				"value": "{{AdRoll Pixel ID}}"
+				"key": "html",
+				"value": "<script type=\"text/javascript\">\n    adroll_adv_id = \"{{AdRoll Advertiser ID}}\";\n    adroll_pix_id = \"{{AdRoll Pixel ID}}\";\n    adroll_email = \"{{Customer Email}}\";\n\n    adroll_custom_data = {};\n    if ({{Page Type}} === 'product')\n    {\n        adroll_custom_data.product_id = '{{Product ID}}';\n    }\n\n    if ({{Page Type}} === 'purchase')\n    {\n        adroll_currency = '{{Currency Code}}';\n        adroll_conversion_value = {{Purchase Revenue}};\n        adroll_custom_data.ORDER_ID = '{{Purchase ID}}';\n        adroll_custom_data.product_action = 'Purchased';\n        adroll_custom_data.product_id = {{Purchase Product IDs}};\n    }\n\n    (function () {\n        var _onload = function(){\n            if (document.readyState && !/loaded|complete/.test(document.readyState)){setTimeout(_onload, 10);return}\n            if (!window.__adroll_loaded){__adroll_loaded=true;setTimeout(_onload, 50);return}\n            var scr = document.createElement(\"script\");\n            var host = ((\"https:\" == document.location.protocol) ? \"https://s.adroll.com\" : \"http://a.adroll.com\");\n            scr.setAttribute('async', 'true');\n            scr.type = \"text/javascript\";\n            scr.src = host + \"/j/roundtrip.js\";\n            ((document.getElementsByTagName('head') || [null])[0] ||\n                document.getElementsByTagName('script')[0].parentNode).appendChild(scr);\n        };\n        if (window.addEventListener) {window.addEventListener('load', _onload, false);}\n        else {window.attachEvent('onload', _onload)}\n    }());\n</script>\n"
 			},
 			{
-				"type": "TEMPLATE",
-				"key": "customerId",
-				"value": "{{AdRoll Advertiser ID}}"
-			},
-			{
-				"type": "TEMPLATE",
-				"key": "conversionValueCurrency",
-				"value": "{{Currency Code}}"
-			},
-			{
-				"type": "TEMPLATE",
-				"key": "conversionValueInDollars",
-				"value": ""
-			},
-			{
-				"type": "TEMPLATE",
-				"key": "visitorEmail",
-				"value": "{{Customer Email}}"
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
 			}
 		],
 		"fingerprint": "",
 		"firingTriggerId": [
 			"<<TRIGGER All Pages>>"
 		],
-		"tagFiringOption": "ONCE_PER_EVENT",
-		"parentFolderId": "<<FOLDER AdRoll>>"
+		"parentFolderId": "<<FOLDER Adroll>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
 	},
+
+
 	{
 		"accountId": "",
 		"containerId": "",
 		"tagId": "",
-		"name": "Adroll Conversion Pixel",
-		"type": "asp",
+		"name": "Adroll Event - AddToCart",
+		"type": "html",
 		"parameter": [
 			{
 				"type": "TEMPLATE",
-				"key": "pixelId",
-				"value": "{{AdRoll Pixel ID}}"
+				"key": "html",
+				"value": "<script>\n  __adroll.record_user({product_id: '{{Product ID}}', product_action: 'AddToCart'});\n</script>"
 			},
 			{
-				"type": "TEMPLATE",
-				"key": "customerId",
-				"value": "{{AdRoll Advertiser ID}}"
-			},
-			{
-				"type": "TEMPLATE",
-				"key": "conversionValueCurrency",
-				"value": "{{Currency Code}}"
-			},
-			{
-				"type": "TEMPLATE",
-				"key": "conversionValueInDollars",
-				"value": "{{Purchase Revenue}}"
-			},
-			{
-				"type": "TEMPLATE",
-				"key": "visitorEmail",
-				"value": "{{Customer Email}}"
-			},
-			{
-				"type": "LIST",
-				"key": "customData",
-				"list": [
-					{
-						"type": "MAP",
-						"map": [
-							{
-								"type": "TEMPLATE",
-								"key": "key",
-								"value": "ORDER_ID"
-							},
-							{
-								"type": "TEMPLATE",
-								"key": "value",
-								"value": "{{Purchase ID}}"
-							}
-						]
-					}
-				]
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
 			}
 		],
 		"fingerprint": "",
 		"firingTriggerId": [
-			"<<TRIGGER Purchase>>"
+			"<<TRIGGER Add To Cart Click>>"
 		],
-		"tagFiringOption": "ONCE_PER_EVENT",
-		"parentFolderId": "<<FOLDER AdRoll>>"
+		"parentFolderId": "<<FOLDER Adroll>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
 	}
 ]
