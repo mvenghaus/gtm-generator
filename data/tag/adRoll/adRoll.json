@@ -36,7 +36,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<script>\n  __adroll.record_user({product_id: '{{Product ID}}', product_action: 'AddToCart'});\n</script>"
+				"value": "<script>\n  if (typeof __adroll !== 'undefined') {\n  \t__adroll.record_user({product_id: '{{Product ID}}', product_action: 'AddToCart'});\n  }\n</script>"
 			},
 			{
 				"type": "BOOLEAN",
