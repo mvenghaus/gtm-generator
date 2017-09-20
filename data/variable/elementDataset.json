@@ -1,0 +1,26 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"variableId": "",
+	"name": "Element Dataset",
+	"type": "v",
+	"parameter": [
+		{
+			"type": "INTEGER",
+			"key": "dataLayerVersion",
+			"value": "2"
+		},
+		{
+			"type": "BOOLEAN",
+			"key": "setDefaultValue",
+			"value": "false"
+		},
+		{
+			"type": "TEMPLATE",
+			"key": "name",
+			"value": "gtm.element.dataset"
+		}
+	],
+	"fingerprint": "",
+	"parentFolderId": "<<FOLDER Variable>>"
+}

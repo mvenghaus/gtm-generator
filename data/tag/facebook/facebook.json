@@ -1,151 +1,182 @@
 [
-  {
-    "accountId": "",
-    "containerId": "",
-    "tagId": "",
-    "name": "Facebook Base Pixel",
-    "type": "html",
-    "parameter": [
-      {
-        "type": "TEMPLATE",
-        "key": "html",
-        "value": "<script>\n!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?\nn.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;\nn.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;\nt.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,\ndocument,'script','https://connect.facebook.net/en_US/fbevents.js');\n\nvar customerData = {}\nvar em = {{Customer Email}};\nif (typeof em !== 'undefined') {\n  customerData.em = em;\n}\n  \nfbq('init', '{{Facebook Pixel ID}}', customerData);\nfbq('track', 'PageView');\n</script>"
-      },
-      {
-        "type": "BOOLEAN",
-        "key": "supportDocumentWrite",
-        "value": "false"
-      }
-    ],
-    "fingerprint": "",
-    "firingTriggerId": [
-      "<<TRIGGER All Pages>>"
-    ],
-    "tagFiringOption": "ONCE_PER_LOAD",
-    "parentFolderId": "<<FOLDER Facebook>>"
-  },
-  {
-    "accountId": "",
-    "containerId": "",
-    "tagId": "",
-    "name": "Facebook Event - Add To Cart",
-    "type": "html",
-    "parameter": [
-      {
-        "type": "TEMPLATE",
-        "key": "html",
-        "value": "<script>\n  \nfbq('track', 'AddToCart', {\n  content_ids: [{{Product ID}}],\n  content_type: 'product',\n  value: {{Product Price}},\n  currency: 'EUR'\n});\n  \n</script>"
-      },
-      {
-        "type": "BOOLEAN",
-        "key": "supportDocumentWrite",
-        "value": "false"
-      }
-    ],
-    "fingerprint": "",
-    "firingTriggerId": [
-      "<<TRIGGER Add To Cart Click>>"
-    ],
-    "setupTag": [
-      {
-        "tagName": "Facebook Base Pixel",
-        "stopOnSetupFailure": true
-      }
-    ],
-    "tagFiringOption": "ONCE_PER_EVENT",
-    "parentFolderId": "<<FOLDER Facebook>>"
-  },
-  {
-    "accountId": "",
-    "containerId": "",
-    "tagId": "",
-    "name": "Facebook Event - Checkout",
-    "type": "html",
-    "parameter": [
-      {
-        "type": "TEMPLATE",
-        "key": "html",
-        "value": "<script>\nfbq('track', 'InitiateCheckout');\n</script>"
-      },
-      {
-        "type": "BOOLEAN",
-        "key": "supportDocumentWrite",
-        "value": "false"
-      }
-    ],
-    "fingerprint": "",
-    "firingTriggerId": [
-      "<<TRIGGER Cart>>"
-    ],
-    "setupTag": [
-      {
-        "tagName": "Facebook Base Pixel",
-        "stopOnSetupFailure": true
-      }
-    ],
-    "tagFiringOption": "ONCE_PER_EVENT",
-    "parentFolderId": "<<FOLDER Facebook>>"
-  },
-  {
-    "accountId": "",
-    "containerId": "",
-    "tagId": "",
-    "name": "Facebook Event - Product",
-    "type": "html",
-    "parameter": [
-      {
-        "type": "TEMPLATE",
-        "key": "html",
-        "value": "<script>\nfbq('track', 'ViewContent', {\ncontent_ids: [\"{{Product ID}}\"],\ncontent_type: 'product',\nvalue: {{Product Price}},\ncurrency: 'EUR'\n});\n</script>"
-      },
-      {
-        "type": "BOOLEAN",
-        "key": "supportDocumentWrite",
-        "value": "false"
-      }
-    ],
-    "fingerprint": "",
-    "firingTriggerId": [
-      "<<TRIGGER Product>>"
-    ],
-    "setupTag": [
-      {
-        "tagName": "Facebook Base Pixel",
-        "stopOnSetupFailure": true
-      }
-    ],
-    "tagFiringOption": "ONCE_PER_EVENT",
-    "parentFolderId": "<<FOLDER Facebook>>"
-  },
-  {
-    "accountId": "",
-    "containerId": "",
-    "tagId": "",
-    "name": "Facebook Event - Purchase",
-    "type": "html",
-    "parameter": [
-      {
-        "type": "TEMPLATE",
-        "key": "html",
-        "value": "<script> \n  fbq('track', 'Purchase', {\n    content_ids: {{Purchase Product IDs}},\n    content_type: 'product',\n    value: {{Purchase Revenue}},\n    currency: 'EUR'\n   });\n</script>"
-      },
-      {
-        "type": "BOOLEAN",
-        "key": "supportDocumentWrite",
-        "value": "false"
-      }
-    ],
-    "fingerprint": "",
-    "firingTriggerId": [
-      "<<TRIGGER Purchase>>"
-    ],
-    "setupTag": [
-      {
-        "tagName": "Facebook Base Pixel",
-        "stopOnSetupFailure": true
-      }
-    ],
-    "tagFiringOption": "ONCE_PER_EVENT",
-    "parentFolderId": "<<FOLDER Facebook>>"
-  }
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Facebook Base Pixel",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script>\n!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?\nn.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;\nn.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;\nt.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,\ndocument,'script','https://connect.facebook.net/en_US/fbevents.js');\n\nvar customerData = {}\nvar em = {{Customer Email}};\nif (typeof em !== 'undefined') {\n  customerData.em = em;\n}\n  \nfbq('init', '{{Facebook Pixel ID}}', customerData);\nfbq('track', 'PageView');\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER All Pages>>"
+		],
+		"tagFiringOption": "ONCE_PER_LOAD",
+		"parentFolderId": "<<FOLDER Facebook>>"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Facebook Event - Add To Cart",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script>\n  \nfbq('track', 'AddToCart', {\n  content_ids: [{{Product ID}}],\n  content_type: 'product',\n  value: {{Product Price}},\n  currency: 'EUR'\n});\n  \n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Add To Cart Click>>"
+		],
+		"setupTag": [
+			{
+				"tagName": "Facebook Base Pixel",
+				"stopOnSetupFailure": true
+			}
+		],
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Facebook>>"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Facebook Event - Checkout",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script>\nfbq('track', 'InitiateCheckout');\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Cart>>"
+		],
+		"setupTag": [
+			{
+				"tagName": "Facebook Base Pixel",
+				"stopOnSetupFailure": true
+			}
+		],
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Facebook>>"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Facebook Event - Product",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script>\nfbq('track', 'ViewContent', {\ncontent_ids: [\"{{Product ID}}\"],\ncontent_type: 'product',\nvalue: {{Product Price}},\ncurrency: 'EUR'\n});\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Product>>"
+		],
+		"setupTag": [
+			{
+				"tagName": "Facebook Base Pixel",
+				"stopOnSetupFailure": true
+			}
+		],
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Facebook>>"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Facebook Event - Purchase",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script> \n  fbq('track', 'Purchase', {\n    content_ids: {{Purchase Product IDs}},\n    content_type: 'product',\n    value: {{Purchase Revenue}},\n    currency: 'EUR'\n   });\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
+		],
+		"setupTag": [
+			{
+				"tagName": "Facebook Base Pixel",
+				"stopOnSetupFailure": true
+			}
+		],
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Facebook>>"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Facebook Event - Wishlist - Compare",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script>\n  var dataset = {{Element Dataset}};\n  if (typeof dataset !== 'undefined' && dataset.hasOwnProperty('linkType')) {\n    \n    if (dataset.linkType === 'wishlist') {\n       fbq('track', 'AddToMerkliste', {\n         content_ids: [dataset.productSku],\n         content_type: 'product',\n         value: dataset.productPrice,\n           currency: '{{Currency Code}}'\n\t\t});\n    }\n    \n    if (dataset.linkType === 'compare') {\n       fbq('track', 'AddToVergleichsliste', {\n         content_ids: [dataset.productSku],\n         content_type: 'product',\n         value: dataset.productPrice,\n           currency: '{{Currency Code}}'\n\t\t});\n    }\n\n  }\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Click - Just Links>>"
+		],
+		"setupTag": [
+			{
+				"tagName": "Facebook Base Pixel",
+				"stopOnSetupFailure": true
+			}
+		],
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Facebook>>"
+	}
 ]
