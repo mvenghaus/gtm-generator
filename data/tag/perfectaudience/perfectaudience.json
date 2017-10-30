@@ -1,0 +1,81 @@
+[
+  {
+    "accountId": "",
+    "containerId": "",
+    "tagId": "",
+    "name": "Perfect Audience - Other",
+    "type": "pa",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "siteId",
+        "value": "{{Perfect Audience Website ID}}"
+      }
+    ],
+    "fingerprint": "",
+    "firingTriggerId": [
+      "<<TRIGGER All Pages>>"
+    ],
+    "blockingTriggerId": [
+      "<<TRIGGER Product>>",
+      "<<TRIGGER Purchase>>"
+    ],
+    "parentFolderId": "<<FOLDER Perfect Audience>>",
+    "tagFiringOption": "ONCE_PER_EVENT"
+  },
+  {
+    "accountId": "",
+    "containerId": "",
+    "tagId": "",
+    "name": "Perfect Audience - Product",
+    "type": "pa",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "productId",
+        "value": "{{Product ID}}"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "siteId",
+        "value": "{{Perfect Audience Website ID}}"
+      }
+    ],
+    "fingerprint": "",
+    "firingTriggerId": [
+      "<<TRIGGER Product>>"
+    ],
+    "parentFolderId": "<<FOLDER Perfect Audience>>",
+    "tagFiringOption": "ONCE_PER_EVENT"
+  },
+  {
+    "accountId": "",
+    "containerId": "",
+    "tagId": "",
+    "name": "Perfect Audience - Purchase",
+    "type": "pa",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "revenue",
+        "value": "{{Purchase Revenue}}"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "orderId",
+        "value": "{{Purchase ID}}"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "siteId",
+        "value": "{{Perfect Audience Website ID}}"
+      }
+    ],
+    "fingerprint": "",
+    "firingTriggerId": [
+      "<<TRIGGER Purchase>>"
+    ],
+    "parentFolderId": "<<FOLDER Perfect Audience>>",
+    "tagFiringOption": "ONCE_PER_EVENT"
+  }
+]
