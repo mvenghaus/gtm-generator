@@ -1,0 +1,24 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"tagId": "",
+	"name": "Shopping24 - Order Tracking Pixel",
+	"type": "html",
+	"parameter": [
+		{
+			"type": "TEMPLATE",
+			"key": "html",
+			"value": "<img src=\"https://tracking.s24.com/TrackOrder?shopId={{Shopping24 Shop ID}}&netRevenue={{Purchase Revenue}}&shipping={{Purchase Shipping}}&products={{Purchase Product IDs Comma Separated}}&lineItems={{Purchase Product Count}}&orderNumber={{Purchase ID}}\" alt=\"\" width=\"1\" height=\"1\">"
+		},
+		{
+			"type": "BOOLEAN",
+			"key": "supportDocumentWrite",
+			"value": "false"
+		}
+	],
+	"fingerprint": "",
+	"firingTriggerId": [
+		"<<TRIGGER Purchase>>"
+	],
+	"parentFolderId": "<<FOLDER Shopping24>>"
+}
