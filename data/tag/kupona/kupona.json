@@ -59,7 +59,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<script>\nvar productIds = [];\nvar productQuantities = [];\n\nfor (var i=0; i<purchaseProducts.length; i++) {\n\tvar product = purchaseProducts[i];\n\n\tproductIds.push(product.id);\n\tproductQuantities.push(product.quantity);\n}\n\nvar kp_order_id = \"{{Purchase ID}}\";\nvar kp_order_total = \"{{Purchase Revenue}}\";\nvar kp_order_product_ids = productIds.join(',');\nvar kp_order_product_quantities = productQuantities.join(',');\n</script>\n<script type=\"text/javascript\" src=\"https://d31bfnnwekbny6.cloudfront.net/customers/{{Kupona Customer ID}}.min.js\"></script>"
+				"value": "<script>\nvar productIds = [];\nvar productQuantities = [];\nvar purchaseProducts = {{Purchase Products}};\n\nfor (var i=0; i<purchaseProducts.length; i++) {\n\tvar product = purchaseProducts[i];\n\n\tproductIds.push(product.id);\n\tproductQuantities.push(product.quantity);\n}\n\nvar kp_order_id = \"{{Purchase ID}}\";\nvar kp_order_total = \"{{Purchase Revenue}}\";\nvar kp_order_product_ids = productIds.join(',');\nvar kp_order_product_quantities = productQuantities.join(',');\n</script>\n<script type=\"text/javascript\" src=\"https://d31bfnnwekbny6.cloudfront.net/customers/{{Kupona Customer ID}}.min.js\"></script>"
 			},
 			{
 				"type": "BOOLEAN",
