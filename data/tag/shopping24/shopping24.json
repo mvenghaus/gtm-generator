@@ -8,7 +8,7 @@
 		{
 			"type": "TEMPLATE",
 			"key": "html",
-			"value": "<img src=\"https://tracking.s24.com/TrackOrder?shopId={{Shopping24 Shop ID}}&netRevenue={{Purchase Revenue}}&shipping={{Purchase Shipping}}&products={{Purchase Product IDs Comma Separated}}&lineItems={{Purchase Product Count}}&orderNumber={{Purchase ID}}\" alt=\"\" width=\"1\" height=\"1\">"
+			"value": "<img src=\"https://tracking.s24.com/TrackOrder?shopId={{Shopping24 Shop ID}}&netRevenue={{Purchase Revenue}}&products={{Purchase Product IDs Comma Separated}}&lineItems={{Purchase Product Count}}&orderNumber={{Purchase ID}}\" alt=\"\" width=\"1\" height=\"1\">"
 		},
 		{
 			"type": "BOOLEAN",
