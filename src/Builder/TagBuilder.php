@@ -9,88 +9,99 @@ use Filter\VariableFilter;
 
 class TagBuilder
 {
-	/** @var VariableFilter */
-	private $variableFilter;
-	/** @var TriggerFilter */
-	private $triggerFilter;
-	/** @var FolderFilter */
-	private $folderFilter;
+    /** @var VariableFilter */
+    private $variableFilter;
+    /** @var TriggerFilter */
+    private $triggerFilter;
+    /** @var FolderFilter */
+    private $folderFilter;
 
-	/**
-	 * @param VariableFilter $variableFilter
-	 * @param TriggerFilter $triggerFilter
-	 * @param FolderFilter $folderFilter
-	 */
-	public function __construct(VariableFilter $variableFilter,
-	                            TriggerFilter $triggerFilter,
-	                            FolderFilter $folderFilter)
-	{
-		$this->variableFilter = $variableFilter;
-		$this->triggerFilter = $triggerFilter;
-		$this->folderFilter = $folderFilter;
-	}
+    /**
+     * @param VariableFilter $variableFilter
+     * @param TriggerFilter $triggerFilter
+     * @param FolderFilter $folderFilter
+     */
+    public function __construct(VariableFilter $variableFilter,
+                                TriggerFilter $triggerFilter,
+                                FolderFilter $folderFilter)
+    {
+        $this->variableFilter = $variableFilter;
+        $this->triggerFilter = $triggerFilter;
+        $this->folderFilter = $folderFilter;
+    }
 
-	public function build(ConfigReader $configReader)
-	{
-		$tags = [];
+    public function build(ConfigReader $configReader)
+    {
+        $tags = [];
 
-		$tagId = 1;
-		foreach ($this->getTags($configReader) as $tagFile => $data)
-		{
-			$tagContent = file_get_contents($tagFile);
+        $tagId = 1;
+        foreach ($this->getTags($configReader) as $tagFile => $data)
+        {
 
-			$tagContent = $this->triggerFilter->filter($tagContent);
-			$tagContent = $this->variableFilter->filter($tagContent, $data);
-			$tagContent = $this->folderFilter->filter($tagContent);
+            $tagsContent = file_get_contents($tagFile);
 
-			$tagList = json_decode($tagContent, true);
-			if (isset($tagList['accountId']))
-			{
-				$tagList = [$tagList];
-			}
-			foreach ($tagList as $tag)
-			{
-				if ($this->isIgnored($tag['name'], $configReader))
-				{
-					continue;
-				}
+            $tagList = json_decode($tagsContent, true);
+            if (isset($tagList['accountId']))
+            {
+                $tagList = [$tagList];
+            }
+            foreach ($tagList as $tag)
+            {
+                try
+                {
+                    $tagContent = json_encode($tag);
 
-				$tag['tagId'] = $tagId++;
+                    $tagContent = $this->triggerFilter->filter($tagContent);
+                    $tagContent = $this->variableFilter->filter($tagContent, $data);
+                    $tagContent = $this->folderFilter->filter($tagContent);
 
-				$tags[] = $tag;
-			}
-		}
+                    $tag = json_decode($tagContent, true);
 
-		return $tags;
-	}
+                    if ($this->isIgnored($tag['name'], $configReader))
+                    {
+                        continue;
+                    }
 
-	private function getTags(ConfigReader $configReader)
-	{
-		$tags = [];
+                    $tag['tagId'] = $tagId++;
 
-		foreach ($configReader->getTags() as $name => $data)
-		{
-			$tagFile = sprintf('%sdata/tag/%s/%s.json', ROOT_DIR, $name, $name);
-			if (!file_exists($tagFile))
-			{
-				throw new \Exception(sprintf('tag file not found "%s.json"', $name));
-			}
+                    $tags[] = $tag;
 
-			$tags[$tagFile] = $data;
-		}
+                } catch (\Exception $e)
+                {
+                    echo $tag['name'] . ' ignored -> ' . $e->getMessage() . PHP_EOL;
+                }
+            }
+        }
 
-		return $tags;
-	}
+        return $tags;
+    }
 
+    private function getTags(ConfigReader $configReader)
+    {
+        $tags = [];
 
-	private function isIgnored($tagName, ConfigReader $configReader)
-	{
-		if (in_array($tagName, $configReader->getIgnoreTags()))
-		{
-			return true;
-		}
+        foreach ($configReader->getTags() as $name => $data)
+        {
+            $tagFile = sprintf('%sdata/tag/%s/%s.json', ROOT_DIR, $name, $name);
+            if (!file_exists($tagFile))
+            {
+                throw new \Exception(sprintf('tag file not found "%s.json"', $name));
+            }
 
-		return false;
-	}
+            $tags[$tagFile] = $data;
+        }
+
+        return $tags;
+    }
+
+    private function isIgnored($tagName, ConfigReader $configReader)
+    {
+        if (in_array($tagName, $configReader->getIgnoreTags()))
+        {
+            return true;
+        }
+
+        return false;
+    }
 
 }

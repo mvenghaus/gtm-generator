@@ -1,0 +1,146 @@
+[
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Adform - Standard Pixel",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script type=\"text/javascript\">\n    window._adftrack = Array.isArray(window._adftrack) ? window._adftrack : (window._adftrack ? [window._adftrack] : []);\n    window._adftrack.push({\n        pm: {{Adform Tracking ID}}\n    });\n    (function () { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://track.adform.net/serving/scripts/trackpoint/async/'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); })();\n\n</script>\n<noscript>\n    <p style=\"margin:0;padding:0;border:0;\">\n        <img src=\"https://track.adform.net/Serving/TrackPoint/?pm={{Adform Tracking ID}}\" width=\"1\" height=\"1\" alt=\"\" />\n    </p>\n</noscript>\n"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER All Pages>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Adform - Product",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script type=\"text/javascript\">\n    window._adftrack = Array.isArray(window._adftrack) ? window._adftrack : (window._adftrack ? [window._adftrack] : []);\n    window._adftrack.push({\n        pm: {{Adform Tracking ID}},\n        divider: encodeURIComponent('|'),\n        pagename: encodeURIComponent('Produktdetailseiten'),\n        order : { \n             itms: [{ \n                 categoryname: '',\n                 productid: '{{Product ID}}'\n             }]\n        }\n    });\n    (function () { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://track.adform.net/serving/scripts/trackpoint/async/'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); })();\n\n</script>\n<noscript>\n    <p style=\"margin:0;padding:0;border:0;\">\n        <img src=\"https://track.adform.net/Serving/TrackPoint/?pm={{Adform Tracking ID}}&ADFPageName=Produktdetailseiten&ADFdivider=|\" width=\"1\" height=\"1\" alt=\"\" />\n    </p>\n</noscript>\n"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Product>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Adform - Cart",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script type=\"text/javascript\">\n  \tvar cartProducts = {{Cart Products}};\n\n  \tvar ordereItms = [];\n\n    if (typeof cartProducts !== 'undefined') {\n      for (var i=0; i < cartProducts.length; i++)\n      {  \n        ordereItms.push({\n           categoryname: '',\n           productid: cartProducts[i].id,\n           productcount: cartProducts[i].quantity,\n           productsales: cartProducts[i].price\n        });\n      }\n    }\n  \n    window._adftrack = Array.isArray(window._adftrack) ? window._adftrack : (window._adftrack ? [window._adftrack] : []);\n    window._adftrack.push({\n        pm: {{Adform Tracking ID}},\n        divider: encodeURIComponent('|'),\n        pagename: encodeURIComponent('Warenkorb-Seite'),\n        order : { \n             sales: '{{Cart Revenue}}',\n             itms: ordereItms\n        }\n    });\n    (function () { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://track.adform.net/serving/scripts/trackpoint/async/'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); })();\n\n</script>\n<noscript>\n    <p style=\"margin:0;padding:0;border:0;\">\n        <img src=\"https://track.adform.net/Serving/TrackPoint/?pm={{Adform Tracking ID}}&ADFPageName=Warenkorb-Seite&ADFdivider=|\" width=\"1\" height=\"1\" alt=\"\" />\n    </p>\n</noscript>\n"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Cart>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Adform - Purchase",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script type=\"text/javascript\">\n  \n  \tvar purchaseProducts = {{Purchase Products}};\n\n  \tvar ordereItms = [];\n\n    if (typeof purchaseProducts !== 'undefined') {\n      for (var i=0; i < purchaseProducts.length; i++)\n      {  \n        ordereItms.push({\n           categoryname: '',\n           productid: purchaseProducts[i].id,\n           productcount: purchaseProducts[i].quantity,\n           productsales: purchaseProducts[i].price\n        });\n      }\n    }\n  \n    window._adftrack = Array.isArray(window._adftrack) ? window._adftrack : (window._adftrack ? [window._adftrack] : []);\n    window._adftrack.push({\n        pm: {{Adform Tracking ID}},\n        divider: encodeURIComponent('|'),\n        pagename: encodeURIComponent('Bestellung'),\n        order : { \n             sales: {{Purchase Revenue}},\n             orderid: {{Purchase ID}},\n             itms: ordereItms\n        }\n    });\n    (function () { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://track.adform.net/serving/scripts/trackpoint/async/'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); })();\n\n</script>\n<noscript>\n    <p style=\"margin:0;padding:0;border:0;\">\n        <img src=\"https://track.adform.net/Serving/TrackPoint/?pm={{Adform Tracking ID}}&ADFPageName=Bestellung&ADFdivider=|\" width=\"1\" height=\"1\" alt=\"\" />\n    </p>\n</noscript>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Adform - Newsletter Subscribe",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script type=\"text/javascript\">\n    window._adftrack = Array.isArray(window._adftrack) ? window._adftrack : (window._adftrack ? [window._adftrack] : []);\n    window._adftrack.push({\n        pm: {{Adform Tracking ID}},\n        divider: encodeURIComponent('|'),\n        pagename: encodeURIComponent('Newsletter-Anmeldung')\n    });\n    (function () { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://track.adform.net/serving/scripts/trackpoint/async/'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); })();\n\n</script>\n<noscript>\n    <p style=\"margin:0;padding:0;border:0;\">\n        <img src=\"https://track.adform.net/Serving/TrackPoint/?pm={{Adform Tracking ID}}&ADFPageName=Newsletter-Anmeldung&ADFdivider=|\" width=\"1\" height=\"1\" alt=\"\" />\n    </p>\n</noscript>\n"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Newsletter Subscribe>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Adform - Contact Success",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script type=\"text/javascript\">\n    window._adftrack = Array.isArray(window._adftrack) ? window._adftrack : (window._adftrack ? [window._adftrack] : []);\n    window._adftrack.push({\n        pm: {{Adform Tracking ID}},\n        divider: encodeURIComponent('|'),\n        pagename: encodeURIComponent('Kontaktformular')\n    });\n    (function () { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://track.adform.net/serving/scripts/trackpoint/async/'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); })();\n\n</script>\n<noscript>\n    <p style=\"margin:0;padding:0;border:0;\">\n        <img src=\"https://track.adform.net/Serving/TrackPoint/?pm={{Adform Tracking ID}}&ADFPageName=Kontaktformular&ADFdivider=|\" width=\"1\" height=\"1\" alt=\"\" />\n    </p>\n</noscript>\n"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Contact Success>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT"
+	}
+]

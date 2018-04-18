@@ -21,11 +21,16 @@ class TriggerFilter
 	public function filter($content)
 	{
 		preg_match_all('/<<TRIGGER ([^>]+)>>/is', $content, $results);
+
 		if (isset($results[1]))
 		{
 			foreach ($results[1] as $triggerName)
 			{
 				$triggerId = $this->triggerResolver->resolveIdByName($triggerName);
+				if (!$triggerId)
+                {
+                    throw new \Exception(sprintf('trigger "%s" not found .. maybe custom trigger missing?', $triggerName));
+                }
 
 				$content = str_replace(sprintf('<<TRIGGER %s>>', $triggerName), $triggerId, $content);
 			}
