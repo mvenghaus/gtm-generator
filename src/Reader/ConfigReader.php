@@ -25,11 +25,6 @@ class ConfigReader
 		return $this->data['tag'] ?? [];
 	}
 
-	public function getCustomTags()
-	{
-		return $this->data['custom']['tag'] ?? [];
-	}
-
 	public function getIgnoreTags()
 	{
 		return $this->data['ignore']['tag'] ?? [];

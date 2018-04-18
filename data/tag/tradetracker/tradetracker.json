@@ -8,7 +8,7 @@
 		{
 			"type": "TEMPLATE",
 			"key": "html",
-			"value": "<div style=\"display:none;\">\n\t<img src=\"/tradetracker/conversion.php?campaignID=13617&productID=20261&conversionType=sales&https=1&transactionID={{Purchase ID}}&transactionAmount={{Purchase Revenue}}&email=&descrMerchant=&descrAffiliate=\" alt=\"\" width=\"1\" height=\"1\" border=\"0\"/>\n</div>"
+			"value": "<div style=\"display:none;\">\n\t<img src=\"{{Tradetracker Base Url}}?campaignID={{Tradetracker Campaign ID}}&productID={{Tradetracker Product ID}}&conversionType=sales&https=1&transactionID={{Purchase ID}}&transactionAmount={{Purchase Revenue}}&email=&descrMerchant=&descrAffiliate=\" alt=\"\" width=\"1\" height=\"1\" border=\"0\"/>\n</div>"
 		},
 		{
 			"type": "BOOLEAN",

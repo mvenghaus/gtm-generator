@@ -1,6 +1,6 @@
 {
 	"adRoll": {
-		"AdRoll Pixel ID": "YOUR_PIXEL_ID",
-		"AdRoll Advertiser ID": "YOUR_ADVERTISER_ID"
+		"AdRoll Advertiser ID": "YOUR_ADVERTISER_ID",
+		"AdRoll Pixel ID": "YOUR_PIXEL_ID"
 	}
 }

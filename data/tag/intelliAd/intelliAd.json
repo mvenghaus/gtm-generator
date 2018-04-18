@@ -3,35 +3,6 @@
 		"accountId": "",
 		"containerId": "",
 		"tagId": "",
-		"name": "IntelliAd - OnSite Pixel",
-		"type": "html",
-		"parameter": [
-			{
-				"type": "TEMPLATE",
-				"key": "html",
-				"value": "<script language=\"javascript\" type=\"text/javascript\" charset=\"utf-8\">\n\n\tvar ia_tc = \"\"; // optional: name of the campaign\n\tvar ia_sc = \"\"; // optional: name of the adgroup\n\tvar ia_pi = \"\"; // optional: product ids, separated by a |\n\n</script>\n<script language=\"javascript\" type=\"text/javascript\" charset=\"utf-8\" src=\"https://t13.intelliad.de/cl/{{IntelliAd Channel ID}}.js\"></script>"
-			},
-			{
-				"type": "BOOLEAN",
-				"key": "supportDocumentWrite",
-				"value": "false"
-			}
-		],
-		"fingerprint": "",
-		"firingTriggerId": [
-			"<<TRIGGER All Pages>>"
-		],
-		"blockingTriggerId": [
-			"<<TRIGGER Cart>>",
-			"<<TRIGGER Purchase>>"
-		],
-		"tagFiringOption": "ONCE_PER_EVENT",
-		"parentFolderId": "<<FOLDER IntelliAd>>"
-	},
-	{
-		"accountId": "",
-		"containerId": "",
-		"tagId": "",
 		"name": "IntelliAd - Cart",
 		"type": "html",
 		"parameter": [

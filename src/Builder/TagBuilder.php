@@ -79,17 +79,6 @@ class TagBuilder
 			$tags[$tagFile] = $data;
 		}
 
-		foreach ($configReader->getCustomTags() as $name => $data)
-		{
-			$tagFile = sprintf('%scustom/tag/%s/%s.json', ROOT_DIR, $name, $name);
-			if (!file_exists($tagFile))
-			{
-				throw new \Exception(sprintf('tag file not found "%s.json"', $name));
-			}
-
-			$tags[$tagFile] = $data;
-		}
-
 		return $tags;
 	}
 

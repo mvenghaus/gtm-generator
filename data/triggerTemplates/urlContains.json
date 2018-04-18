@@ -2,7 +2,7 @@
 	"accountId": "",
 	"containerId": "",
 	"triggerId": "",
-	"name": "Newsletter Subscribe",
+	"name": "{{Trigger Name}}",
 	"type": "PAGEVIEW",
 	"filter": [
 		{
@@ -16,7 +16,7 @@
 				{
 					"type": "TEMPLATE",
 					"key": "arg1",
-					"value": "{{Newsletter Subscribe Url}}"
+					"value": "{{Url Contains Match}}"
 				}
 			]
 		}

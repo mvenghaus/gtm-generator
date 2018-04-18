@@ -9,77 +9,108 @@ use Resolver\TriggerResolver;
 
 class TriggerBuilder
 {
-	/** @var TriggerResolver */
-	private $triggerResolver;
-	/** @var VariableFilter */
-	private $variableFilter;
-	/** @var FolderFilter */
-	private $folderFilter;
+    /** @var TriggerResolver */
+    private $triggerResolver;
+    /** @var VariableFilter */
+    private $variableFilter;
+    /** @var FolderFilter */
+    private $folderFilter;
 
-	/**
-	 * @param TriggerResolver $triggerResolver
-	 * @param VariableFilter $variableFilter
-	 * @param FolderFilter $folderFilter
-	 */
-	public function __construct(TriggerResolver $triggerResolver,
-	                            VariableFilter $variableFilter,
-								FolderFilter $folderFilter)
-	{
-		$this->triggerResolver = $triggerResolver;
-		$this->variableFilter = $variableFilter;
-		$this->folderFilter = $folderFilter;
-	}
+    /**
+     * @param TriggerResolver $triggerResolver
+     * @param VariableFilter $variableFilter
+     * @param FolderFilter $folderFilter
+     */
+    public function __construct(TriggerResolver $triggerResolver,
+                                VariableFilter $variableFilter,
+                                FolderFilter $folderFilter)
+    {
+        $this->triggerResolver = $triggerResolver;
+        $this->variableFilter = $variableFilter;
+        $this->folderFilter = $folderFilter;
+    }
 
-	public function build(ConfigReader $configReader)
-	{
-		$triggers = [];
+    public function build(ConfigReader $configReader)
+    {
+        $triggers = [];
 
-		$triggerId = 1;
-		foreach ($this->getTrigger($configReader) as $triggerFile => $data)
-		{
-			$triggerContent = file_get_contents($triggerFile);
+        $triggerId = 1;
+        foreach ($this->getTrigger($configReader) as $triggerFile => $data)
+        {
+            $triggerContent = file_get_contents($triggerFile);
 
-			$triggerContent = $this->variableFilter->filter($triggerContent, $data);
-			$triggerContent = $this->folderFilter->filter($triggerContent);
+            $triggerContent = $this->variableFilter->filter($triggerContent, $data);
+            $triggerContent = $this->folderFilter->filter($triggerContent);
 
-			$trigger = json_decode($triggerContent, true);
-			$trigger['triggerId'] = $triggerId++;
+            $trigger = json_decode($triggerContent, true);
+            $trigger['triggerId'] = $triggerId++;
 
-			$this->triggerResolver->add($trigger['triggerId'], $trigger['name']);
+            $this->triggerResolver->add($trigger['triggerId'], $trigger['name']);
 
-			$triggers[] = $trigger;
-		}
+            $triggers[] = $trigger;
+        }
 
-		return $triggers;
-	}
+        foreach ($this->getCustomTrigger($configReader) as $triggerKey => $data)
+        {
 
-	public function getTrigger(ConfigReader $configReader)
-	{
-		$trigger = [];
+            list($triggerFile, $triggerName) = explode('#', $triggerKey);
 
-		foreach ($configReader->getTrigger() as $name => $data)
-		{
-			$triggerFile = sprintf('%sdata/trigger/%s.json', ROOT_DIR, $name);
-			if (!file_exists($triggerFile))
-			{
-				throw new \Exception(sprintf('trigger file not found "%s.json"', $name));
-			}
+            $triggerContent = file_get_contents($triggerFile);
 
-			$trigger[$triggerFile] = $data;
-		}
+            $vars = $data['vars'] ?? [];
+            $vars['Trigger Name'] = $triggerName;
 
-		foreach ($configReader->getCustomTrigger() as $name => $data)
-		{
-			$triggerFile = sprintf('%scustom/trigger/%s.json', ROOT_DIR, $name);
-			if (!file_exists($triggerFile))
-			{
-				throw new \Exception(sprintf('trigger file not found "%s.json"', $name));
-			}
+            $triggerContent = $this->variableFilter->filter($triggerContent, $vars);
+            $triggerContent = $this->folderFilter->filter($triggerContent);
 
-			$trigger[$triggerFile] = $data;
-		}
+            $trigger = json_decode($triggerContent, true);
+            $trigger['triggerId'] = $triggerId++;
 
-		return $trigger;
-	}
+            $this->triggerResolver->add($trigger['triggerId'], $triggerName);
+
+            $triggers[] = $trigger;
+        }
+
+        return $triggers;
+    }
+
+    public function getTrigger(ConfigReader $configReader)
+    {
+        $trigger = [];
+
+        foreach ($configReader->getTrigger() as $name => $data)
+        {
+            $triggerFile = sprintf('%sdata/trigger/%s.json', ROOT_DIR, $name);
+            if (!file_exists($triggerFile))
+            {
+                throw new \Exception(sprintf('trigger file not found "%s"', $triggerFile));
+            }
+
+            $trigger[$triggerFile] = $data;
+        }
+
+        return $trigger;
+    }
+
+    public function getCustomTrigger(ConfigReader $configReader)
+    {
+        $trigger = [];
+
+        foreach ($configReader->getCustomTrigger() as $data)
+        {
+            $template = $data['template'] ?? null;
+            $triggerFile = sprintf('%sdata/triggerTemplates/%s.json', ROOT_DIR, $template);
+            if (!file_exists($triggerFile))
+            {
+                throw new \Exception(sprintf('custom trigger file not found "%s"', $triggerFile));
+            }
+
+            $key = sprintf('%s#%s', $triggerFile, $data['name']);
+
+            $trigger[$key] = $data;
+        }
+
+        return $trigger;
+    }
 
 }
