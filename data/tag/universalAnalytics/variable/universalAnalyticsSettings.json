@@ -31,6 +31,27 @@
 			"value": "false"
 		},
 		{
+			"type": "LIST",
+			"key": "fieldsToSet",
+			"list": [
+				{
+					"type": "MAP",
+					"map": [
+						{
+							"type": "TEMPLATE",
+							"key": "fieldName",
+							"value": "anonymizeIP"
+						},
+						{
+							"type": "TEMPLATE",
+							"key": "value",
+							"value": "true"
+						}
+					]
+				}
+			]
+		},
+		{
 			"type": "BOOLEAN",
 			"key": "useHashAutoLink",
 			"value": "false"
