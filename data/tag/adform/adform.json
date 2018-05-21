@@ -21,6 +21,7 @@
 		"firingTriggerId": [
 			"<<TRIGGER All Pages>>"
 		],
+		"parentFolderId": "<<FOLDER Adform>>",
 		"tagFiringOption": "ONCE_PER_EVENT"
 	},
 	{
@@ -45,6 +46,7 @@
 		"firingTriggerId": [
 			"<<TRIGGER Product>>"
 		],
+		"parentFolderId": "<<FOLDER Adform>>",
 		"tagFiringOption": "ONCE_PER_EVENT"
 	},
 	{
@@ -69,6 +71,7 @@
 		"firingTriggerId": [
 			"<<TRIGGER Cart>>"
 		],
+		"parentFolderId": "<<FOLDER Adform>>",
 		"tagFiringOption": "ONCE_PER_EVENT"
 	},
 	{
@@ -93,6 +96,7 @@
 		"firingTriggerId": [
 			"<<TRIGGER Purchase>>"
 		],
+		"parentFolderId": "<<FOLDER Adform>>",
 		"tagFiringOption": "ONCE_PER_EVENT"
 	},
 	{
@@ -117,6 +121,7 @@
 		"firingTriggerId": [
 			"<<TRIGGER Newsletter Subscribe>>"
 		],
+		"parentFolderId": "<<FOLDER Adform>>",
 		"tagFiringOption": "ONCE_PER_EVENT"
 	},
 	{
@@ -141,6 +146,7 @@
 		"firingTriggerId": [
 			"<<TRIGGER Contact Success>>"
 		],
+		"parentFolderId": "<<FOLDER Adform>>",
 		"tagFiringOption": "ONCE_PER_EVENT"
 	}
 ]
