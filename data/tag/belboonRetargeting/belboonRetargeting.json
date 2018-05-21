@@ -1,0 +1,127 @@
+[
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Belboon Retargeting - Home",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script type=\"text/javascript\">\nvar belboonTag = {};\n</script>\n<script type=\"text/javascript\" src=\"https://containertags.belboon.de/belboonTag.js.php?pId={{Belboon Retargeting Partner ID}}&page=start&type=dynamic\"></script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Home>>"
+		],
+		"parentFolderId": "<<FOLDER Belboon Retargeting>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Belboon Retargeting - Category",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script type=\"text/javascript\">\nvar belboonTag = {\"categoryId\": \"{{Category Name}}\"};\n</script>\n<script type=\"text/javascript\" src=\"https://containertags.belboon.de/belboonTag.js.php?pId={{Belboon Retargeting Partner ID}}&page=category&type=dynamic\"></script>\n\n"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Category>>"
+		],
+		"parentFolderId": "<<FOLDER Belboon Retargeting>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Belboon Retargeting - Product",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script type=\"text/javascript\">\nvar belboonTag = {\n\"productBrand\": \"\",\n\"categoryId\": \"\",\n\"products\": [\n\t\t{\n\t\t\t\"id\": \"{{Product ID}}\",\n\t\t\t\"price\": \"{{Product Price}}\",\n\t\t}]\n};\n</script>\n<script type=\"text/javascript\" src=\"https://containertags.belboon.de/belboonTag.js.php?pId={{Belboon Retargeting Partner ID}}&page=product&type=dynamic\"></script>\n\n"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Product>>"
+		],
+		"parentFolderId": "<<FOLDER Belboon Retargeting>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Belboon Retargeting - Cart",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script type=\"text/javascript\">\nvar cartProducts = {{Cart Products}};\nvar products = [];\nfor (var i=0; i<cartProducts.length; i++) {\n  products.push({ \"id\" : cartProducts[i].id, \"price\" : cartProducts[i].price, \"qty\": cartProducts[i].quantity });\n}\n\nvar belboonTag = {\n\t\"orderProducts\": products\n};\n</script>\n<script type=\"text/javascript\" src=\"https://containertags.belboon.de/belboonTag.js.php?pId={{Belboon Retargeting Partner ID}}&page=basket&type=dynamic\"></script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Cart>>"
+		],
+		"parentFolderId": "<<FOLDER Belboon Retargeting>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Belboon Retargeting - Purchase",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script type=\"text/javascript\">\nvar purchaseProducts = {{Purchase Products}};\nvar products = [];\nfor (var i=0; i<purchaseProducts.length; i++) {\n  products.push({ \"id\" : purchaseProducts[i].id, \"price\" : purchaseProducts[i].price, \"qty\": purchaseProducts[i].quantity });\n}\n\nvar belboonTag = {\n\t\"orderProducts\": products\n};\n</script>\n<script type=\"text/javascript\" src=\"https://containertags.belboon.de/belboonTag.js.php?pId={{Belboon Retargeting Partner ID}}&page=checkout&type=dynamic\"></script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
+		],
+		"parentFolderId": "<<FOLDER Belboon Retargeting>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	}
+]

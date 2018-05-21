@@ -1,0 +1,27 @@
+[
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Belboon Standard",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<img src=\"https://www1.belboon.de/adtracking/sale/{{Belboon Standard Partner ID}}.gif/oc={{Purchase ID}}&sale={{Purchase Revenue}}&belboon={{Belboon}}\" border=\"0\" width=\"1\" height=\"1\" alt=\"\" id=\"bbconv\"/>\n<object class=\"flash\" type=\"application/x-shockwave-flash\" data=\"https://www1.belboon.de/tracking/flash.swf\" width=\"1\" height=\"1\" ><param name=\"flashvars\" value=\"pgmid={{Belboon Standard Partner ID}}&etype=sale&tparam=sale&evalue={{Purchase Revenue}}&oc={{Purchase ID}}\"><param name=\"movie\" value=\"https://www1.belboon.de/tracking/flash.swf\" /></object>\n<script src=\"https://www1.belboon.de/adtracking/conversion.jssl\"></script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
+		],
+		"parentFolderId": "<<FOLDER Belboon Standard>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	}
+]
