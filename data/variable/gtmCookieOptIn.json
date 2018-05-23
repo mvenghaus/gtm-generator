@@ -1,0 +1,20 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"variableId": "",
+	"name": "GTM Cookie OptIn",
+	"type": "k",
+	"parameter": [
+		{
+			"type": "BOOLEAN",
+			"key": "decodeCookie",
+			"value": "false"
+		},
+		{
+			"type": "TEMPLATE",
+			"key": "name",
+			"value": "gtm_cookie_optin"
+		}
+	],
+	"fingerprint": ""
+}

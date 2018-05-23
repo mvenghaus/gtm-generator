@@ -40,6 +40,8 @@ class TagBuilder
 
             $tagsContent = file_get_contents($tagFile);
 
+            list($tagGroup) = explode('.', basename($tagFile));
+
             $tagList = json_decode($tagsContent, true);
             if (isset($tagList['accountId']))
             {
@@ -49,6 +51,8 @@ class TagBuilder
             {
                 try
                 {
+                    $tag = $this->handleOptInTags($tagGroup, $tag, $configReader);
+
                     $tagContent = json_encode($tag);
 
                     $tagContent = $this->triggerFilter->filter($tagContent);
@@ -56,11 +60,6 @@ class TagBuilder
                     $tagContent = $this->folderFilter->filter($tagContent);
 
                     $tag = json_decode($tagContent, true);
-
-                    if ($this->isIgnored($tag['name'], $configReader))
-                    {
-                        continue;
-                    }
 
                     $tag['tagId'] = $tagId++;
 
@@ -94,14 +93,15 @@ class TagBuilder
         return $tags;
     }
 
-    private function isIgnored($tagName, ConfigReader $configReader)
+    private function handleOptInTags($tagGroup, $tag, ConfigReader $configReader)
     {
-        if (in_array($tagName, $configReader->getIgnoreTags()))
+        $optInTags = $configReader->getOptInTags();
+        if (in_array($tagGroup, $optInTags))
         {
-            return true;
+            $tag['blockingTriggerId'] = ['<<TRIGGER Cookie Optin Missing>>'];
         }
 
-        return false;
+        return $tag;
     }
 
 }

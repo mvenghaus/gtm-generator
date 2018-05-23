@@ -25,11 +25,6 @@ class ConfigReader
 		return $this->data['tag'] ?? [];
 	}
 
-	public function getIgnoreTags()
-	{
-		return $this->data['ignore']['tag'] ?? [];
-	}
-
 	public function getTrigger()
 	{
 		if (!isset($this->data['trigger']))
@@ -74,5 +69,11 @@ class ConfigReader
 
 		return $variable;
 	}
+
+
+	public function getOptInTags()
+    {
+        return $this->data['config']['optin']['tags'] ?? [];
+    }
 
 }

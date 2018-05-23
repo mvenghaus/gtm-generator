@@ -1,0 +1,30 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"triggerId": "",
+	"name": "Cookie Optin Missing",
+	"type": "PAGEVIEW",
+	"filter": [
+		{
+			"type": "EQUALS",
+			"parameter": [
+				{
+					"type": "TEMPLATE",
+					"key": "arg0",
+					"value": "{{GTM Cookie OptIn}}"
+				},
+				{
+					"type": "TEMPLATE",
+					"key": "arg1",
+					"value": "1"
+				},
+				{
+					"type": "BOOLEAN",
+					"key": "negate",
+					"value": "true"
+				}
+			]
+		}
+	],
+	"fingerprint": ""
+}
