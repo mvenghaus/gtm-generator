@@ -46,8 +46,36 @@ class TriggerBuilder
             $trigger['triggerId'] = $triggerId++;
 
             $this->triggerResolver->add($trigger['triggerId'], $trigger['name']);
-
             $triggers[] = $trigger;
+
+            // create cookie opt event trigger
+            if ($trigger['type'] == 'PAGEVIEW')
+            {
+                $trigger['triggerId'] = $triggerId++;
+                $trigger['type'] = 'CUSTOM_EVENT';
+                $trigger['name'] .= ' - Cookie OptIn Event';
+                $trigger['customEventFilter'] = [
+                    [
+                        'type' => "EQUALS",
+                        'parameter' => [
+                            [
+                                'type' => 'TEMPLATE',
+                                'key' => 'arg0',
+                                'value' => '{{_event}}'
+                            ],
+                            [
+                                'type' => 'TEMPLATE',
+                                'key' => 'arg1',
+                                'value' => 'cookieOptIn'
+                            ]
+                        ]
+                    ]
+                ];
+
+                $this->triggerResolver->add($trigger['triggerId'], $trigger['name']);
+
+                $triggers[] = $trigger;
+            }
         }
 
         foreach ($this->getCustomTrigger($configReader) as $triggerKey => $data)

@@ -12,8 +12,6 @@ $containerBuilder->addDefinitions([
 	{
 		$triggerResolver = new TriggerResolver();
 
-		$triggerResolver->add(2147479553, 'All Pages');
-
 		return $triggerResolver;
 	}
 

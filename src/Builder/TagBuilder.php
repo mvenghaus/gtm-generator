@@ -6,6 +6,7 @@ use Filter\FolderFilter;
 use Reader\ConfigReader;
 use Filter\TriggerFilter;
 use Filter\VariableFilter;
+use Resolver\TriggerResolver;
 
 class TagBuilder
 {
@@ -15,19 +16,24 @@ class TagBuilder
     private $triggerFilter;
     /** @var FolderFilter */
     private $folderFilter;
+    /** @var TriggerResolver */
+    private $triggerResolver;
 
     /**
      * @param VariableFilter $variableFilter
      * @param TriggerFilter $triggerFilter
      * @param FolderFilter $folderFilter
+     * @param TriggerResolver $triggerResolver
      */
     public function __construct(VariableFilter $variableFilter,
                                 TriggerFilter $triggerFilter,
-                                FolderFilter $folderFilter)
+                                FolderFilter $folderFilter,
+                                TriggerResolver $triggerResolver)
     {
         $this->variableFilter = $variableFilter;
         $this->triggerFilter = $triggerFilter;
         $this->folderFilter = $folderFilter;
+        $this->triggerResolver = $triggerResolver;
     }
 
     public function build(ConfigReader $configReader)
@@ -64,7 +70,6 @@ class TagBuilder
                     $tag['tagId'] = $tagId++;
 
                     $tags[] = $tag;
-
                 } catch (\Exception $e)
                 {
                     echo $tag['name'] . ' ignored -> ' . $e->getMessage() . PHP_EOL;
@@ -98,6 +103,13 @@ class TagBuilder
         $optInTags = $configReader->getOptInTags();
         if (in_array($tagGroup, $optInTags))
         {
+            $triggerName = strtr(current($tag['firingTriggerId']), ['<<TRIGGER ' => '', '>>' => '']) . ' - Cookie OptIn Event';
+
+            $triggerId = $this->triggerResolver->resolveIdByName($triggerName);
+            if ($triggerId)
+            {
+                $tag['firingTriggerId'][] = '<<TRIGGER ' . $triggerName . '>>';
+            }
             $tag['blockingTriggerId'] = ['<<TRIGGER Cookie Optin Missing>>'];
         }
 

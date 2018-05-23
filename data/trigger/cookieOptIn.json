@@ -1,0 +1,26 @@
+{
+  "accountId": "",
+  "containerId": "",
+  "triggerId": "",
+  "name": "Cookie OptIn",
+  "type": "CUSTOM_EVENT",
+  "customEventFilter": [
+    {
+      "type": "EQUALS",
+      "parameter": [
+        {
+          "type": "TEMPLATE",
+          "key": "arg0",
+          "value": "{{_event}}"
+        },
+        {
+          "type": "TEMPLATE",
+          "key": "arg1",
+          "value": "cookieOptIn"
+        }
+      ]
+    }
+  ],
+  "fingerprint": "",
+  "parentFolderId": "<<FOLDER Trigger>>"
+}

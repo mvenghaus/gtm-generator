@@ -1,0 +1,9 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"triggerId": "",
+	"name": "All Pages",
+	"type": "PAGEVIEW",
+	"fingerprint": "",
+	"parentFolderId": "<<FOLDER Trigger>>"
+}
