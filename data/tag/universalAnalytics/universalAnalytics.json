@@ -58,5 +58,30 @@
 		],
 		"tagFiringOption": "ONCE_PER_EVENT",
 		"parentFolderId": "<<FOLDER Universal Analytics>>"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Universal Analytics - OptOut JS Function",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script>\nif (document.cookie.indexOf('ga-disable-{{Universal Analytics Tracking ID}}=true') > -1) {\n  window['ga-disable-{{Universal Analytics Tracking ID}}'] = true;\n}\n\nwindow.gaOptout = function() {\n  document.cookie = 'ga-disable-{{Universal Analytics Tracking ID}}=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';\n  window['ga-disable-{{Universal Analytics Tracking ID}}'] = true;\n};\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER All Pages>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Universal Analytics>>"
 	}
 ]
