@@ -158,7 +158,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<script>\n  var dataset = {{Element Dataset}};\n  if (typeof dataset !== 'undefined' && dataset.hasOwnProperty('linkType')) {\n    \n    if (dataset.linkType === 'wishlist') {\n       fbq('track', 'AddToMerkliste', {\n         content_ids: [dataset.productSku],\n         content_type: 'product',\n         value: dataset.productPrice,\n           currency: '{{Currency Code}}'\n\t\t});\n    }\n    \n    if (dataset.linkType === 'compare') {\n       fbq('track', 'AddToVergleichsliste', {\n         content_ids: [dataset.productSku],\n         content_type: 'product',\n         value: dataset.productPrice,\n           currency: '{{Currency Code}}'\n\t\t});\n    }\n\n  }\n</script>"
+				"value": "<script>\n  var dataset = {{Element Dataset}};\n  if (typeof dataset !== 'undefined' && dataset.hasOwnProperty('linkType')) {\n    \n    if (dataset.linkType === 'wishlist') {\n       fbq('track', 'AddToMerkliste', {\n         content_ids: [dataset.productSku],\n         content_type: 'product',\n         value: dataset.productPrice,\n         currency: '{{Currency Code}}'\n\t\t});\n    }\n    \n    if (dataset.linkType === 'compare') {\n       fbq('track', 'AddToVergleichsliste', {\n         content_ids: [dataset.productSku],\n         content_type: 'product',\n         value: dataset.productPrice,\n         currency: '{{Currency Code}}'\n\t\t});\n    }\n\n  }\n</script>"
 			},
 			{
 				"type": "BOOLEAN",
