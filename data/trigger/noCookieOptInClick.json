@@ -1,0 +1,42 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"triggerId": "",
+	"name": "Cookie Optin Missing Click",
+	"type": "LINK_CLICK",
+	"filter": [
+		{
+			"type": "EQUALS",
+			"parameter": [
+				{
+					"type": "TEMPLATE",
+					"key": "arg0",
+					"value": "{{GTM Cookie OptIn}}"
+				},
+				{
+					"type": "TEMPLATE",
+					"key": "arg1",
+					"value": "1"
+				},
+				{
+					"type": "BOOLEAN",
+					"key": "negate",
+					"value": "true"
+				}
+			]
+		}
+	],
+	"waitForTags": {
+		"type": "BOOLEAN",
+		"value": "false"
+	},
+	"checkValidation": {
+		"type": "BOOLEAN",
+		"value": "false"
+	},
+	"waitForTagsTimeout": {
+		"type": "TEMPLATE",
+		"value": "2000"
+	},
+	"fingerprint": ""
+}
