@@ -5,6 +5,10 @@
 		"tagId": "",
 		"name": "Universal Analytics with Optimize - PageView",
 		"type": "ua",
+		"priority": {
+			"type": "INTEGER",
+			"value": "1000"
+		},
 		"parameter": [
 			{
 				"type": "BOOLEAN",
@@ -40,6 +44,10 @@
 		"tagId": "",
 		"name": "Universal Analytics with Optimize - Purchase",
 		"type": "ua",
+		"priority": {
+			"type": "INTEGER",
+			"value": "1000"
+		},
 		"parameter": [
 			{
 				"type": "BOOLEAN",
@@ -70,6 +78,10 @@
 		"tagId": "",
 		"name": "Universal Analytics with Optimize - OptOut JS Function",
 		"type": "html",
+		"priority": {
+			"type": "INTEGER",
+			"value": "1000"
+		},
 		"parameter": [
 			{
 				"type": "TEMPLATE",
@@ -95,6 +107,10 @@
 		"tagId": "",
 		"name": "Google Optimize",
 		"type": "opt",
+		"priority": {
+			"type": "INTEGER",
+			"value": "1000"
+		},
 		"parameter": [
 			{
 				"type": "BOOLEAN",

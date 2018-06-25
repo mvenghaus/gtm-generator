@@ -5,6 +5,10 @@
 		"tagId": "",
 		"name": "Universal Analytics - PageView",
 		"type": "ua",
+		"priority": {
+			"type": "INTEGER",
+			"value": "1000"
+		},
 		"parameter": [
 			{
 				"type": "BOOLEAN",
@@ -35,6 +39,10 @@
 		"tagId": "",
 		"name": "Universal Analytics - Purchase",
 		"type": "ua",
+		"priority": {
+			"type": "INTEGER",
+			"value": "1000"
+		},
 		"parameter": [
 			{
 				"type": "BOOLEAN",
@@ -65,6 +73,10 @@
 		"tagId": "",
 		"name": "Universal Analytics - OptOut JS Function",
 		"type": "html",
+		"priority": {
+			"type": "INTEGER",
+			"value": "1000"
+		},
 		"parameter": [
 			{
 				"type": "TEMPLATE",
