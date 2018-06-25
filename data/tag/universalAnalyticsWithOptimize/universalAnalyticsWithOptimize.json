@@ -104,7 +104,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "optimizeContainerId",
-				"value": "{{Optimize Container ID}}"
+				"value": "{{Google Optimize Container ID}}"
 			},
 			{
 				"type": "TEMPLATE",
