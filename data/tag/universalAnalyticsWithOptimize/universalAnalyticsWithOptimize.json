@@ -1,0 +1,122 @@
+[
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Universal Analytics with Optimize - PageView",
+		"type": "ua",
+		"parameter": [
+			{
+				"type": "BOOLEAN",
+				"key": "overrideGaSettings",
+				"value": "false"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "trackType",
+				"value": "TRACK_PAGEVIEW"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "gaSettings",
+				"value": "{{Universal Analytics Settings with Optimize}}"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER All Pages>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Universal Analytics with Optimize>>",
+		"setupTag": [
+			{
+				"tagName": "Google Optimize"
+			}
+		]
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Universal Analytics with Optimize - Purchase",
+		"type": "ua",
+		"parameter": [
+			{
+				"type": "BOOLEAN",
+				"key": "overrideGaSettings",
+				"value": "false"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "trackType",
+				"value": "TRACK_TRANSACTION"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "gaSettings",
+				"value": "{{Universal Analytics Settings}}"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Universal Analytics with Optimize>>"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Universal Analytics with Optimize - OptOut JS Function",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script>\nif (document.cookie.indexOf('ga-disable-{{Universal Analytics Tracking ID}}=true') > -1) {\n  window['ga-disable-{{Universal Analytics Tracking ID}}'] = true;\n}\n\nwindow.gaOptout = function() {\n  document.cookie = 'ga-disable-{{Universal Analytics Tracking ID}}=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';\n  window['ga-disable-{{Universal Analytics Tracking ID}}'] = true;\n};\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER All Pages>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Universal Analytics with Optimize>>"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Google Optimize",
+		"type": "opt",
+		"parameter": [
+			{
+				"type": "BOOLEAN",
+				"key": "overrideGaSettings",
+				"value": "false"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "optimizeContainerId",
+				"value": "{{Optimize Container ID}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "gaSettings",
+				"value": "{{Universal Analytics Settings}}"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER All Pages>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Universal Analytics with Optimize>>"
+	}
+]
