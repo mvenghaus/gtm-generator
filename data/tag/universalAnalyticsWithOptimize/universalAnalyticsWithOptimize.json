@@ -19,7 +19,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "gaSettings",
-				"value": "{{Universal Analytics Settings with Optimize}}"
+				"value": "{{Universal Analytics Settings}}"
 			}
 		],
 		"fingerprint": "",
