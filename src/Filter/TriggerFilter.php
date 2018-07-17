@@ -24,16 +24,22 @@ class TriggerFilter
 
 		if (isset($results[1]))
 		{
+		    $triggerNotFound = [];
 			foreach ($results[1] as $triggerName)
 			{
 				$triggerId = $this->triggerResolver->resolveIdByName($triggerName);
 				if (!$triggerId)
                 {
-                    throw new \Exception(sprintf('trigger "%s" not found .. maybe custom trigger missing?', $triggerName));
+                    $triggerNotFound[] = $triggerName;
                 }
 
 				$content = str_replace(sprintf('<<TRIGGER %s>>', $triggerName), $triggerId, $content);
 			}
+
+			if (count($triggerNotFound) > 0)
+            {
+                throw new \Exception(sprintf('trigger "%s" not found .. maybe custom trigger missing?', implode('", "', $triggerNotFound)));
+            }
 		}
 
 		return $content;

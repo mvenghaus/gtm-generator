@@ -3,7 +3,7 @@
 		"accountId": "",
 		"containerId": "",
 		"tagId": "",
-		"name": "Universal Analytics with Optimize - PageView",
+		"name": "Universal Analytics - PageView",
 		"type": "ua",
 		"priority": {
 			"type": "INTEGER",
@@ -28,15 +28,10 @@
 		],
 		"fingerprint": "",
 		"firingTriggerId": [
-			"<<TRIGGER All Pages>>"
+			"<<TRIGGER Purchase>>"
 		],
 		"tagFiringOption": "ONCE_PER_EVENT",
-		"parentFolderId": "<<FOLDER Universal Analytics with Optimize>>",
-		"setupTag": [
-			{
-				"tagName": "Google Optimize"
-			}
-		]
+		"parentFolderId": "<<FOLDER Universal Analytics>>"
 	},
 	{
 		"accountId": "",
@@ -92,40 +87,6 @@
 				"type": "BOOLEAN",
 				"key": "supportDocumentWrite",
 				"value": "false"
-			}
-		],
-		"fingerprint": "",
-		"firingTriggerId": [
-			"<<TRIGGER All Pages>>"
-		],
-		"tagFiringOption": "ONCE_PER_EVENT",
-		"parentFolderId": "<<FOLDER Universal Analytics with Optimize>>"
-	},
-	{
-		"accountId": "",
-		"containerId": "",
-		"tagId": "",
-		"name": "Google Optimize",
-		"type": "opt",
-		"priority": {
-			"type": "INTEGER",
-			"value": "1000"
-		},
-		"parameter": [
-			{
-				"type": "BOOLEAN",
-				"key": "overrideGaSettings",
-				"value": "false"
-			},
-			{
-				"type": "TEMPLATE",
-				"key": "optimizeContainerId",
-				"value": "{{Google Optimize Container ID}}"
-			},
-			{
-				"type": "TEMPLATE",
-				"key": "gaSettings",
-				"value": "{{Universal Analytics Settings}}"
 			}
 		],
 		"fingerprint": "",
