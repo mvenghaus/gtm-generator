@@ -2,7 +2,7 @@
 
 chdir(__DIR__ . '/../');
 
-foreach (glob('projects/*.json') as $file)
+foreach (glob('{projects/*.json,projects/**/*.json}', GLOB_BRACE) as $file)
 {
 	if (preg_match('/import/', $file)) continue;
 
