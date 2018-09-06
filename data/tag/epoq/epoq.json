@@ -1,0 +1,27 @@
+[
+  {
+    "accountId": "",
+    "containerId": "",
+    "tagId": "",
+    "name": "Epoq - Global Script",
+    "type": "html",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "html",
+        "value": "<script src=\"https://cdn.epoq.de/flow/{{Epoq Client ID}}.js\"></script>"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "supportDocumentWrite",
+        "value": "false"
+      }
+    ],
+    "fingerprint": "",
+    "firingTriggerId": [
+      "<<TRIGGER All Pages>>"
+    ],
+    "parentFolderId": "<<FOLDER Epoq>>",
+    "tagFiringOption": "ONCE_PER_EVENT"
+  }
+]
