@@ -1,0 +1,27 @@
+[
+  {
+    "accountId": "",
+    "containerId": "",
+    "tagId": "",
+    "name": "Cleverreach - Purchase",
+    "type": "html",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "html",
+        "value": "<script src=\"https://d388us03v35p3m.cloudfront.net/js/conversions_min.js\"></script>\n<script>\nCR_conversion ({\n    \"conversion\" : \"{{Cleverreach Conversion ID}}\",\n    \"client_id\" : \"{{Cleverreach Client ID}}\",\n    \"zone\" : \"{{Cleverreach Zone}}\",\n    \"order_id\" : \"{{Purchase ID}}\",\n    \"price\" : \"{{Purchase Revenue}}\"\n});\n</script>"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "supportDocumentWrite",
+        "value": "false"
+      }
+    ],
+    "fingerprint": "",
+    "firingTriggerId": [
+      "<<TRIGGER Purchase>>"
+    ],
+    "parentFolderId": "<<FOLDER Cleverreach>>",
+    "tagFiringOption": "ONCE_PER_EVENT"
+  }
+]
