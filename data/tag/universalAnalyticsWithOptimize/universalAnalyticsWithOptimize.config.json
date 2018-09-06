@@ -1,0 +1,6 @@
+{
+	"universalAnalyticsWithOptimize": {
+		"Universal Analytics Tracking ID": "YOUR_UA_TRACKING_ID",
+		"Google Optimize Container ID": "YOUR_UA_TRACKING_ID"
+	}
+}

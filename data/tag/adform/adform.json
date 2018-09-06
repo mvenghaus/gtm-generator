@@ -19,7 +19,12 @@
 		],
 		"fingerprint": "",
 		"firingTriggerId": [
-			"<<TRIGGER All Pages>>"
+			"<<TRIGGER Home>>",
+			"<<TRIGGER Category>>",
+			"<<TRIGGER Magazine>>"
+		],
+		"blockingTriggerId": [
+			"<<TRIGGER Urls with Question Mark>>"
 		],
 		"parentFolderId": "<<FOLDER Adform>>",
 		"tagFiringOption": "ONCE_PER_EVENT"

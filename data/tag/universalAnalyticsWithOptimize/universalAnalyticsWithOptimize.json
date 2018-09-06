@@ -28,7 +28,7 @@
 		],
 		"fingerprint": "",
 		"firingTriggerId": [
-			"<<TRIGGER All Pages>>"
+			"<<TRIGGER Purchase>>"
 		],
 		"tagFiringOption": "ONCE_PER_EVENT",
 		"parentFolderId": "<<FOLDER Universal Analytics>>"
@@ -37,7 +37,7 @@
 		"accountId": "",
 		"containerId": "",
 		"tagId": "",
-		"name": "Universal Analytics - Purchase",
+		"name": "Universal Analytics with Optimize - Purchase",
 		"type": "ua",
 		"priority": {
 			"type": "INTEGER",
@@ -65,13 +65,13 @@
 			"<<TRIGGER Purchase>>"
 		],
 		"tagFiringOption": "ONCE_PER_EVENT",
-		"parentFolderId": "<<FOLDER Universal Analytics>>"
+		"parentFolderId": "<<FOLDER Universal Analytics with Optimize>>"
 	},
 	{
 		"accountId": "",
 		"containerId": "",
 		"tagId": "",
-		"name": "Universal Analytics - OptOut JS Function",
+		"name": "Universal Analytics with Optimize - OptOut JS Function",
 		"type": "html",
 		"priority": {
 			"type": "INTEGER",
@@ -94,6 +94,6 @@
 			"<<TRIGGER All Pages>>"
 		],
 		"tagFiringOption": "ONCE_PER_EVENT",
-		"parentFolderId": "<<FOLDER Universal Analytics>>"
+		"parentFolderId": "<<FOLDER Universal Analytics with Optimize>>"
 	}
 ]

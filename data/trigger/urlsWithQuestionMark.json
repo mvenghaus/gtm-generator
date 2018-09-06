@@ -1,0 +1,25 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"triggerId": "",
+	"name": "Urls with Question Mark",
+	"type": "PAGEVIEW",
+	"filter": [
+		{
+			"type": "CONTAINS",
+			"parameter": [
+				{
+					"type": "TEMPLATE",
+					"key": "arg0",
+					"value": "{{Page URL}}"
+				},
+				{
+					"type": "TEMPLATE",
+					"key": "arg1",
+					"value": "?"
+				}
+			]
+		}
+	],
+	"fingerprint": ""
+}
