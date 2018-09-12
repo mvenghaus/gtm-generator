@@ -110,7 +110,9 @@ class TagBuilder
             {
                 $tag['firingTriggerId'][] = '<<TRIGGER ' . $triggerName . '>>';
             }
-            $tag['blockingTriggerId'] = ['<<TRIGGER Cookie Optin Missing>>'];
+
+            if (!isset($tag['blockingTriggerId'])) $tag['blockingTriggerId'] = [];
+            $tag['blockingTriggerId'][] = '<<TRIGGER Cookie Optin Missing>>';
         }
 
         return $tag;
