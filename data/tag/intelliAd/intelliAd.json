@@ -3,13 +3,42 @@
 		"accountId": "",
 		"containerId": "",
 		"tagId": "",
+		"name": "IntelliAd - Onsite",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script language=\"javascript\" type=\"text/javascript\" charset=\"utf-8\">\n\nvar ia_tc = \"\";\nvar ia_sc = \"\";\nvar ia_pi = \"\";\n\nvar loadAndExecute = function(url, clientId){\nvar scriptTag = document.createElement('script');\nscriptTag.async = true;\nscriptTag.defer = true;\n(document.getElementsByTagName(\"body\")[0] || document.getElementsByTagName(\"head\")[0]).appendChild(scriptTag);\nscriptTag.src = url;\nscriptTag.onload = function(){iahfpc(clientId, false);};\n};\nloadAndExecute('//t13.intelliad.de/hfpc.min.js', \"{{IntelliAd Channel ID}}\");\n\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER All Pages>>"
+		],
+		"blockingTriggerId": [
+			"<<TRIGGER Cart>>",
+			"<<TRIGGER Purchase>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER IntelliAd>>"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
 		"name": "IntelliAd - Cart",
 		"type": "html",
 		"parameter": [
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<script async defer language=\"javascript\" type=\"text/javascript\" charset=\"utf-8\">\n\nvar cartProducts = {{Cart Products}};\nvar productSkus = [];\nfor (var i=0; i<cartProducts.length; i++) {\n  productSkus.push(cartProducts[i].id);\n}\n\nvar ia_tp = \"t23.intelliad.de/tc2.js\";\nvar ia_cl = \"{{IntelliAd Channel ID}}\";\nvar ia_v = \"0\";\nvar ia_vz = \"{{IntelliAd Cart Type}}\"; // Warenkorb\nvar ia_vv = \"EUR\";\nvar ia_po = \"\";\nvar ia_pi = productSkus.join('|');\nvar ia_custom1 = \"\";\nvar ia_custom2 = \"\";\nvar ia_custom3 = \"\";\nvar ia_custom4 = \"\";\nvar ia_rand = Math.floor(Math.random()*11111139435231);\n  \nvar scriptTag = document.createElement(\"script\");\nscriptTag.type = \"text/javascript\";\nscriptTag.src = \"//\"+ia_tp+'?cl='+ia_cl+'&v='+ia_v+'&vz='+ia_vz+'&vv='+ia_vv+'&po='+ia_po+'&pi='+ia_pi+'&c1='+ia_custom1+'&c2='+ia_custom2+'&c3='+ia_custom3+'&c4='+ia_custom4+'&rand='+ia_rand;\nscriptTag.language = \"javascript\";\nscriptTag.async = true;\nscriptTag.defer = true;\n(document.getElementsByTagName(\"body\")[0] || document.getElementsByTagName(\"head\")[0]).appendChild(scriptTag);\n\n\n</script>\n<noscript>\n<img src=\"http://t23.intelliad.de/tc.php?cl={{IntelliAd Channel ID}}&v=0&vz={{IntelliAd Cart Type}}&vv=EUR&po=&pi=&c1=&c2=&c3=&c4=\" width=\"1\" height=\"1\" alt=\"intelliAd\"/>\n</noscript>"
+				"value": "<script async defer language=\"JavaScript\" type=\"text/javascript\">\n\nvar cartProducts = {{Cart Products}};\nvar productSkus = [];\nfor (var i=0; i<cartProducts.length; i++) {\n  productSkus.push(cartProducts[i].id);\n}\n\nvar ia_v=\"0\";\nvar ia_vz=\"{{IntelliAd Cart Type}}\";\nvar ia_vv=\"{{Currency Code}}\";\nvar ia_po=\"\";\nvar ia_pi=productSkus.join('|');\nvar ia_c1=\"\";\nvar ia_c2=\"\";\nvar ia_c3=\"\";\nvar ia_c4=\"\";\nvar ia_tp=\"t23.intelliad.de\";\nvar ia_mar=\"\";\nvar enc_mar=\"0\";\n\nvar loadAndExecute = function(url, clientId) {\nvar scriptTag = document.createElement('script');\nscriptTag.async = true;\nscriptTag.defer = true;\n(document.getElementsByTagName(\"body\")[0] || document.getElementsByTagName(\"head\")[0]).appendChild(scriptTag);\nscriptTag.src = url;\nscriptTag.onload = function(){iaconvhfpc(clientId);};\n};\nloadAndExecute(\"//t23.intelliad.de/convhfpc.min.js\",\"{{IntelliAd Channel ID}}\");\n\n</script>\n\n\n<noscript>\n<img src=\"http://t23.intelliad.de/tc.php?cl={{IntelliAd Channel ID}}&v=0&vz={{IntelliAd Cart Type}}&vv={{Currency Code}}&po=&c1=&c2=&c3=&c4=&pi=\" width=\"1\" height=\"1\" alt=\"intelliAd\" />\n</noscript>"
 			},
 			{
 				"type": "BOOLEAN",
@@ -34,7 +63,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<script async defer language=\"javascript\" type=\"text/javascript\" charset=\"utf-8\">\n\nvar purchaseProducts = {{Purchase Products}};\nvar productSkus = [];\nfor (var i=0; i<purchaseProducts.length; i++) {\n  productSkus.push(purchaseProducts[i].id);\n}\n  \nvar ia_tp = \"t23.intelliad.de/tc2.js\";\nvar ia_cl = \"{{IntelliAd Channel ID}}\";\nvar ia_v = \"{{Purchase Revenue}}\"; // Platzhalter Shopsystem einfügen\nvar ia_vz = \"{{IntelliAd Sale Type}}\";\nvar ia_vv = \"EUR\";\nvar ia_po = \"{{Purchase ID}}\";\nvar ia_pi = productSkus.join('|');\nvar ia_custom1 = \"\";\nvar ia_custom2 = \"\";\nvar ia_custom3 = \"\";\nvar ia_custom4 = \"\";\nvar ia_rand = Math.floor(Math.random()*11111139435231);\n\nvar scriptTag = document.createElement(\"script\");\nscriptTag.type = \"text/javascript\";\nscriptTag.src = \"//\"+ia_tp+'?cl='+ia_cl+'&v='+ia_v+'&vz='+ia_vz+'&vv='+ia_vv+'&po='+ia_po+'&pi='+ia_pi+'&c1='+ia_custom1+'&c2='+ia_custom2+'&c3='+ia_custom3+'&c4='+ia_custom4+'&rand='+ia_rand;\nscriptTag.language = \"javascript\";\nscriptTag.async = true;\nscriptTag.defer = true;\n(document.getElementsByTagName(\"body\")[0] || document.getElementsByTagName(\"head\")[0]).appendChild(scriptTag);\n\n\n</script>\n<noscript>\n<img src=\"http://t23.intelliad.de/tc.php?cl={{IntelliAd Channel ID}}&v={{Purchase Revenue}}&vz=sale&vv=EUR&po={{Purchase ID}}&pi=&c1=&c2=&c3=&c4=\" width=\"1\" height=\"1\" alt=\"intelliAd\"/>\n</noscript>"
+				"value": "<script async defer language=\"JavaScript\" type=\"text/javascript\">\n\nvar purchaseProducts = {{Purchase Products}};\nvar productSkus = [];\nfor (var i=0; i<purchaseProducts.length; i++) {\n  productSkus.push(purchaseProducts[i].id);\n}\n\nvar ia_v=\"{{Purchase Revenue}}\";\nvar ia_vz=\"{{IntelliAd Sale Type}}\";\nvar ia_vv=\"{{Currency Code}}\";\nvar ia_po=\"{{Purchase ID}}\";\nvar ia_pi=productSkus.join('|');\nvar ia_c1=\"\";\nvar ia_c2=\"\";\nvar ia_c3=\"\";\nvar ia_c4=\"\";\nvar ia_tp=\"t23.intelliad.de\";\nvar ia_mar=\"\";\nvar enc_mar=\"0\";\n\nvar loadAndExecute = function(url, clientId) {\nvar scriptTag = document.createElement('script');\nscriptTag.async = true;\nscriptTag.defer = true;\n(document.getElementsByTagName(\"body\")[0] || document.getElementsByTagName(\"head\")[0]).appendChild(scriptTag);\nscriptTag.src = url;\nscriptTag.onload = function(){iaconvhfpc(clientId);};\n};\nloadAndExecute(\"//t23.intelliad.de/convhfpc.min.js\",\"{{IntelliAd Channel ID}}\");\n\n</script>\n\n<noscript>\n<img src=\"http://t23.intelliad.de/tc.php?cl={{IntelliAd Channel ID}}&v={{Purchase Revenue}}&vz={{IntelliAd Sale Type}}&vv={{Currency Code}}&po={{Purchase ID}}&c1=&c2=&c3=&c4=&pi=\" width=\"1\" height=\"1\" alt=\"intelliAd\" />\n</noscript>"
 			},
 			{
 				"type": "BOOLEAN",
