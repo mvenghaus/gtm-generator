@@ -1,0 +1,52 @@
+[
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Commerce Connector - Cookie Setter",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script>\n  if (location.href.match('commerceconnector')) {\n    {{js_set_cookie}}('commerceconnector', '1', { 'path' : '/' });\n  }\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER All Pages>>"
+		],
+		"parentFolderId": "<<FOLDER Commerce Connector>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Commerce Connector - Purchase",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<div id=\"commerceconnector-container\" style=\"display:none;\"></div>\n<script>\n  \n  if ({{js_get_cookie}}('commerceconnector') == '1') {\n    var purchaseProducts = {{Purchase Products}};\n\n    if (typeof purchaseProducts !== 'undefined') {\n\n      var trackingImageUrl = 'http://www.commerce-connector.com/tracking/tracking.gif?shop={{Commerce Connector Shop ID}}';\n      for (var i=0; i < purchaseProducts.length; i++) {\n        trackingImageUrl += '&merchant[' + i + ']=' + purchaseProducts[i].id + '&sale[' + i + ']=' + purchaseProducts[i].quantity;\n      }\n\n      var trackingImage = document.createElement('img');\n      trackingImage.src = trackingImageUrl;\n      \n      document.getElementById('commerceconnector-container').appendChild(trackingImage);\n      \n      {{js_remove_cookie}}('commerceconnector');\n    }\n  }\n\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
+		],
+		"parentFolderId": "<<FOLDER Commerce Connector>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	}
+]
