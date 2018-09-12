@@ -1,0 +1,16 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"variableId": "",
+	"name": "js_get_cookie",
+	"type": "jsm",
+	"parameter": [
+		{
+			"type": "TEMPLATE",
+			"key": "javascript",
+			"value": "function() {\n  return function(sName) {\n    var oCrumbles = document.cookie.split(';');\n    for(var i=0; i<oCrumbles.length;i++)\n    {\n        var oPair= oCrumbles[i].split('=');\n        var sKey = decodeURIComponent(oPair[0].trim());\n        var sValue = oPair.length>1 ? oPair[1] : '';\n        if(sKey == sName) {\n            return decodeURIComponent(sValue);\n        }\n    }\n    return '';\n  }\n}"
+		}
+	],
+	"fingerprint": "",
+	"parentFolderId": "<<FOLDER JS Functions>>"
+}
