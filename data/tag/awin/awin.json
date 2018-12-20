@@ -1,0 +1,24 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"tagId": "",
+	"name": "Awin",
+	"type": "html",
+	"parameter": [
+		{
+			"type": "TEMPLATE",
+			"key": "html",
+			"value": "<script defer=\"defer\" src=\"https://www.dwin1.com/{{Awin Site ID}}.js\" type=\"text/javascript\"></script>\n\n<img border=\"0\" height=\"0\" src=\"https://www.awin1.com/sread.img?tt=ns&tv=2&merchant={{Awin Site ID}}&amount={{Purchase Revenue}}&ch=aw&cr=EUR&parts=DEFAULT:{{Purchase Revenue}}&ref={{Purchase ID}}&testmode=0\" style=\"display: none;\" width=\"0\">\n\n<script type=\"text/javascript\">\n    //<![CDATA[\n    /*** Do not change ***/\n    var AWIN = {};\n    AWIN.Tracking = {};\n    AWIN.Tracking.Sale = {};\n    /*** Set your transaction parameters ***/\n    AWIN.Tracking.Sale.amount = \"{{Purchase Revenue}}\";\n    AWIN.Tracking.Sale.channel = \"aw\";\n    AWIN.Tracking.Sale.currency = \"EUR\";\n    AWIN.Tracking.Sale.orderRef = \"{{Purchase ID}}\";\n    AWIN.Tracking.Sale.parts = \"DEFAULT:{{Purchase Revenue}}\";\n    AWIN.Tracking.Sale.test = \"0\";\n    //]]>\n</script>"
+		},
+		{
+			"type": "BOOLEAN",
+			"key": "supportDocumentWrite",
+			"value": "false"
+		}
+	],
+	"fingerprint": "",
+	"firingTriggerId": [
+		"<<TRIGGER Purchase>>"
+	],
+	"parentFolderId": "<<FOLDER Awin>>"
+}
