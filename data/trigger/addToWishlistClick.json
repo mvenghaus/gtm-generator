@@ -21,6 +21,21 @@
       ]
     }
   ],
+  "waitForTags": {
+    "type": "BOOLEAN",
+    "value": "false"
+  },
+  "checkValidation": {
+    "type": "BOOLEAN",
+    "value": "false"
+  },
+  "waitForTagsTimeout": {
+    "type": "TEMPLATE",
+    "value": "2000"
+  },
+  "uniqueTriggerId": {
+    "type": "TEMPLATE"
+  },
   "fingerprint": "",
   "parentFolderId": "<<FOLDER Trigger>>"
 }
