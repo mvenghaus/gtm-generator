@@ -1,0 +1,136 @@
+[
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Pinterest Base Pixel",
+		"type": "html",
+		"priority": {
+			"type": "INTEGER",
+			"value": "2"
+		},
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<!-- Pinterest Tag -->\n<script>\n!function(e){if(!window.pintrk){window.pintrk = function () {\nwindow.pintrk.queue.push(Array.prototype.slice.call(arguments))};var\n  n=window.pintrk;n.queue=[],n.version=\"3.0\";var\n  t=document.createElement(\"script\");t.async=!0,t.src=e;var\n  r=document.getElementsByTagName(\"script\")[0];\n  r.parentNode.insertBefore(t,r)}}(\"https://s.pinimg.com/ct/core.js\");\n  \nvar customerData = {}\nvar em = {{Customer Email Sha256}};\nif (typeof em !== 'undefined') {\n  customerData.em = em;\n}\n  \npintrk('load', '2614231233485', customerData);\npintrk('page');\n</script>\n<noscript>\n<img height=\"1\" width=\"1\" style=\"display:none;\" alt=\"\"\n  src=\"https://ct.pinterest.com/v3/?tid=2614231233485&pd[em]={{Customer Email Sha256}}&noscript=1\" />\n</noscript>\n<!-- end Pinterest Tag -->"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER All Pages>>"
+		],
+		"tagFiringOption": "ONCE_PER_LOAD",
+		"parentFolderId": "<<FOLDER Pinterest>>"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Pinterest Event - Add To Cart",
+		"type": "html",
+		"priority": {
+			"type": "INTEGER",
+			"value": "1"
+		},
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script>\npintrk('track', 'addtocart', {\n  value: {{Product Price}},\n  order_quantity: 1,\n  currency: {{Currency Code}},\n  line_items: [{\n    product_price: {{Product Price}},\n    product_quantity: 1\n  }]\n});\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Add To Cart Click>>"
+		],
+		"setupTag": [
+			{
+				"tagName": "Pinterest Base Pixel",
+				"stopOnSetupFailure": true
+			}
+		],
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Pinterest>>"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Pinterest Event - Purchase",
+		"type": "html",
+		"priority": {
+			"type": "INTEGER",
+			"value": "1"
+		},
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script>\n  var purchaseProducts = {{Purchase Products}};\n  var orderItems = [];\n  var orderItemsQuantityTotal = 0;\n  if (typeof purchaseProducts !== 'undefined') {\n    for (var i=0; i < purchaseProducts.length; i++)\n    {  \n      orderItems.push({\n        product_id: purchaseProducts[i].id,\n        product_name: purchaseProducts[i].name,\n        product_price: purchaseProducts[i].price,\n        product_quantity: purchaseProducts[i].quantity,\n      });\n      orderItemsQuantityTotal += purchaseProducts[i].quantity;\n    }\n  }\n  \n  pintrk('track', 'checkout', {\n    value: {{Purchase Revenue}},\n    order_quantity: orderItemsQuantityTotal,\n    currency: '{{Currency Code}}',\n    line_items: orderItems\n  });\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
+		],
+		"setupTag": [
+			{
+				"tagName": "Pinterest Base Pixel",
+				"stopOnSetupFailure": true
+			}
+		],
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Pinterest>>"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Pinterest Event - Searchresults",
+		"type": "html",
+		"priority": {
+			"type": "INTEGER",
+			"value": "1"
+		},
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script>\n  \n  var searchResultProducts = {{Search Products}};\n  var searchResultItems = [];\n  if (typeof searchResultProducts !== 'undefined') {\n    for (var i=0; i < searchResultProducts.length; i++)\n    {  \n      searchResultItems.push({\n        product_id: cartProducts[i].id,\n        product_name: cartProducts[i].name,\n        product_price: cartProducts[i].price\n      });\n    }\n  }\n  \n  pintrk('track', 'search', {\n    search_query: {{Search Keyword}},\n    line_items: searchResultItems\n  });\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Searchresults>>"
+		],
+		"setupTag": [
+			{
+				"tagName": "Pinterest Base Pixel",
+				"stopOnSetupFailure": true
+			}
+		],
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Pinterest>>"
+	}
+]
