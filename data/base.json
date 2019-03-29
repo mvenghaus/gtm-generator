@@ -48,6 +48,12 @@
 				"containerId": "",
 				"type": "EVENT",
 				"name": "Event"
+			},
+			{
+				"accountId": "",
+				"containerId": "",
+				"type": "CLICK_ELEMENT",
+				"name": "Click Element"
 			}
 		],
 		"fingerprint": "",

@@ -1,0 +1,26 @@
+{
+  "accountId": "",
+  "containerId": "",
+  "triggerId": "",
+  "name": "Add To Compare Click",
+  "type": "LINK_CLICK",
+  "filter": [
+    {
+      "type": "CSS_SELECTOR",
+      "parameter": [
+        {
+          "type": "TEMPLATE",
+          "key": "arg0",
+          "value": "{{Click Element}}"
+        },
+        {
+          "type": "TEMPLATE",
+          "key": "arg1",
+          "value": "[data-linktype=\"compare\"]"
+        }
+      ]
+    }
+  ],
+  "fingerprint": "",
+  "parentFolderId": "<<FOLDER Trigger>>"
+}

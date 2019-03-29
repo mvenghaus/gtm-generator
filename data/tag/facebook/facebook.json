@@ -5,6 +5,10 @@
 		"tagId": "",
 		"name": "Facebook Base Pixel",
 		"type": "html",
+		"priority": {
+			"type": "INTEGER",
+			"value": "2"
+		},
 		"parameter": [
 			{
 				"type": "TEMPLATE",
@@ -30,6 +34,10 @@
 		"tagId": "",
 		"name": "Facebook Event - Add To Cart",
 		"type": "html",
+		"priority": {
+			"type": "INTEGER",
+			"value": "1"
+		},
 		"parameter": [
 			{
 				"type": "TEMPLATE",
@@ -61,6 +69,10 @@
 		"tagId": "",
 		"name": "Facebook Event - Checkout",
 		"type": "html",
+		"priority": {
+			"type": "INTEGER",
+			"value": "1"
+		},
 		"parameter": [
 			{
 				"type": "TEMPLATE",
@@ -92,6 +104,10 @@
 		"tagId": "",
 		"name": "Facebook Event - Product",
 		"type": "html",
+		"priority": {
+			"type": "INTEGER",
+			"value": "1"
+		},
 		"parameter": [
 			{
 				"type": "TEMPLATE",
@@ -123,6 +139,10 @@
 		"tagId": "",
 		"name": "Facebook Event - Purchase",
 		"type": "html",
+		"priority": {
+			"type": "INTEGER",
+			"value": "1"
+		},
 		"parameter": [
 			{
 				"type": "TEMPLATE",
@@ -152,13 +172,17 @@
 		"accountId": "",
 		"containerId": "",
 		"tagId": "",
-		"name": "Facebook Event - Wishlist - Compare",
+		"name": "Facebook Event - Wishlist",
 		"type": "html",
+		"priority": {
+			"type": "INTEGER",
+			"value": "1"
+		},
 		"parameter": [
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<script>\n  var dataset = {{Element Dataset}};\n  if (typeof dataset !== 'undefined' && dataset.hasOwnProperty('linkType')) {\n    \n    if (dataset.linkType === 'wishlist') {\n       fbq('track', 'AddToMerkliste', {\n         content_ids: [dataset.productSku],\n         content_type: 'product',\n         value: dataset.productPrice,\n           currency: '{{Currency Code}}'\n\t\t});\n    }\n    \n    if (dataset.linkType === 'compare') {\n       fbq('track', 'AddToVergleichsliste', {\n         content_ids: [dataset.productSku],\n         content_type: 'product',\n         value: dataset.productPrice,\n           currency: '{{Currency Code}}'\n\t\t});\n    }\n\n  }\n</script>"
+				"value": "<script>\n  var dataset = {{Element Dataset}};\n  if (typeof dataset !== 'undefined') {\n    var eventParams = {\n      content_type: 'product',\n      currency: '{{Currency Code}}'\n    };\n    \n    if (dataset.hasOwnProperty('productSku'))\n      eventParams.content_ids = [dataset.productSku];\n    if (dataset.hasOwnProperty('productPrice'))\n      eventParams.value = dataset.productPrice;\n    \n    fbq('track', 'AddToWishlist', eventParams);\n  }\n</script>"
 			},
 			{
 				"type": "BOOLEAN",
@@ -168,7 +192,42 @@
 		],
 		"fingerprint": "",
 		"firingTriggerId": [
-			"<<TRIGGER Click - Just Links>>"
+			"<<TRIGGER Add To Wishlist Click>>"
+		],
+		"setupTag": [
+			{
+				"tagName": "Facebook Base Pixel",
+				"stopOnSetupFailure": true
+			}
+		],
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Facebook>>"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Facebook Event - Compare",
+		"type": "html",
+		"priority": {
+			"type": "INTEGER",
+			"value": "1"
+		},
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script>\n  var dataset = {{Element Dataset}};\n  if (typeof dataset !== 'undefined') {\n    var eventParams = {\n      content_type: 'product',\n      currency: '{{Currency Code}}'\n    };\n    \n    if (dataset.hasOwnProperty('productSku'))\n      eventParams.content_ids = [dataset.productSku];\n    if (dataset.hasOwnProperty('productPrice'))\n      eventParams.value = dataset.productPrice;\n    \n    fbq('track', 'AddToCompare', eventParams);\n  }\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Add To Compare Click>>"
 		],
 		"setupTag": [
 			{
