@@ -16,7 +16,7 @@
         {
           "type": "TEMPLATE",
           "key": "arg1",
-          "value": "[data-linktype=\"compare\"]"
+          "value": "[data-link-type=\"compare\"]"
         }
       ]
     }

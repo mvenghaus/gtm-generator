@@ -16,7 +16,7 @@
         {
           "type": "TEMPLATE",
           "key": "arg1",
-          "value": "[data-linktype=\"wishlist\"]"
+          "value": "[data-link-type=\"wishlist\"]"
         }
       ]
     }
