@@ -9,7 +9,7 @@
       {
         "type": "TEMPLATE",
         "key": "html",
-        "value": "<script src=\"https://cdn.epoq.de/flow/{{Epoq Client ID}}.js\"></script>"
+        "value": "<script type=\"text/javascript\">\n\tif (typeof {{Customer Email Md5}} !== 'undefined') {\n\t\tvar epoq_customerId = {{Customer Email Md5}};\n\t}\n</script>\n<script src=\"https://cdn.epoq.de/flow/{{Epoq Client ID}}.js\"></script>"
       },
       {
         "type": "BOOLEAN",
