@@ -1,0 +1,16 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"variableId": "",
+	"name": "js_set_cookie",
+	"type": "jsm",
+	"parameter": [
+		{
+			"type": "TEMPLATE",
+			"key": "javascript",
+			"value": "function() {\n  return function(sName, sValue, options) {\n      //oDate.setYear(oDate.getFullYear()+1);\n      var sCookie = encodeURIComponent(sName) + '=' + encodeURIComponent(sValue);\n\n      // Shorthand: options === expires date\n      if (options && options instanceof Date) {\n          options = {\n              expires: options\n          };\n      }\n      // Longhand: options object\n      if (options && typeof options == 'object') {\n          if (options.expires) {\n              sCookie += '; expires=' + options.expires.toGMTString();\n          }\n          if (options.path) {\n              sCookie += '; path=' + options.path.toString();\n          }\n          if (options.domain) {\n              sCookie += '; domain=' + options.domain.toString();\n          }\n          if (options.secure) {\n              sCookie += '; secure';\n          }\n      }\n      document.cookie= sCookie;\n  } \n}"
+		}
+	],
+	"fingerprint": "",
+	"parentFolderId": "<<FOLDER JS Functions>>"
+}

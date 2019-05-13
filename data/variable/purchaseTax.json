@@ -1,0 +1,26 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"variableId": "",
+	"name": "Purchase Tax",
+	"type": "v",
+	"parameter": [
+		{
+			"type": "INTEGER",
+			"key": "dataLayerVersion",
+			"value": "2"
+		},
+		{
+			"type": "BOOLEAN",
+			"key": "setDefaultValue",
+			"value": "false"
+		},
+		{
+			"type": "TEMPLATE",
+			"key": "name",
+			"value": "ecommerce.purchase.actionField.tax"
+		}
+	],
+	"fingerprint": "",
+	"parentFolderId": "<<FOLDER Variable>>"
+}

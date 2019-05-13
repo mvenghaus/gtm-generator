@@ -35,14 +35,8 @@ class TriggerBuilder
         $triggers = [];
 
         $triggerId = 1;
-        foreach ($this->getTrigger($configReader) as $triggerFile => $data)
+        foreach ($this->getTrigger($configReader) as $name => $trigger)
         {
-            $triggerContent = file_get_contents($triggerFile);
-
-            $triggerContent = $this->variableFilter->filter($triggerContent, $data);
-            $triggerContent = $this->folderFilter->filter($triggerContent);
-
-            $trigger = json_decode($triggerContent, true);
             $trigger['triggerId'] = $triggerId++;
 
             $this->triggerResolver->add($trigger['triggerId'], $trigger['name']);
@@ -106,18 +100,39 @@ class TriggerBuilder
     {
         $trigger = [];
 
-        foreach ($configReader->getTrigger() as $name => $data)
+        foreach ($configReader->getTrigger() as $name)
         {
-            $triggerFile = sprintf('%sdata/trigger/%s.json', ROOT_DIR, $name);
-            if (!file_exists($triggerFile))
-            {
-                throw new \Exception(sprintf('trigger file not found "%s"', $triggerFile));
-            }
+            $file = sprintf('%sdata/trigger/%s.json', ROOT_DIR, $name);
 
-            $trigger[$triggerFile] = $data;
+            $trigger[$file] = $this->loadTrigger($file);
+        }
+
+        foreach ($configReader->getTags() as $tagName => $tagData)
+        {
+            foreach (glob(sprintf('%sdata/tag/%s/trigger/*.json', ROOT_DIR, $tagName)) as $file)
+            {
+                $name = str_replace('.json', '', basename($file));
+                $content = $this->loadTrigger($file, $tagData);
+
+                $trigger[$name] = $content;
+            }
         }
 
         return $trigger;
+    }
+
+    private function loadTrigger($file, $triggers = [])
+    {
+        if (!file_exists($file))
+        {
+            throw new \Exception(sprintf('trigger file not found "%s"', $file));
+        }
+
+        $content = file_get_contents($file);
+        $content = $this->variableFilter->filter($content, $triggers);
+        $content = $this->folderFilter->filter($content);
+
+        return json_decode($content, true);
     }
 
     public function getCustomTrigger(ConfigReader $configReader)
