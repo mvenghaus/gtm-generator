@@ -9,7 +9,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<img src=\"https://www1.belboon.de/adtracking/sale/{{Belboon Standard Partner ID}}.gif/oc={{Purchase ID}}&sale={{Purchase Revenue}}&belboon={{Belboon}}\" border=\"0\" width=\"1\" height=\"1\" alt=\"\" id=\"bbconv\"/>\n<object class=\"flash\" type=\"application/x-shockwave-flash\" data=\"https://www1.belboon.de/tracking/flash.swf\" width=\"1\" height=\"1\" ><param name=\"flashvars\" value=\"pgmid={{Belboon Standard Partner ID}}&etype=sale&tparam=sale&evalue={{Purchase Revenue}}&oc={{Purchase ID}}\"><param name=\"movie\" value=\"https://www1.belboon.de/tracking/flash.swf\" /></object>\n<script src=\"https://www1.belboon.de/adtracking/conversion.jssl\"></script>"
+				"value": "<img src=\"//janus.r.jakuli.com/ts/i{{Belboon Standard Partner ID}}/tsa?typ=i&tst=&trc=default&ctg=sale&sid=checkout&cid={{Purchase ID}}&orv={{Purchase Revenue}}&orc=EUR&cli=\" width=\"1\" height=\"1\" border=\"0\" style=\"display:none;\">"
 			},
 			{
 				"type": "BOOLEAN",
