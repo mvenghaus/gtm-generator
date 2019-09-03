@@ -1,5 +1,6 @@
 {
 	"universalAnalytics": {
-		"Universal Analytics Tracking ID": "YOUR_UA_TRACKING_ID"
+		"Universal Analytics Tracking ID": "YOUR_UA_TRACKING_ID",
+		"Search Num Results - Metric Index": "YOUR_CUSTOM_METRIC_ID"
 	}
 }

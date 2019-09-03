@@ -13,12 +13,33 @@
 			{
 				"type": "BOOLEAN",
 				"key": "overrideGaSettings",
-				"value": "false"
+				"value": "true"
 			},
 			{
 				"type": "TEMPLATE",
 				"key": "trackType",
 				"value": "TRACK_PAGEVIEW"
+			},
+			{
+				"type": "LIST",
+				"key": "metric",
+				"list": [
+					{
+						"type": "MAP",
+						"map": [
+							{
+								"type": "TEMPLATE",
+								"key": "index",
+								"value": "{{Search Num Results - Metric Index}}"
+							},
+							{
+								"type": "TEMPLATE",
+								"key": "metric",
+								"value": "{{Search Num Results}}"
+							}
+						]
+					}
+				]
 			},
 			{
 				"type": "TEMPLATE",

@@ -1,0 +1,26 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"variableId": "",
+	"name": "Search Num Results",
+	"type": "v",
+	"parameter": [
+		{
+			"type": "INTEGER",
+			"key": "dataLayerVersion",
+			"value": "2"
+		},
+		{
+			"type": "BOOLEAN",
+			"key": "setDefaultValue",
+			"value": "false"
+		},
+		{
+			"type": "TEMPLATE",
+			"key": "name",
+			"value": "searchNumResults"
+		}
+	],
+	"fingerprint": "",
+	"parentFolderId": "<<FOLDER Variable>>"
+}
