@@ -1,7 +1,9 @@
 {
 	"googleCustomerReviews": {
-		"Google Customer Reviews Store ID": "YOUR_STORE_ID",
-		"Google Customer Reviews Badge Position": "YOUR_BADGE_POSITION",
-		"Google Customer Reviews Subaccount ID": "YOUR_SUBACCOUNT_ID"
+		"Google Customer Reviews Merchant ID": "YOUR_MERCHANT_ID",
+		"Google Customer Reviews Badge Position": "BOTTOM_RIGHT",
+		"Google Customer Reviews Survey Opt In Style": "CENTER_DIALOG",
+		"Google Customer Reviews Survey Opt In Delivery Add Days": "4",
+		"Delivery Country Code": "DE"
 	}
 }
