@@ -1,0 +1,30 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"variableId": "",
+	"name": "Awin Purchase Revenue",
+	"type": "v",
+	"parameter": [
+		{
+			"type": "INTEGER",
+			"key": "dataLayerVersion",
+			"value": "2"
+		},
+		{
+			"type": "BOOLEAN",
+			"key": "setDefaultValue",
+			"value": "true"
+		},
+		{
+			"type": "TEMPLATE",
+			"key": "defaultValue",
+			"value": "{{Purchase Revenue}}"
+		},
+		{
+			"type": "TEMPLATE",
+			"key": "name",
+			"value": "awinPurchaseRevenue"
+		}
+	],
+	"fingerprint": ""
+}
