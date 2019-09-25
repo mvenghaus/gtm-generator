@@ -3,7 +3,7 @@
 		"accountId": "",
 		"containerId": "",
 		"tagId": "",
-		"name": "Trusted Shops",
+		"name": "Trusted Shops - Badge",
 		"type": "html",
 		"parameter": [
 			{
@@ -22,6 +22,35 @@
 			"<<TRIGGER All Pages>>"
 		],
 		"parentFolderId": "<<FOLDER Trusted Shops>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Trusted Shops - Buyer Protection",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<div id=\"trustedShopsCheckout\" style=\"display: none;\">\n  <span id=\"tsCheckoutOrderNr\">{{Purchase ID}}</span>\n  <span id=\"tsCheckoutBuyerEmail\">{{Purchase Email}}</span>\n  <span id=\"tsCheckoutOrderAmount\">{{Purchase Revenue}}</span>\n  <span id=\"tsCheckoutOrderCurrency\">{{Currency Code}}</span>\n  <span id=\"tsCheckoutOrderPaymentType\"></span>\n  <span id=\"tsCheckoutOrderEstDeliveryDate\"></span>\n</div> "
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
+		],
+		"teardownTag": [
+			{
+				"tagName": "Trusted Shops - Badge"
+			}
+		],
 		"tagFiringOption": "ONCE_PER_EVENT"
 	}
 ]
