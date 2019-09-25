@@ -9,7 +9,7 @@
       {
         "type": "TEMPLATE",
         "key": "html",
-        "value": "<script type=\"text/javascript\">\n\tif (typeof {{Customer Email Md5}} !== 'undefined') {\n\t\tvar epoq_customerId = {{Customer Email Md5}};\n\t}\n</script>\n<script src=\"https://cdn.epoq.de/flow/{{Epoq Client ID}}.js\"></script>"
+        "value": "<script type=\"text/javascript\">\n  if (typeof {{Customer Email Md5}} !== 'undefined') {\n    window.epoq_customerId = {{Customer Email Md5}};\n  } else {\n    window.epoq_customerId = '';\n  }\n\n  // cart products\n  // properties: id, quantity, price\n  window.epoq_cartProducts = {{Cart Products}};\n  \n  // purchase products\n  // properties: id, quantity, price\n  window.epoq_purchaseProducts = {{Purchase Products}};\n  \n  // page type\n  // home, category, product, searchresults, cart, purchase\n  window.epoq_pageType = {{Page Type}}\n  \n</script>\n<script src=\"https://cdn.epoq.de/flow/{{Epoq Client ID}}.js\"></script>"
       },
       {
         "type": "BOOLEAN",

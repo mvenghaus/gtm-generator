@@ -1,24 +1,50 @@
-{
-	"accountId": "",
-	"containerId": "",
-	"tagId": "",
-	"name": "Shopping24 - Order Tracking Pixel",
-	"type": "html",
-	"parameter": [
-		{
-			"type": "TEMPLATE",
-			"key": "html",
-			"value": "<img src=\"https://tracking.s24.com/TrackOrder?shopId={{Shopping24 Shop ID}}&netRevenue={{Purchase Revenue}}&products={{Purchase Product IDs Comma Separated}}&lineItems={{Purchase Product Count}}&orderNumber={{Purchase ID}}\" alt=\"\" width=\"1\" height=\"1\">"
-		},
-		{
-			"type": "BOOLEAN",
-			"key": "supportDocumentWrite",
-			"value": "false"
-		}
-	],
-	"fingerprint": "",
-	"firingTriggerId": [
-		"<<TRIGGER Purchase>>"
-	],
-	"parentFolderId": "<<FOLDER Shopping24>>"
-}
+[
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Shopping24 - Product",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script src=\"https://tracking.s24.com/js/conversion-tracking.js\"></script>\n<script>\n  document.addEventListener('DOMContentLoaded', function initS24() {\n  \twindow.s24ConversionTracking.init('s24clid');\n  }, false);\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Product>>"
+		],
+		"parentFolderId": "<<FOLDER Shopping24>>"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Shopping24 - Purchase",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script src=\"https://tracking.s24.com/js/conversion-tracking.js\"></script>\n<script>\n  window.s24ConversionTracking.track({\n    'order_id': '{{Purchase ID}}',\n    'conversion_value': {{Purchase Revenue}},\n    'currency': '{{Currency Code}}',\n    'skus': {{Purchase Product IDs}}\n  })\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
+		],
+		"parentFolderId": "<<FOLDER Shopping24>>"
+	}
+]

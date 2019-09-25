@@ -42,7 +42,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<script>\n  \nfbq('track', 'AddToCart', {\n  content_ids: [{{Product ID}}],\n  content_type: 'product',\n  value: {{Product Price}},\n  currency: 'EUR'\n});\n  \n</script>"
+				"value": "<script>\n  \nfbq('track', 'AddToCart', {\n  content_ids: [{{Product ID}}],\n  content_type: 'product',\n  value: {{Product Price}},\n  currency: '{{Currency Code}}'\n});\n  \n</script>"
 			},
 			{
 				"type": "BOOLEAN",
@@ -112,7 +112,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<script>\nfbq('track', 'ViewContent', {\ncontent_ids: [\"{{Product ID}}\"],\ncontent_type: 'product',\nvalue: {{Product Price}},\ncurrency: 'EUR'\n});\n</script>"
+				"value": "<script>\nfbq('track', 'ViewContent', {\ncontent_ids: [\"{{Product ID}}\"],\ncontent_type: 'product',\nvalue: {{Product Price}},\ncurrency: '{{Currency Code}}'\n});\n</script>"
 			},
 			{
 				"type": "BOOLEAN",
@@ -147,7 +147,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<script> \n  fbq('track', 'Purchase', {\n    content_ids: {{Purchase Product IDs}},\n    content_type: 'product',\n    value: {{Purchase Revenue}},\n    currency: 'EUR'\n   });\n</script>"
+				"value": "<script> \n  fbq('track', 'Purchase', {\n    content_ids: {{Purchase Product IDs}},\n    content_type: 'product',\n    value: {{Purchase Revenue}},\n    currency: '{{Currency Code}}'\n   });\n</script>"
 			},
 			{
 				"type": "BOOLEAN",

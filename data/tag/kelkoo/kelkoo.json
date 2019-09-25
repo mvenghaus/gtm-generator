@@ -1,0 +1,31 @@
+[
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Kelkoo - Purchase",
+		"type": "html",
+		"priority": {
+			"type": "INTEGER",
+			"value": "1"
+		},
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script type=\"text/javascript\">\n  \n  var purchaseProducts = {{Purchase Products}};\n  var orderItems = [];\n  if (typeof purchaseProducts !== 'undefined') {\n    for (var i=0; i < purchaseProducts.length; i++) {  \n      orderItems.push({\n        productid: purchaseProducts[i].id,\n        productname: purchaseProducts[i].name,\n        price: purchaseProducts[i].price,\n        quantity: purchaseProducts[i].quantity,\n      });\n    }\n  }\n  \n  _kkstrack = {\n    merchantInfo : [{ country:\"{{Kelkoo Country}}\", merchantId:\"{{Kelkoo Merchant ID}}\" }],\n    orderValue: {{Purchase Revenue}},\n    orderId: {{Purchase ID}},\n    basket: orderItems\n  };\n  (function() {\n    var s = document.createElement('script');\n    s.type = 'text/javascript';\n    s.async = true;\n    s.src = 'https://s.kk-resources.com/ks.js';\n    var x = document.getElementsByTagName('script')[0];\n    x.parentNode.insertBefore(s, x);\n  })();\n </script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Kelkoo>>"
+	}
+]

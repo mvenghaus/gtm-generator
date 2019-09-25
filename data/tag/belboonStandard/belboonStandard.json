@@ -9,7 +9,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<img src=\"//janus.r.jakuli.com/ts/i{{Belboon Standard Partner ID}}/tsa?typ=i&tst=&trc=default&ctg=sale&sid=checkout&cid={{Purchase ID}}&orv={{Purchase Revenue}}&orc=EUR&cli=\" width=\"1\" height=\"1\" border=\"0\" style=\"display:none;\">"
+				"value": "<img src=\"//janus.r.jakuli.com/ts/i{{Belboon Standard Partner ID}}/tsa?typ=i&tst=&trc=default&ctg=sale&sid=checkout&cid={{Purchase ID}}&orv={{Purchase Revenue}}&orc={{Currency Code}}&cli=\" width=\"1\" height=\"1\" border=\"0\" style=\"display:none;\">"
 			},
 			{
 				"type": "BOOLEAN",

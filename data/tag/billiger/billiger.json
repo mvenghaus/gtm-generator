@@ -1,0 +1,26 @@
+[
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Billiger - Purchase",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script type=\"text/javascript\">\n  (function () {\n    var articleString = \"\";\n    var purchaseProducts = {{Purchase Products}};\n    if (typeof purchaseProducts !== \"undefined\") {\n      for (var i=0; i < purchaseProducts.length; i++) {       \n        articleString += \"&aid_\" + (i+1) + \"=\" + purchaseProducts[i].id\n          + \"&name_\" + (i+1) + \"=\" + purchaseProducts[i].name\n          + \"&cnt_\" + (i+1) + \"=\" + purchaseProducts[i].quantity\n          + \"&val_\" + (i+1) + \"=\" + purchaseProducts[i].price;\n      }\n    }\n  \n    var link = \"https://billiger.de/sale?shop_id={{Billiger Shop ID}}&oid={{Purchase ID}}\" + articleString;\n\n    var i = document.createElement('img');\n    i.src = encodeURI(link);\n    i.width = 1;\n    i.height = 1;\n    i.border = 0;\n    i.alt = \"\";\n\n    document.body.appendChild(i);\n  })();\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
+		],
+		"parentFolderId": "<<FOLDER Billiger>>"
+	}
+]

@@ -3,13 +3,13 @@
 		"accountId": "",
 		"containerId": "",
 		"tagId": "",
-		"name": "Google Customer Reviews",
+		"name": "Google Customer Reviews - Badge",
 		"type": "html",
 		"parameter": [
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<script type=\"text/javascript\">\n\tvar gts = gts || [];\n\n\tgts.push([\"id\", \"{{Google Customer Reviews Store ID}}\"]);\n\tgts.push([\"badge_position\", \"{{Google Customer Reviews Badge Position}}\"]);\n\tgts.push([\"locale\", \"{{Locale Code}}\"]);\n\tgts.push([\"google_base_offer_id\", \"{{Product ID}}\"]);\n\tgts.push([\"google_base_subaccount_id\", \"{{Google Customer Reviews Subaccount ID}}\"]);\n\n\t(function() {\n\t\tvar gts = document.createElement(\"script\");\n\t\tgts.type = \"text/javascript\";\n\t\tgts.async = true;\n\t\tgts.src = \"https://www.googlecommerce.com/trustedstores/api/js\";\n\t\tvar s = document.getElementsByTagName(\"script\")[0];\n\t\ts.parentNode.insertBefore(gts, s);\n\t})();\n</script>"
+				"value": "<script>\n    window.renderBadge = function () {\n        var ratingBadgeContainer = document.createElement(\"div\");\n        document.body.appendChild(ratingBadgeContainer);\n        window.gapi.load('ratingbadge', function () {\n            window.gapi.ratingbadge.render(\n                ratingBadgeContainer, {\n                    \"merchant_id\": {{Google Customer Reviews Merchant ID}},\n                    \"position\": \"{{Google Customer Reviews Badge Position}}\",\n                });\n        });\n    }\n</script>\n<script src=\"https://apis.google.com/js/platform.js?onload=renderBadge\"></script>"
 			},
 			{
 				"type": "BOOLEAN",
@@ -20,6 +20,31 @@
 		"fingerprint": "",
 		"firingTriggerId": [
 			"<<TRIGGER All Pages>>"
+		],
+		"parentFolderId": "<<FOLDER Google Customer Reviews>>",
+		"tagFiringOption": "ONCE_PER_EVENT"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Google Customer Reviews - Survey Opt-in",
+		"type": "html",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script>\n  window.renderOptIn = function() { \n    window.gapi.load('surveyoptin', function() {\n      var d = new Date();\n      d.setDate(d.getDate() + {{Google Customer Reviews Survey Opt In Delivery Add Days}});\n      d = new Date(d.getTime() - (d.getTimezoneOffset() * 60000 ))\n                    .toISOString()\n                    .split(\"T\")[0];\n      window.gapi.surveyoptin.render(\n        {\n          // REQUIRED\n          \"merchant_id\": {{Google Customer Reviews Merchant ID}},\n          \"order_id\": \"{{Purchase ID}}\",\n          \"email\": \"{{Customer Email}}\",\n          \"delivery_country\": \"{{Delivery Country Code}}\",\n          \"estimated_delivery_date\": d,\n\n          // OPTIONAL\n          \"opt_in_style\": \"{{Google Customer Reviews Survey Opt In Style}}\",\n          //\"products\": [{\"gtin\":\"GTIN1\"}, {\"gtin\":\"GTIN2\"}]\n        }); \n     });\n  }\n</script>\n<script src=\"https://apis.google.com/js/platform.js?onload=renderOptIn\"></script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
 		],
 		"parentFolderId": "<<FOLDER Google Customer Reviews>>",
 		"tagFiringOption": "ONCE_PER_EVENT"
