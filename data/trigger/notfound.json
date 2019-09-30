@@ -1,0 +1,26 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"triggerId": "",
+	"name": "404 Not found",
+	"type": "PAGEVIEW",
+	"filter": [
+		{
+			"type": "EQUALS",
+			"parameter": [
+				{
+					"type": "TEMPLATE",
+					"key": "arg0",
+					"value": "{{Page Type}}"
+				},
+				{
+					"type": "TEMPLATE",
+					"key": "arg1",
+					"value": "notfound"
+				}
+			]
+		}
+	],
+	"fingerprint": "",
+	"parentFolderId": "<<FOLDER Trigger>>"
+}

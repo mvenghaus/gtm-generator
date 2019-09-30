@@ -92,6 +92,60 @@
 		"accountId": "",
 		"containerId": "",
 		"tagId": "",
+		"name": "Universal Analytics - 404 Not found",
+		"type": "ua",
+		"priority": {
+			"type": "INTEGER",
+			"value": "1000"
+		},
+		"parameter": [
+			{
+				"type": "BOOLEAN",
+				"key": "nonInteraction",
+				"value": "true"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "overrideGaSettings",
+				"value": "false"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "eventCategory",
+				"value": "404 Not found"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "trackType",
+				"value": "TRACK_EVENT"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "gaSettings",
+				"value": "{{Universal Analytics Settings}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "eventAction",
+				"value": "{{Page URL}}"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "eventLabel",
+				"value": "Referrer: {{Referrer}}"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER 404 Not found>>"
+		],
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Universal Analytics>>"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
 		"name": "Universal Analytics - OptOut JS Function",
 		"type": "html",
 		"priority": {

@@ -54,6 +54,12 @@
 				"containerId": "",
 				"type": "CLICK_ELEMENT",
 				"name": "Click Element"
+			},
+			{
+				"accountId": "",
+				"containerId": "",
+				"type": "REFERRER",
+				"name": "Referrer"
 			}
 		],
 		"fingerprint": "",
