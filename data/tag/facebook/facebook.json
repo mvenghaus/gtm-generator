@@ -237,5 +237,40 @@
 		],
 		"tagFiringOption": "ONCE_PER_EVENT",
 		"parentFolderId": "<<FOLDER Facebook>>"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Facebook Event - Contact Success",
+		"type": "html",
+		"priority": {
+			"type": "INTEGER",
+			"value": "1"
+		},
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script>\nfbq('track', 'InitiateCheckout');\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Contact Success>>"
+		],
+		"setupTag": [
+			{
+				"tagName": "Facebook Base Pixel",
+				"stopOnSetupFailure": true
+			}
+		],
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Facebook>>"
 	}
 ]
