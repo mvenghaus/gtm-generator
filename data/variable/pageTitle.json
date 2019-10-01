@@ -1,0 +1,16 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"variableId": "",
+	"name": "Page Title",
+	"type": "j",
+	"parameter": [
+		{
+			"type": "TEMPLATE",
+			"key": "name",
+			"value": "document.title"
+		}
+	],
+	"fingerprint": "",
+	"parentFolderId": "<<FOLDER Variable>>"
+}
