@@ -1,0 +1,26 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"triggerId": "",
+	"name": "{{Trigger Name}}",
+	"type": "PAGEVIEW",
+	"filter": [
+		{
+			"type": "CONTAINS",
+			"parameter": [
+				{
+					"type": "TEMPLATE",
+					"key": "arg0",
+					"value": "{{Page Title}}"
+				},
+				{
+					"type": "TEMPLATE",
+					"key": "arg1",
+					"value": "{{Page Title Contains Match}}"
+				}
+			]
+		}
+	],
+	"fingerprint": "",
+	"parentFolderId": "<<FOLDER Trigger>>"
+}
