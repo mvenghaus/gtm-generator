@@ -1,0 +1,41 @@
+{
+  "accountId": "",
+  "containerId": "",
+  "triggerId": "",
+  "name": "Add To Wishlist Click - Legacy",
+  "type": "LINK_CLICK",
+  "filter": [
+    {
+      "type": "CONTAINS",
+      "parameter": [
+        {
+          "type": "TEMPLATE",
+          "key": "arg0",
+          "value": "{{Click Classes}}"
+        },
+        {
+          "type": "TEMPLATE",
+          "key": "arg1",
+          "value": "link-wishlist"
+        }
+      ]
+    }
+  ],
+  "waitForTags": {
+    "type": "BOOLEAN",
+    "value": "false"
+  },
+  "checkValidation": {
+    "type": "BOOLEAN",
+    "value": "false"
+  },
+  "waitForTagsTimeout": {
+    "type": "TEMPLATE",
+    "value": "2000"
+  },
+  "uniqueTriggerId": {
+    "type": "TEMPLATE"
+  },
+  "fingerprint": "",
+  "parentFolderId": "<<FOLDER Trigger>>"
+}
