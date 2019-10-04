@@ -253,7 +253,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<script>\nfbq('track', 'InitiateCheckout');\n</script>"
+				"value": "<script>\nfbq('track', 'Contact');\n</script>"
 			},
 			{
 				"type": "BOOLEAN",
