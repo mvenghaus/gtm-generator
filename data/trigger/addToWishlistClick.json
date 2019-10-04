@@ -19,6 +19,26 @@
           "value": "[data-link-type=\"wishlist\"]"
         }
       ]
+    },
+    {
+      "type": "CONTAINS",
+      "parameter": [
+          {
+              "type": "TEMPLATE",
+              "key": "arg0",
+              "value": "{{Click Classes}}"
+          },
+          {
+              "type": "TEMPLATE",
+              "key": "arg1",
+              "value": "active"
+          },
+          {
+              "type": "BOOLEAN",
+              "key": "negate",
+              "value": "true"
+          }
+      ]
     }
   ],
   "waitForTags": {
