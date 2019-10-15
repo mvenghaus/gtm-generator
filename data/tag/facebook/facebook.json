@@ -182,7 +182,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<script>\n  var dataset = {{Element Dataset}};\n  if (typeof dataset !== 'undefined') {\n    var eventParams = {\n      content_type: 'product',\n      currency: '{{Currency Code}}'\n    };\n    \n    if (dataset.hasOwnProperty('productSku'))\n      eventParams.content_ids = [dataset.productSku];\n    if (dataset.hasOwnProperty('productPrice'))\n      eventParams.value = dataset.productPrice;\n    \n    fbq('track', 'AddToWishlist', eventParams);\n  }\n</script>"
+				"value": "<script>\n  (function() {\n    var dataset = {{Element Dataset}};\n    var eventParams = {\n      content_type: 'product',\n      currency: '{{Currency Code}}'\n    };\n\n    if (dataset && dataset.hasOwnProperty('productSku') && dataset.productSku) {\n      eventParams.content_ids = [dataset.productSku];\n    } else if ({{Product ID}}) {\n      eventParams.content_ids = [{{Product ID}}];\n    }\n\n    if (dataset && dataset.hasOwnProperty('productPrice') && dataset.productPrice) {\n      eventParams.value = dataset.productPrice;\n    } else if ({{Product Price}}) {\n      eventParams.value = {{Product Price}};\n    }\n\n    fbq('track', 'AddToWishlist', eventParams);\n  })();\n</script>"
 			},
 			{
 				"type": "BOOLEAN",
@@ -192,7 +192,8 @@
 		],
 		"fingerprint": "",
 		"firingTriggerId": [
-			"<<TRIGGER Add To Wishlist Click>>"
+			"<<TRIGGER Add To Wishlist Click>>",
+			"<<TRIGGER Add To Wishlist Click - Legacy>>"
 		],
 		"setupTag": [
 			{
@@ -217,7 +218,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<script>\n  var dataset = {{Element Dataset}};\n  if (typeof dataset !== 'undefined') {\n    var eventParams = {\n      content_type: 'product',\n      currency: '{{Currency Code}}'\n    };\n    \n    if (dataset.hasOwnProperty('productSku'))\n      eventParams.content_ids = [dataset.productSku];\n    if (dataset.hasOwnProperty('productPrice'))\n      eventParams.value = dataset.productPrice;\n    \n    fbq('track', 'AddToCompare', eventParams);\n  }\n</script>"
+				"value": "<script>\n  (function() {\n    var dataset = {{Element Dataset}};\n    var eventParams = {\n      content_type: 'product',\n      currency: '{{Currency Code}}'\n    };\n\n    if (dataset && dataset.hasOwnProperty('productSku') && dataset.productSku) {\n      eventParams.content_ids = [dataset.productSku];\n    } else if ({{Product ID}}) {\n      eventParams.content_ids = [{{Product ID}}];\n    }\n\n    if (dataset && dataset.hasOwnProperty('productPrice') && dataset.productPrice) {\n      eventParams.value = dataset.productPrice;\n    } else if ({{Product Price}}) {\n      eventParams.value = {{Product Price}};\n    }\n\n    fbq('track', 'AddToCompare', eventParams);\n  })();\n</script>"
 			},
 			{
 				"type": "BOOLEAN",
@@ -228,6 +229,41 @@
 		"fingerprint": "",
 		"firingTriggerId": [
 			"<<TRIGGER Add To Compare Click>>"
+		],
+		"setupTag": [
+			{
+				"tagName": "Facebook Base Pixel",
+				"stopOnSetupFailure": true
+			}
+		],
+		"tagFiringOption": "ONCE_PER_EVENT",
+		"parentFolderId": "<<FOLDER Facebook>>"
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Facebook Event - Contact Success",
+		"type": "html",
+		"priority": {
+			"type": "INTEGER",
+			"value": "1"
+		},
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "html",
+				"value": "<script>\nfbq('track', 'Contact');\n</script>"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "supportDocumentWrite",
+				"value": "false"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Contact Success>>"
 		],
 		"setupTag": [
 			{

@@ -2,21 +2,21 @@
   "accountId": "",
   "containerId": "",
   "triggerId": "",
-  "name": "Add To Wishlist Click",
+  "name": "Add To Wishlist Click - Legacy",
   "type": "LINK_CLICK",
   "filter": [
     {
-      "type": "CSS_SELECTOR",
+      "type": "CONTAINS",
       "parameter": [
         {
           "type": "TEMPLATE",
           "key": "arg0",
-          "value": "{{Click Element}}"
+          "value": "{{Click Classes}}"
         },
         {
           "type": "TEMPLATE",
           "key": "arg1",
-          "value": "[data-link-type=\"wishlist\"]"
+          "value": "link-wishlist"
         }
       ]
     },

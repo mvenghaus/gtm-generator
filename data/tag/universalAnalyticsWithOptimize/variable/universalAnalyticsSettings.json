@@ -40,7 +40,7 @@
 						{
 							"type": "TEMPLATE",
 							"key": "fieldName",
-							"value": "anonymizeIP"
+							"value": "anonymizeIp"
 						},
 						{
 							"type": "TEMPLATE",

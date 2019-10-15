@@ -28,7 +28,7 @@
 		],
 		"fingerprint": "",
 		"firingTriggerId": [
-			"<<TRIGGER Purchase>>"
+			"<<TRIGGER All Pages>>"
 		],
 		"tagFiringOption": "ONCE_PER_EVENT",
 		"parentFolderId": "<<FOLDER Universal Analytics>>"

@@ -58,6 +58,12 @@
 			{
 				"accountId": "",
 				"containerId": "",
+				"type": "CLICK_CLASSES",
+				"name": "Click Classes"
+			},
+			{
+				"accountId": "",
+				"containerId": "",
 				"type": "REFERRER",
 				"name": "Referrer"
 			}
