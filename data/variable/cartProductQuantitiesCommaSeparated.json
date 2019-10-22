@@ -1,0 +1,16 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"variableId": "",
+	"name": "Cart Product Quantities Comma Separated",
+	"type": "jsm",
+	"parameter": [
+		{
+			"type": "TEMPLATE",
+			"key": "javascript",
+			"value": "function () {\n  var cartProducts = {{Cart Products}};\n  var productQuantities = [];\n\n  if (typeof cartProducts !== 'undefined') {\n    for (var i=0; i < cartProducts.length; i++)\n    {  \n      productQuantities.push(cartProducts[i].quantity);\n    }\n  }\n  return productQuantities.join(',');\n}"
+		}
+	],
+	"fingerprint": "",
+	"parentFolderId": "<<FOLDER Variable>>"
+}

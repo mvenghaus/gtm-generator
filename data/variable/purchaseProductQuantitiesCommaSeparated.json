@@ -1,0 +1,16 @@
+{
+	"accountId": "",
+	"containerId": "",
+	"variableId": "",
+	"name": "Purchase Product Quantities Comma Separated",
+	"type": "jsm",
+	"parameter": [
+		{
+			"type": "TEMPLATE",
+			"key": "javascript",
+			"value": "function () {\n  var ecommerce = {{Ecommerce}};\n  var productQuantities = [];\n\n  if (ecommerce.hasOwnProperty('purchase')) {\n    for (var i=0; i < ecommerce.purchase.products.length; i++)\n    {  \n      productQuantities.push(ecommerce.purchase.products[i].quantity);\n    }\n  }\n  return productQuantities.join(',');\n}"
+		}
+	],
+	"fingerprint": "",
+	"parentFolderId": "<<FOLDER Variable>>"
+}

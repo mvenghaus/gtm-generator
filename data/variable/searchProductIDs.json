@@ -1,0 +1,16 @@
+{
+  "accountId": "",
+  "containerId": "",
+  "variableId": "",
+  "name": "Search Product IDs",
+  "type": "jsm",
+  "parameter": [
+    {
+      "type": "TEMPLATE",
+      "key": "javascript",
+      "value": "function () {\n  var searchProducts = {{Search Products}};\n  var productIds = [];\n\n  if (typeof searchProducts !== 'undefined') {\n    for (var i=0; i < searchProducts.length; i++)\n    {  \n      productIds.push(searchProducts[i].id);\n    }\n  }\n  return productIds;\n}"
+    }
+  ],
+  "fingerprint": "",
+  "parentFolderId": "<<FOLDER Variable>>"
+}

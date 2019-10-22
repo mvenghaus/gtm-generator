@@ -1,0 +1,16 @@
+{
+  "accountId": "",
+  "containerId": "",
+  "variableId": "",
+  "name": "Category Product IDs",
+  "type": "jsm",
+  "parameter": [
+    {
+      "type": "TEMPLATE",
+      "key": "javascript",
+      "value": "function () {\n  var categoryProducts = {{Category Products}};\n  var productIds = [];\n\n  if (typeof categoryProducts !== 'undefined') {\n    for (var i=0; i < categoryProducts.length; i++)\n    {  \n      productIds.push(categoryProducts[i].id);\n    }\n  }\n  return productIds;\n}"
+    }
+  ],
+  "fingerprint": "",
+  "parentFolderId": "<<FOLDER Variable>>"
+}
