@@ -9,7 +9,7 @@
 			{
 				"type": "TEMPLATE",
 				"key": "html",
-				"value": "<script src=\"https://tracking.s24.com/js/conversion-tracking.js\"></script>\n<script>\n  document.addEventListener('DOMContentLoaded', function initS24() {\n  \twindow.s24ConversionTracking.init('s24clid');\n  }, false);\n</script>"
+				"value": "<script src=\"https://tracking.s24.com/js/conversion-tracking.js\"></script>\n<script>\n  document.addEventListener('DOMContentLoaded', function initS24() {\n  \twindow.s24ConversionTracking.init('{{Shopping24 Shop ID}}');\n  }, false);\n</script>"
 			},
 			{
 				"type": "BOOLEAN",
