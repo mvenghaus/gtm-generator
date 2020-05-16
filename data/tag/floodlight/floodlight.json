@@ -1,0 +1,272 @@
+[
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Floodlight - Product",
+		"type": "flc",
+		"parameter": [
+			{
+				"type": "LIST",
+				"key": "customVariable",
+				"list": [
+					{
+						"type": "MAP",
+						"map": [
+							{
+								"type": "TEMPLATE",
+								"key": "key",
+								"value": "u1"
+							},
+							{
+								"type": "TEMPLATE",
+								"key": "value",
+								"value": "{{Product ID}}"
+							}
+						]
+					},
+					{
+						"type": "MAP",
+						"map": [
+							{
+								"type": "TEMPLATE",
+								"key": "key",
+								"value": "u3"
+							},
+							{
+								"type": "TEMPLATE",
+								"key": "value",
+								"value": "{{Product Name}}"
+							}
+						]
+					}
+				]
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "enableConversionLinker",
+				"value": "true"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "groupTag",
+				"value": "a1"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "useImageTag",
+				"value": "false"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "activityTag",
+				"value": "remar0"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "ordinalType",
+				"value": "STANDARD"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "conversionCookiePrefix",
+				"value": "_gcl"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "advertiserId",
+				"value": "{{Floodlight Advertiser ID}}"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Product>>"
+		],
+		"monitoringMetadata": {
+			"type": "MAP"
+		}
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Floodlight - AddToCart",
+		"type": "flc",
+		"parameter": [
+			{
+				"type": "LIST",
+				"key": "customVariable",
+				"list": [
+					{
+						"type": "MAP",
+						"map": [
+							{
+								"type": "TEMPLATE",
+								"key": "key",
+								"value": "u1"
+							},
+							{
+								"type": "TEMPLATE",
+								"key": "value",
+								"value": "{{Product ID}}"
+							}
+						]
+					},
+					{
+						"type": "MAP",
+						"map": [
+							{
+								"type": "TEMPLATE",
+								"key": "key",
+								"value": "u2"
+							},
+							{
+								"type": "TEMPLATE",
+								"key": "value",
+								"value": "{{Product Price}}"
+							}
+						]
+					},
+					{
+						"type": "MAP",
+						"map": [
+							{
+								"type": "TEMPLATE",
+								"key": "key",
+								"value": "u3"
+							},
+							{
+								"type": "TEMPLATE",
+								"key": "value",
+								"value": "{{Product Name}}"
+							}
+						]
+					},
+					{
+						"type": "MAP",
+						"map": [
+							{
+								"type": "TEMPLATE",
+								"key": "key",
+								"value": "u6"
+							},
+							{
+								"type": "TEMPLATE",
+								"key": "value",
+								"value": "{{Page Type}}"
+							}
+						]
+					}
+				]
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "enableConversionLinker",
+				"value": "true"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "groupTag",
+				"value": "addto0"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "useImageTag",
+				"value": "false"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "activityTag",
+				"value": "addto0"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "ordinalType",
+				"value": "STANDARD"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "conversionCookiePrefix",
+				"value": "_gcl"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "advertiserId",
+				"value": "{{Floodlight Advertiser ID}}"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Add To Cart Click>>"
+		],
+		"monitoringMetadata": {
+			"type": "MAP"
+		}
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
+		"name": "Floodlight - Purchase",
+		"type": "fls",
+		"parameter": [
+			{
+				"type": "TEMPLATE",
+				"key": "revenue",
+				"value": "{{Purchase Revenue}}"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "enableConversionLinker",
+				"value": "true"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "countingMethod",
+				"value": "TRANSACTIONS"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "orderId",
+				"value": "{{Purchase ID}}"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "enableProductReporting",
+				"value": "false"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "groupTag",
+				"value": "sales0"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "useImageTag",
+				"value": "false"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "activityTag",
+				"value": "kaufi0"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "conversionCookiePrefix",
+				"value": "_gcl"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "advertiserId",
+				"value": "{{Floodlight Advertiser ID}}"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER Purchase>>"
+		],
+		"monitoringMetadata": {
+			"type": "MAP"
+		}
+	}
+]
