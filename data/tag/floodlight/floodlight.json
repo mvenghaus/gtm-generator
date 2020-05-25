@@ -3,6 +3,57 @@
 		"accountId": "",
 		"containerId": "",
 		"tagId": "",
+		"name": "Floodlight - Global",
+		"type": "flc",
+		"parameter": [
+			{
+				"type": "BOOLEAN",
+				"key": "enableConversionLinker",
+				"value": "true"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "groupTag",
+				"value": "visit"
+			},
+			{
+				"type": "BOOLEAN",
+				"key": "useImageTag",
+				"value": "false"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "activityTag",
+				"value": "globa0"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "ordinalType",
+				"value": "STANDARD"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "conversionCookiePrefix",
+				"value": "_gcl"
+			},
+			{
+				"type": "TEMPLATE",
+				"key": "advertiserId",
+				"value": "{{Floodlight Advertiser ID}}"
+			}
+		],
+		"fingerprint": "",
+		"firingTriggerId": [
+			"<<TRIGGER All Pages>>"
+		],
+		"monitoringMetadata": {
+			"type": "MAP"
+		}
+	},
+	{
+		"accountId": "",
+		"containerId": "",
+		"tagId": "",
 		"name": "Floodlight - Product",
 		"type": "flc",
 		"parameter": [
