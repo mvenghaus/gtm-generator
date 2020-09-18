@@ -1,0 +1,26 @@
+{
+  "accountId": "",
+  "containerId": "",
+  "triggerId": "",
+  "name": "Product Click",
+  "type": "CUSTOM_EVENT",
+  "customEventFilter": [
+    {
+      "type": "EQUALS",
+      "parameter": [
+        {
+          "type": "TEMPLATE",
+          "key": "arg0",
+          "value": "{{_event}}"
+        },
+        {
+          "type": "TEMPLATE",
+          "key": "arg1",
+          "value": "productClick"
+        }
+      ]
+    }
+  ],
+  "fingerprint": "",
+  "parentFolderId": "<<FOLDER Trigger>>"
+}
